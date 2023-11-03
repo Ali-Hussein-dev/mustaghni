@@ -5,7 +5,7 @@ import { type Company } from "@/components/company-card";
 
 export const useSearch = () => {
   const [input, setInput] = React.useState("");
-  const inputRef = React.useRef(null);
+  const inputRef = React.useRef<HTMLInputElement>(null);
   const {
     data: companies,
     isLoading,
