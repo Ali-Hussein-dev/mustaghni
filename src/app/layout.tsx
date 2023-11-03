@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 
 import { Inter } from "next/font/google";
 import { Footer } from "./components/Footer";
+import { Providers } from "@/hooks/providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans ${inter.variable}`}>
-        {children}
+        <Providers>{children}</Providers>
         <Footer />
       </body>
     </html>

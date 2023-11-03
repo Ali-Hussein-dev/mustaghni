@@ -4,6 +4,7 @@ specifiers:
   '@sanity/image-url': '1'
   '@sanity/vision': '3'
   '@t3-oss/env-nextjs': ^0.7.0
+  '@tanstack/react-query': ^5.4.3
   '@types/eslint': ^8.44.2
   '@types/node': ^18.16.0
   '@types/react': ^18.2.20
@@ -32,6 +33,7 @@ dependencies:
   '@sanity/image-url': 1.0.2
   '@sanity/vision': 3.19.0_7qwdpgvhatjckrubbosml2afpm
   '@t3-oss/env-nextjs': 0.7.1_5t6euwxcdh5fbfdut3slz5dieu
+  '@tanstack/react-query': 5.4.3_biqbaboplfbrettd7655fr4n2y
   next: 13.5.6_biqbaboplfbrettd7655fr4n2y
   next-sanity: 5.5.10_4yvq7misltadu4vs2oghl7ymyu
   react: 18.2.0
@@ -1524,6 +1526,27 @@ packages:
       '@t3-oss/env-core': 0.7.1_5t6euwxcdh5fbfdut3slz5dieu
       typescript: 5.2.2
       zod: 3.22.4
+    dev: false
+
+  /@tanstack/query-core/5.4.3:
+    resolution: {integrity: sha512-fnI9ORjcuLGm1sNrKatKIosRQUpuqcD4SV7RqRSVmj8JSicX2aoMyKryHEBpVQvf6N4PaBVgBxQomjsbsGPssQ==}
+    dev: false
+
+  /@tanstack/react-query/5.4.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-4aSOrRNa6yEmf7mws5QPTVMn8Lp7L38tFoTZ0c1ZmhIvbr8GIA0WT7X5N3yz/nuK8hUtjw9cAzBr4BPDZZ+tzA==}
+    peerDependencies:
+      react: ^18.0.0
+      react-dom: ^18.0.0
+      react-native: '*'
+    peerDependenciesMeta:
+      react-dom:
+        optional: true
+      react-native:
+        optional: true
+    dependencies:
+      '@tanstack/query-core': 5.4.3
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /@tanstack/react-virtual/3.0.0-beta.54_react@18.2.0:

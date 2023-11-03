@@ -12,6 +12,7 @@
     "@sanity/image-url": "1",
     "@sanity/vision": "3",
     "@t3-oss/env-nextjs": "^0.7.0",
+    "@tanstack/react-query": "^5.4.3",
     "next": "^13.5.4",
     "next-sanity": "5",
     "react": "18.2.0",
