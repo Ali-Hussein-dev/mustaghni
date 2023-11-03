@@ -15,7 +15,8 @@ const content = {
 // };
 
 export default function HomePage() {
-  const { input, setInput, isLoading, companies, onSubmit } = useSearch();
+  const { input, setInput, isLoading, companies, onSubmit, inputRef } =
+    useSearch();
   return (
     <main className="flex-col-start h-full min-h-screen w-full bg-gray-50 ">
       <div className="px-w container mx-auto grow px-2 py-10 text-neutral-800 md:pt-20">
@@ -29,6 +30,7 @@ export default function HomePage() {
               isLoading={isLoading}
               input={input}
               setInput={setInput}
+              inputRef={inputRef}
             />
           </form>
           <CompaniesList companies={companies} />

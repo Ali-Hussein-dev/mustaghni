@@ -5,6 +5,7 @@ import { type Company } from "@/components/company-card";
 
 export const useSearch = () => {
   const [input, setInput] = React.useState("");
+  const inputRef = React.useRef(null);
   const {
     data: companies,
     isLoading,
@@ -22,6 +23,7 @@ export const useSearch = () => {
     (e: React.FormEvent) => {
       e.preventDefault();
       void refetch();
+      inputRef.current?.blur();
     },
     [refetch],
   );
@@ -31,5 +33,6 @@ export const useSearch = () => {
     onSubmit,
     companies,
     isLoading,
+    inputRef,
   };
 };

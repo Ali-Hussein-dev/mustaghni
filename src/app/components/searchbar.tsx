@@ -7,16 +7,19 @@ interface SearchBarProps {
   isLoading: boolean;
   input: string;
   setInput: (v: string) => void;
+  inputRef: React.RefObject<HTMLInputElement>;
 }
 
 const SearchBar: React.FC<SearchBarProps> = ({
   isLoading,
   input,
   setInput,
+  inputRef,
 }) => {
   return (
     <div className="flex-row-start dusration-300 mb-2 w-full gap-1 rounded-full border border-gray-200 bg-gradient-to-t from-gray-50 to-transparent px-3 focus-within:border-gray-300 focus-within:shadow-xl">
       <input
+        ref={inputRef}
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
