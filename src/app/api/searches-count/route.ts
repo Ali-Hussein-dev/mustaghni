@@ -1,11 +1,7 @@
-import { env } from "@/env.mjs"
-import { Redis } from "@upstash/redis"
+import { redisClient } from "@/utils/redis"
 
 export const GET = async () => {
-    const redis = new Redis({
-        url: env.UPSTASH_REDIS_REST_URL,
-        token: env.UPSTASH_REDIS_REST_TOKEN
-    })
-    const counts = await redis.get("searches")
+
+    const counts = await redisClient.get("searches")
     return Response.json({ counts })
 }
