@@ -3,6 +3,7 @@ import { CompaniesList } from "@/components/companies-list";
 import SearchBar from "./components/searchbar";
 import * as React from "react";
 import { useSearch } from "./hooks/use-search";
+import { SearchesCount } from "@/components/searches-count";
 
 const content = {
   title: "Sahem",
@@ -33,6 +34,7 @@ export default function HomePage() {
               inputRef={inputRef}
             />
           </form>
+          <SearchesCount />
           <CompaniesList companies={companies} />
         </div>
       </div>
