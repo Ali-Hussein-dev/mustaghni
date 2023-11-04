@@ -2,7 +2,7 @@ const content = [
   "Refrain from using their products",
   "Motivate others to abbandon their products",
   "Unfollow their accounts, report, and abstain from interacting with their content on social media",
-  "Provide a one-star rating for their apps",
+  "Rate their apps with one star and leave a review showing their bias",
 ];
 export const InitialView = () => {
   return (
