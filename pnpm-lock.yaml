@@ -11,6 +11,7 @@ specifiers:
   '@types/react-dom': ^18.2.7
   '@typescript-eslint/eslint-plugin': ^6.3.0
   '@typescript-eslint/parser': ^6.3.0
+  '@upstash/redis': ^1.24.3
   autoprefixer: ^10.4.14
   eslint: ^8.47.0
   eslint-config-next: ^13.5.4
@@ -34,6 +35,7 @@ dependencies:
   '@sanity/vision': 3.19.0_7qwdpgvhatjckrubbosml2afpm
   '@t3-oss/env-nextjs': 0.7.1_5t6euwxcdh5fbfdut3slz5dieu
   '@tanstack/react-query': 5.4.3_biqbaboplfbrettd7655fr4n2y
+  '@upstash/redis': 1.24.3
   next: 13.5.6_biqbaboplfbrettd7655fr4n2y
   next-sanity: 5.5.10_4yvq7misltadu4vs2oghl7ymyu
   react: 18.2.0
@@ -1891,6 +1893,12 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
+  /@upstash/redis/1.24.3:
+    resolution: {integrity: sha512-gw6d4IA1biB4eye5ESaXc0zOlVQI94aptsBvVcTghYWu1kRmOrJFoMFEDCa8p5uzluyYAOFCuY2GWLR6O4ZoIw==}
+    dependencies:
+      crypto-js: 4.2.0
+    dev: false
+
   /@vercel/stega/0.1.0:
     resolution: {integrity: sha512-5b0PkOJsFBX5alChuIO3qpkt5vIZBevzLPhUQ1UP8UzVjL3F1VllnZxp/thfD8R5ol7D7WHkgZHIjdUBX4tDpQ==}
     dev: false
@@ -2494,6 +2502,10 @@ packages:
       path-key: 3.1.1
       shebang-command: 2.0.0
       which: 2.0.2
+
+  /crypto-js/4.2.0:
+    resolution: {integrity: sha512-KALDyEYgpY+Rlob/iriUtjV6d5Eq+Y191A5g4UqLAi8CyGP9N1+FdVbkc1SxKc2r4YAYqG8JzO2KGL+AizD70Q==}
+    dev: false
 
   /crypto-random-string/2.0.0:
     resolution: {integrity: sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==}
