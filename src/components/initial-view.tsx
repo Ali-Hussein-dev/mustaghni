@@ -10,7 +10,10 @@ export const InitialView = () => {
       <h2 className="mb-4 text-center font-bold">How to Boycott</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {content.map((o, i) => (
-          <div key={i} className="rounded bg-gray-100 px-4 py-6 text-gray-700">
+          <div
+            key={i}
+            className="rounded border border-gray-300 bg-gray-100 px-4 py-6 text-gray-700"
+          >
             {o}
           </div>
         ))}
