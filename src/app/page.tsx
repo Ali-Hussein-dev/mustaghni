@@ -4,16 +4,18 @@ import SearchBar from "./components/searchbar";
 import * as React from "react";
 import { useSearch } from "./hooks/use-search";
 import { SearchesCount } from "@/components/searches-count";
+import type { Metadata } from "next";
 
 const content = {
   title: "Sahem",
   description:
-    "Support Palestinian by boycotting companies that supports Isreal",
+    "Support Palestinian by boycotting companies that supports isreal",
 };
-// const contentA = {
-//   title: "Sahem",
-//   description: "ادعم إخوتك في فلسطين من خلال مقاطعة الشركات التي تدعم إسرائيل",
-// };
+
+export const metadata: Metadata = {
+  title: content.title,
+  description: content.description,
+};
 
 export default function HomePage() {
   const { input, setInput, isLoading, companies, onSubmit, inputRef } =
