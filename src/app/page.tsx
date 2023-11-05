@@ -3,15 +3,12 @@ import { CompaniesList } from "@/components/companies-list";
 import SearchBar from "./components/searchbar";
 import * as React from "react";
 import { useSearch } from "./hooks/use-search";
-import { SearchesCount } from "@/components/searches-count";
 
 const content = {
   title: "Sahem",
   description:
     "Support Palestinian by boycotting companies that supports isreal",
 };
-
-
 
 export default function HomePage() {
   const { input, setInput, isLoading, companies, onSubmit, inputRef } =
@@ -32,7 +29,6 @@ export default function HomePage() {
               inputRef={inputRef}
             />
           </form>
-          <SearchesCount />
           <CompaniesList companies={companies} />
         </div>
       </div>
