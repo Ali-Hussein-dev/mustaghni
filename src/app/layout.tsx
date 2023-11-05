@@ -3,15 +3,16 @@ import "@/styles/globals.css";
 import { Inter } from "next/font/google";
 import { Footer } from "./components/Footer";
 import { Providers } from "@/hooks/providers";
+import type { Metadata } from "next";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
 });
-
-export const metadata = {
+export const metadata: Metadata = {
   title: "Sahem",
-  description: "Contriubte",
+  description:
+    "Support Palestinian by boycotting companies that supports isreal",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
