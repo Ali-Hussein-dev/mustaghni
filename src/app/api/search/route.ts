@@ -3,7 +3,7 @@ import { type NextRequest } from 'next/server'
 import { searchCompanies } from '../../../../sanity/lib/get-companies';
 import { redisClient } from '@/utils/redis';
 
-const nameSchema = z.string().min(1).refine(name => /^[a-zA-Z0-9' &]+$/.test(name), {
+const nameSchema = z.string().min(1).refine(name => /^[^\*\_\{\}\}\[\]]+$/.test(name), {
     message: "name should not contain special characters",
 });
 
@@ -32,3 +32,4 @@ export const GET = async (req: NextRequest) => {
     const results = await searchCompanies(companyName)
     return Response.json(results)
 }
+
