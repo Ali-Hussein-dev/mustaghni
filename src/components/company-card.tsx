@@ -12,7 +12,7 @@ export const CompanyCard = ({ title, logo }: Props) => {
     <div className="rounded-sm border border-gray-200 bg-gray-100 px-3 py-4 ">
       <div className="flex-row-start gap-2">
         {logo ? (
-          <div className="relative h-10 w-10 overflow-hidden rounded-full">
+          <div className="relative h-10 w-11 overflow-hidden rounded-full">
             <Image
               fill
               src={logo}

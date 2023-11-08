@@ -23,7 +23,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
+      <body
+        className={`font-sans ${inter.variable} min-h-screen bg-gray-50 text-neutral-800 flex-col-start`}
+      >
         <Providers>{children}</Providers>
         <Footer />
       </body>

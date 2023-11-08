@@ -1,8 +1,8 @@
 import { FaTiktok } from "react-icons/fa6";
 
 export const Footer = () => (
-  <footer className="flex-row-center h-14 border-t border-neutral-200 text-gray-800">
-    <div className="flex-row-center max-w-3xl gap-4 ">
+  <footer className="h-14 w-full border-t border-neutral-300 text-gray-800 flex-row-center">
+    <div className="max-w-3xl gap-4 flex-row-center ">
       {[
         // { href: "https://x.com", icon: <FaXTwitter size="20" /> },
         {
