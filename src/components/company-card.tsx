@@ -41,6 +41,8 @@ export const CompanyCard = ({
               <a
                 href={ownerCompanyURL}
                 className="text-sky-600 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 {ownedBy}
               </a>
