@@ -22,6 +22,16 @@ const companySchema = {
             title: "Tags",
             type: "array",
             of: [{ type: "string" }],
+        },
+        {
+            name: "ownedBy",
+            title: "Owner company",
+            type: "string",
+        },
+        {
+            name: "ownerCompanyURL",
+            title: "Owner company URL",
+            type: "url",
         }
     ]
 }

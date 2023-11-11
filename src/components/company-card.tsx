@@ -4,15 +4,22 @@ import Image from "next/image";
 export type Company = {
   title: string;
   logo: string;
+  ownedBy?: string;
+  ownerCompanyURL?: string;
   tags: string[];
 };
-type Props = Pick<Company, "title" | "logo">;
-export const CompanyCard = ({ title, logo }: Props) => {
+type Props = Pick<Company, "title" | "logo" | "ownedBy" | "ownerCompanyURL">;
+export const CompanyCard = ({
+  title,
+  logo,
+  ownedBy = "",
+  ownerCompanyURL,
+}: Props) => {
   return (
     <div className="rounded-sm border border-gray-200 bg-gray-100 px-3 py-4 ">
-      <div className="flex-row-start gap-2">
+      <div className="gap-2 flex-row-start">
         {logo ? (
-          <div className="relative h-10 w-11 overflow-hidden rounded-full">
+          <div className="relative h-11 w-11 overflow-hidden rounded-full">
             <Image
               fill
               src={logo}
@@ -25,7 +32,25 @@ export const CompanyCard = ({ title, logo }: Props) => {
             {title[0]}
           </div>
         )}
-        <span className="font-semibold text-gray-700">{title}</span>
+        <div className=" flex-col-start">
+          <span className="font-semibold text-gray-700">{title}</span>
+
+          {ownerCompanyURL ? (
+            <span className="text-sm ">
+              Owned by:{" "}
+              <a
+                href={ownerCompanyURL}
+                className="text-sky-600 hover:underline"
+              >
+                {ownedBy}
+              </a>
+            </span>
+          ) : (
+            <span hidden={!ownedBy} className="text-sm text-gray-600">
+              Owned by {ownedBy}
+            </span>
+          )}
+        </div>
       </div>
     </div>
   );

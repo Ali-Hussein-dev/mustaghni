@@ -14,6 +14,8 @@ export const searchCompanies = async (title: string): Promise<Company[]> => {
         _id,
         title,
         "logo": logo.asset->url,
+        ownedBy,
+        ownerCompanyURL,
     }`, {
         title
     })
