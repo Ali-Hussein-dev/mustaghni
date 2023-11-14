@@ -27,20 +27,6 @@ export const Hero = () => {
         />
       </form>
       <CompaniesList companies={companies} />
-      {/* <p className="px-2 pt-4 text-center text-gray-600">
-        {
-          "I'm looking for help collecting and gathering more info about brands & firms. If you're interested in helping, please DM me"
-        }
-        <a
-          href="https://twitter.com/AliHussein_20"
-          className="font-semibold"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {" "}
-          here
-        </a>
-      </p> */}
     </div>
   );
 };
