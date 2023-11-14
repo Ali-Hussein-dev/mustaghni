@@ -10,16 +10,16 @@ export const InitialView = async () => {
   const counts = await getDocsClount("company");
   return (
     <div className="w-full ">
-      <h2 className="mb-1 text-center font-bold">How to Boycott</h2>
-      <p className="mb-4 text-center text-gray-600">
+      <p className="mb-1 text-center text-gray-600">
         {counts % 10 === 0 ? counts : "+" + (counts - (counts % 10))} brands
         support israel
       </p>
+      <h2 className="mb-4 text-center text-2xl font-bold">How to Boycott</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {content.map((o, i) => (
           <div
             key={i}
-            className="rounded border border-gray-300 bg-gray-100 px-4 py-6 text-gray-700"
+            className="rounded border border-gray-300 bg-gray-100 px-4 py-6 font-medium text-gray-700"
           >
             {o}
           </div>
