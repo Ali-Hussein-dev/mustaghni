@@ -11,10 +11,12 @@ export const CompaniesList = ({ companies }: { companies?: Company[] }) => {
           not found
         </div>
       )}
-      <div className=" px-1  md:px-4">
-        <p className="pb-2 font-medium text-gray-500">
-          Results: {companies.length}
-        </p>
+      <div className=" px-1 md:px-4">
+        {companies.length > 0 && (
+          <p className="pb-2 font-medium text-gray-500">
+            Results: {companies.length}
+          </p>
+        )}
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
           {companies?.map((o, i) => (
             <DyanmicCompanyCard
