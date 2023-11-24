@@ -4,7 +4,7 @@ import Image from "next/image";
 const data = [
   {
     name: "Nestle",
-    img: "/supporter-companies/nestle.png",
+    img: "/supporter-companies/Nestle.png",
     // brands: 5,
   },
   {
