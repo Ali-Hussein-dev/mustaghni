@@ -7,13 +7,8 @@ const content = [
   "Rate their apps with one star and leave a review showing their bias",
 ];
 export const InitialView = () => {
-  // const counts = await getDocsClount("company");
   return (
     <div className="w-full ">
-      <p className="mb-1 text-center text-gray-600">
-        {/* {counts % 10 === 0 ? counts : "+" + (counts - (counts % 10))} */}
-        +280 brands support israel
-      </p>
       <h2 className="mb-4 text-center text-2xl font-bold">How to Boycott</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {content.map((o, i) => (
