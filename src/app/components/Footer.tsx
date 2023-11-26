@@ -6,7 +6,7 @@ export const Footer = () => (
       {[
         // { href: "https://x.com", icon: <FaXTwitter size="20" /> },
         {
-          href: "https://www.tiktok.com/@alih5221",
+          href: "https://www.tiktok.com/@ali_h_dev",
           icon: <FaTiktok size="20" />,
         },
         // { href: "https://tiktok.com", icon: <FaInstagram size="20" /> },
