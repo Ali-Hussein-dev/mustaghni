@@ -10,9 +10,9 @@ const inter = Inter({
   variable: "--font-sans",
 });
 export const metadata: Metadata = {
-  title: "MustaghnI",
+  title: "Mustaghni",
   description:
-    "Support Palestinian by boycotting companies that supports isreal",
+    "Support Palestinian by boycotting companies that support genocide",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
