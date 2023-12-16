@@ -90,8 +90,10 @@ export const TopSupporters = () => {
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkMGKQBAAAuQBND/XDIQAAAABJRU5ErkJggg=="
               />
             </div>
-            <div className="px-4 pt-2 flex-col-start">
-              <div className="text-sm font-semibold sm:text-lg">{o.name}</div>
+            <div className="px-1 pt-2 flex-col-center sm:px-4">
+              <span className="text-center text-sm font-semibold md:text-lg">
+                {o.name}
+              </span>
               {/* <div className="font-light">{o.brands} brands</div> */}
             </div>
           </div>
