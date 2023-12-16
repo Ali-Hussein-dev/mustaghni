@@ -18,7 +18,7 @@ export const Hero = () => {
         (companies ?? []).length > 0 ? "" : "h-screen"
       }`}
     >
-      <div className="space-y-4">
+      <div className="animate-in space-y-4">
         <div className="w-full pt-10 flex-col-center">
           <Image
             src="/logo.png"
@@ -26,6 +26,8 @@ export const Hero = () => {
             width="270"
             height="100"
             className="mb-4"
+            priority
+            quality={75}
           />
           <p className="mx-auto mb-4 max-w-xl text-center text-xl text-gray-700">
             {content.description}
