@@ -57,6 +57,11 @@ const data = [
     img: "/supporter-companies/moneleza.png",
     // brands: 10,
   },
+  {
+    name: "JAB Holding Company",
+    img: "/supporter-companies/jab.png",
+    // brands: 10,
+  },
 ];
 //======================================
 export const TopSupporters = () => {
