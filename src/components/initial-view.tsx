@@ -14,7 +14,7 @@ export const InitialView = () => {
         {content.map((o, i) => (
           <div
             key={i}
-            className="rounded border border-gray-300 bg-gray-100 px-4 py-6 font-medium text-gray-700"
+            className="rounded border px-4 py-6 font-medium text-gray-700"
           >
             {o}
           </div>

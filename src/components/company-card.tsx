@@ -16,7 +16,7 @@ export const CompanyCard = ({
   ownerCompanyURL,
 }: Props) => {
   return (
-    <div className="rounded-sm border border-gray-200 bg-gray-100 px-3 py-4 ">
+    <div className="rounded-sm border border-gray-200 bg-gray-100/60 px-3 py-4 ">
       <div className="gap-2 flex-row-start">
         {logo ? (
           <div className="relative h-11 w-11 overflow-hidden rounded-full">
