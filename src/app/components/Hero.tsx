@@ -7,7 +7,7 @@ import Image from "next/image";
 const content = {
   title: "MustaghnI",
   description:
-    "Save children and innocent people by boycotting companies that fund genocide",
+    "If you can't take action against genocide in Palestine, you can at least boycott supporting corporations",
 };
 export const Hero = () => {
   const { input, setInput, isLoading, companies, onSubmit, inputRef } =
@@ -20,7 +20,7 @@ export const Hero = () => {
       {/* <h1 className="text-center text-3xl font-extrabold text-gray-800">
         {content.title}
       </h1> */}
-      <p className="mx-auto max-w-2xl text-center text-lg text-gray-600">
+      <p className="mx-auto mb-4 max-w-xl text-center text-xl text-gray-700">
         {content.description}
       </p>
       <form onSubmit={onSubmit}>
