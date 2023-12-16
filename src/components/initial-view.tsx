@@ -8,14 +8,13 @@ const content = [
 ];
 export const InitialView = () => {
   return (
-    <div className="w-full ">
-      <h2 className="mb-4 text-center text-2xl font-bold">How to Boycott</h2>
+    <div className="w-full text-gray-700">
+      <h2 className="mb-4 text-center text-2xl font-extrabold">
+        How to Boycott?
+      </h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {content.map((o, i) => (
-          <div
-            key={i}
-            className="rounded border px-4 py-6 font-medium text-gray-700"
-          >
+          <div key={i} className="rounded border px-4 py-6 font-medium ">
             {o}
           </div>
         ))}
