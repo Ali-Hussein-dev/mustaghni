@@ -8,7 +8,7 @@ const content = [
 ];
 export const InitialView = () => {
   return (
-    <div className="w-full text-gray-700">
+    <div className="mx-auto w-full max-w-3xl py-6 text-gray-700">
       <h2 className="mb-4 text-center text-2xl font-extrabold">
         How to Boycott?
       </h2>
