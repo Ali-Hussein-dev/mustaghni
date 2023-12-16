@@ -1,10 +1,7 @@
 import { type Company, DyanmicCompanyCard } from "./company-card";
-import { InitialView } from "./initial-view";
 
 export const CompaniesList = ({ companies }: { companies?: Company[] }) => {
-  return !companies ? (
-    <InitialView />
-  ) : (
+  return companies ? (
     <div>
       {companies.length === 0 && (
         <div className="w-full bg-gray-100 py-4 font-semibold flex-row-center">
@@ -30,5 +27,5 @@ export const CompaniesList = ({ companies }: { companies?: Company[] }) => {
         </div>
       </div>
     </div>
-  );
+  ) : null;
 };

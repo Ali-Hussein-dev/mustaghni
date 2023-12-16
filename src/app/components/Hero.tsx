@@ -13,24 +13,33 @@ export const Hero = () => {
   const { input, setInput, isLoading, companies, onSubmit, inputRef } =
     useSearch();
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-col justify-center gap-4">
-      <div className="w-full pt-10 flex-row-center">
-        <Image src="/logo.png" alt="logo" width="200" height="75" />
+    <div
+      className={`mx-auto flex w-full max-w-3xl flex-col justify-center gap-4 ${
+        (companies ?? []).length > 0 ? "" : "h-screen"
+      }`}
+    >
+      <div className="space-y-4">
+        <div className="w-full pt-10 flex-col-center">
+          <Image
+            src="/logo.png"
+            alt="logo"
+            width="270"
+            height="100"
+            className="mb-4"
+          />
+          <p className="mx-auto mb-4 max-w-xl text-center text-xl text-gray-700">
+            {content.description}
+          </p>
+        </div>
+        <form onSubmit={onSubmit}>
+          <SearchBar
+            isLoading={isLoading}
+            input={input}
+            setInput={setInput}
+            inputRef={inputRef}
+          />
+        </form>
       </div>
-      {/* <h1 className="text-center text-3xl font-extrabold text-gray-800">
-        {content.title}
-      </h1> */}
-      <p className="mx-auto mb-4 max-w-xl text-center text-xl text-gray-700">
-        {content.description}
-      </p>
-      <form onSubmit={onSubmit}>
-        <SearchBar
-          isLoading={isLoading}
-          input={input}
-          setInput={setInput}
-          inputRef={inputRef}
-        />
-      </form>
 
       <CompaniesList companies={companies} />
     </div>
