@@ -30,7 +30,7 @@ export const WhichBrands = () => {
         </div>
         <ul className="space-y-2">
           {content.list.map((item, index) => (
-            <li key={index} className="rounded border px-2 pb-2 pt-4">
+            <li key={index} className="rounded border px-4 pb-2 pt-4">
               <h3 className="text-xl font-medium">{item.title}</h3>
               <p className="font-light">{item.description}</p>
             </li>
