@@ -23,8 +23,10 @@ export const WhichBrands = () => {
     <div className="w-full pt-10 text-gray-700">
       <div className="mx-auto w-full max-w-3xl">
         <div className="mb-4 w-full flex-col-center">
-          <h2 className="text-2xl font-extrabold">{content.title}</h2>
-          <p className="">{content.description}</p>
+          <h2 className="text-center text-2xl font-extrabold">
+            {content.title}
+          </h2>
+          <p className="text-center">{content.description}</p>
         </div>
         <ul className="space-y-2">
           {content.list.map((item, index) => (
