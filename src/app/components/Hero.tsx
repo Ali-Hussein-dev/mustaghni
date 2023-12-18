@@ -7,7 +7,7 @@ import Image from "next/image";
 const content = {
   title: "MustaghnI",
   description:
-    "If you can't take action against genocide in Palestine, you can at least boycott supporting corporations",
+    "Easily search for brands & corporations associated with genocide in Palestine.",
 };
 export const Hero = () => {
   const { input, setInput, isLoading, companies, onSubmit, inputRef } =
@@ -29,7 +29,7 @@ export const Hero = () => {
             priority
             quality={75}
           />
-          <p className="mx-auto mb-4 max-w-xl text-center text-xl text-gray-700">
+          <p className="mx-auto mb-4 max-w-lg px-1 text-center text-xl font-semibold text-gray-600">
             {content.description}
           </p>
         </div>
