@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Mustaghni",
   description:
-    "Support Palestinian by boycotting companies that support genocide",
+    "Easily search for brands & corporations associated with genocide in Palestine.",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
