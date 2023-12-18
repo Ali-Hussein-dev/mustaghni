@@ -19,6 +19,7 @@ specifiers:
   eslint-config-next: ^14.0.1
   next: ^14.0.1
   next-sanity: '5'
+  nextjs-google-analytics: ^2.3.3
   postcss: ^8.4.27
   prettier: ^3.0.0
   prettier-plugin-tailwindcss: ^0.5.1
@@ -42,6 +43,7 @@ dependencies:
   '@upstash/redis': 1.24.3
   next: 14.0.1_biqbaboplfbrettd7655fr4n2y
   next-sanity: 5.5.10_2v4ler3esqartstocgay4mc6nq
+  nextjs-google-analytics: 2.3.3_next@14.0.1+react@18.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.11.0_react@18.2.0
@@ -4633,6 +4635,18 @@ packages:
     transitivePeerDependencies:
       - '@babel/core'
       - babel-plugin-macros
+    dev: false
+
+  /nextjs-google-analytics/2.3.3_next@14.0.1+react@18.2.0:
+    resolution: {integrity: sha512-Y6sI6A7wt5dji8hYBnVkOh9LTyImSLFZXx3FpyQgVW7W4b4qEFHjH2u3fhDJsrRZeLlUGM8/RuHD/mhHc2Axfg==}
+    peerDependencies:
+      next: '>=11.0.0'
+      react: '>=17.0.0'
+    dependencies:
+      next: 14.0.1_biqbaboplfbrettd7655fr4n2y
+      react: 18.2.0
+    optionalDependencies:
+      fsevents: 2.3.3
     dev: false
 
   /node-releases/2.0.13:

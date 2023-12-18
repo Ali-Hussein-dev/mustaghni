@@ -2,7 +2,9 @@
 import * as React from "react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { MantineProvider, createTheme } from "@mantine/core";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 import "@mantine/core/styles.css";
+
 const theme = createTheme({
   primaryColor: "gray",
   colors: {
@@ -33,10 +35,13 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
       }),
   );
   return (
-    <QueryClientProvider client={queryClient}>
-      <MantineProvider theme={theme} defaultColorScheme="light">
-        {children}
-      </MantineProvider>
-    </QueryClientProvider>
+    <>
+      <QueryClientProvider client={queryClient}>
+        <MantineProvider theme={theme} defaultColorScheme="light">
+          {children}
+        </MantineProvider>
+      </QueryClientProvider>
+      <GoogleAnalytics trackPageViews strategy="lazyOnload" />
+    </>
   );
 };
