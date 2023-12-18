@@ -77,7 +77,7 @@ export const TopSupporters = () => {
         {data.map((o, i) => (
           <div
             key={i}
-            className="flex flex-col items-center justify-center rounded-xl border border-gray-300 bg-gray-50 py-4 text-stone-700"
+            className="flex flex-col items-center justify-center rounded-xl border border-gray-200 py-4 text-stone-700"
           >
             <div className="relative aspect-square w-[70px]">
               <Image
