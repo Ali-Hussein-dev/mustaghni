@@ -1,3 +1,5 @@
+import PCard from "@/app/components/p-card";
+
 const content = {
   title: "Which Brands To Boycott?",
   description: "The level of supporting israel varies from brand to brand.",
@@ -32,11 +34,13 @@ export const WhichBrands = () => {
           </h2>
           <p className="text-center">{content.description}</p>
         </div>
-        <ul className="space-y-2">
+        <ul className="space-y-4">
           {content.list.map((item, index) => (
-            <li key={index} className="rounded border px-4 pb-2 pt-4">
-              <h3 className="text-xl font-medium">{item.title}</h3>
-              <p className="font-light">{item.description}</p>
+            <li key={index}>
+              <PCard>
+                <h3 className="text-xl font-medium">{item.title}</h3>
+                <p className="font-light">{item.description}</p>
+              </PCard>
             </li>
           ))}
         </ul>

@@ -1,22 +1,38 @@
 // import { getDocsClount } from "../../sanity/lib/get-docu-count";
 
+import PCard from "@/app/components/p-card";
+
 const content = [
-  "Refrain from using their products",
-  "Motivate others to abbandon their products",
-  "Unfollow their accounts, report, and abstain from interacting with their content on social media",
-  "Rate their apps with one star and leave a review showing their bias",
+  {
+    title: "Stop buying their products",
+    p: "Refrain from using their products",
+  },
+  {
+    title: "Promte others to take action",
+    p: "Motivate others to abbandon their products",
+  },
+  {
+    title: "Be active on social media",
+    p: "Unfollow their accounts, report their posts, and abstain from interacting with their content on social media",
+  },
+  {
+    title: "Lower their applications rating",
+    p: "Rate their apps with one star and leave a review showing their bias",
+  },
 ];
-export const InitialView = () => {
+export const HowToBoycott = () => {
   return (
     <div className="mx-auto w-full max-w-3xl py-6 text-gray-700">
-      <h2 className="mb-4 text-center text-2xl font-extrabold">
-        How to Boycott?
-      </h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+      <div className="mb-4 ">
+        <h2 className="text-center text-2xl font-extrabold">How to Boycott?</h2>
+        <p className="text-center">Make it effective and widly adapted</p>
+      </div>
+      <div className="space-y-4">
         {content.map((o, i) => (
-          <div key={i} className="rounded border px-4 py-6 font-medium ">
-            {o}
-          </div>
+          <PCard key={i}>
+            <h3 className="text-xl font-medium">{o.title}</h3>
+            <p className="">{o.p}</p>
+          </PCard>
         ))}
       </div>
     </div>
