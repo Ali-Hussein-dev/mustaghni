@@ -103,7 +103,7 @@ export const TopSupporters = () => {
         </h2>
         <BrandsCount />
       </div>
-      <div className="grid max-w-3xl grid-cols-2 gap-3 sm:gap-6">
+      <div className="grid max-w-3xl grid-cols-1 gap-3 sm:gap-6 md:grid-cols-2">
         {data.map((o, i) => (
           <div
             key={i}
