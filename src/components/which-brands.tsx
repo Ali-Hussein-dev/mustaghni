@@ -3,6 +3,10 @@ const content = {
   description: "The level of supporting israel varies from brand to brand.",
   list: [
     {
+      title: "Israeli brands",
+      description: "Such as Fiverr, Wix, Monday.com, ...etc",
+    },
+    {
       title: "When brands explicitly support israel",
       description: "Such as Zara, Facebook, Starbucks ..etc",
     },
