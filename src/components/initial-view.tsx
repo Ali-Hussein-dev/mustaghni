@@ -1,5 +1,3 @@
-// import { getDocsClount } from "../../sanity/lib/get-docu-count";
-
 import PCard from "@/app/components/p-card";
 
 const content = [

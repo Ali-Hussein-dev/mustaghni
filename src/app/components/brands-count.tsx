@@ -1,4 +1,4 @@
-import { getDocsCount } from "../../../sanity/lib/get-docu-count";
+import { getDocsCount } from "@sanity/lib/get-docu-count";
 import * as React from "react";
 //======================================
 export const BrandsCount = async () => {
