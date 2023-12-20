@@ -8,7 +8,7 @@ export const useSearch = () => {
   const inputRef = React.useRef<HTMLInputElement>(null);
   const {
     data: companies,
-    isLoading,
+    isFetching,
     refetch,
   } = useQuery<Company[]>({
     queryKey: ["brands-search"],
@@ -32,7 +32,7 @@ export const useSearch = () => {
     setInput,
     onSubmit,
     companies,
-    isLoading,
+    isLoading: isFetching,
     inputRef,
   };
 };
