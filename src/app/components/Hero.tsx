@@ -1,9 +1,9 @@
 "use client";
 import { CompaniesList } from "@/components/companies-list";
-import SearchBar from "./searchbar";
 import * as React from "react";
 import { useSearch } from "../hooks/use-search";
 import Image from "next/image";
+import { MantineSearchbar } from "./search/Searchbar";
 const content = {
   title: "MustaghnI",
   description:
@@ -34,7 +34,7 @@ export const Hero = () => {
           </p>
         </div>
         <form onSubmit={onSubmit}>
-          <SearchBar
+          <MantineSearchbar
             isLoading={isLoading}
             input={input}
             setInput={setInput}
