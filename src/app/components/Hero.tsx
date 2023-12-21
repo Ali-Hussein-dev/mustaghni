@@ -4,22 +4,24 @@ import * as React from "react";
 import { useSearch } from "../hooks/use-search";
 import Image from "next/image";
 import { MantineSearchbar } from "./search/Searchbar";
+import { SearchesCount } from "@/components/searches-count";
 const content = {
-  title: "MustaghnI",
   description:
     "Easily search for brands & corporations associated with genocide in Palestine.",
 };
 export const Hero = () => {
   const { input, setInput, isLoading, companies, onSubmit, inputRef } =
     useSearch();
+  const withResults = (companies ?? []).length > 0;
+  console.log({ companies });
   return (
     <div
       className={`mx-auto flex w-full max-w-3xl flex-col justify-center gap-4 ${
-        (companies ?? []).length > 0 ? "" : "h-screen"
+        withResults ? "" : "h-screen"
       }`}
     >
       <div className="animate-in space-y-4">
-        <div className="w-full pt-10 flex-col-center">
+        <div className="w-full flex-col-center">
           <Image
             src="/logo.png"
             alt="logo"
@@ -29,11 +31,15 @@ export const Hero = () => {
             priority
             quality={75}
           />
-          <p className="mx-auto mb-4 max-w-lg px-1 text-center text-xl font-semibold text-gray-600">
+          <p className="mx-auto mb-2 max-w-lg px-1 text-center text-xl font-semibold text-gray-600">
             {content.description}
           </p>
+          <SearchesCount />
         </div>
-        <form onSubmit={onSubmit}>
+        <form
+          onSubmit={onSubmit}
+          // className={withResults ? "" : "pb-10 md:pb-44"}
+        >
           <MantineSearchbar
             isLoading={isLoading}
             input={input}
