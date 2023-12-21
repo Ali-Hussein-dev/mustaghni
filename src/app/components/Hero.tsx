@@ -13,6 +13,7 @@ export const Hero = () => {
   const { input, setInput, isLoading, companies, onSubmit, inputRef } =
     useSearch();
   const withResults = (companies ?? []).length > 0;
+  console.log({ companies });
   return (
     <div
       className={`mx-auto flex w-full max-w-3xl flex-col justify-center gap-4 ${
@@ -37,7 +38,7 @@ export const Hero = () => {
         </div>
         <form
           onSubmit={onSubmit}
-          className={withResults ? "" : "pb-10 md:pb-44"}
+          // className={withResults ? "" : "pb-10 md:pb-44"}
         >
           <MantineSearchbar
             isLoading={isLoading}
