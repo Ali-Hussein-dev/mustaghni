@@ -34,16 +34,16 @@ export const WhichBrands = () => {
           </h2>
           <p className="text-center">{content.description}</p>
         </div>
-        <ul className="space-y-4">
+        <div className="space-y-4">
           {content.list.map((item, index) => (
-            <li key={index}>
+            <div key={index}>
               <PCard>
                 <h3 className="text-xl font-medium">{item.title}</h3>
                 <p className="font-light">{item.description}</p>
               </PCard>
-            </li>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
