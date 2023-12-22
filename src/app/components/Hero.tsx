@@ -4,20 +4,20 @@ import * as React from "react";
 import { useSearch } from "../hooks/use-search";
 import Image from "next/image";
 import { MantineSearchbar } from "./search/Searchbar";
-import { SearchesCount } from "@/components/searches-count";
+import { CountsLabel } from "@/components/counts-label";
+
 const content = {
   description:
-    "Easily search for brands & corporations associated with genocide in Palestine.",
+    "Easily search for corporations associated with genocide in Palestine.",
 };
 export const Hero = () => {
   const { input, setInput, isLoading, companies, onSubmit, inputRef } =
     useSearch();
   const withResults = (companies ?? []).length > 0;
-  console.log({ companies });
   return (
     <div
-      className={`mx-auto flex w-full max-w-3xl flex-col justify-center gap-4 ${
-        withResults ? "" : "h-screen"
+      className={`mx-auto flex w-full max-w-3xl flex-col justify-start gap-4 ${
+        withResults ? "pt-4" : "h-screen pt-20 md:pt-32"
       }`}
     >
       <div className="animate-in space-y-4">
@@ -34,7 +34,9 @@ export const Hero = () => {
           <p className="mx-auto mb-2 max-w-lg px-1 text-center text-xl font-semibold text-gray-600">
             {content.description}
           </p>
-          <SearchesCount />
+          <div className="gap-3 flex-row-center">
+            <CountsLabel />
+          </div>
         </div>
         <form
           onSubmit={onSubmit}

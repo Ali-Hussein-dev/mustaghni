@@ -1,4 +1,3 @@
-import { BrandsCount } from "@/app/components/brands-count";
 import { Paper } from "@mantine/core";
 import Image from "next/image";
 
@@ -102,7 +101,6 @@ export const TopSupporters = () => {
         <h2 className="mb-1 text-center text-2xl font-bold">
           Black List Corporations
         </h2>
-        <BrandsCount />
       </div>
       <div className="grid max-w-3xl grid-cols-1 gap-3 sm:gap-6 md:grid-cols-2">
         {data.map((o, i) => (
