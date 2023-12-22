@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Footer } from "../components/Footer";
 import { Providers } from "@/hooks/providers";
 import type { Metadata } from "next";
+import { ColorSchemeScript } from "@mantine/core";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,6 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body className="scroll-smooth antialiased">
         <Providers>
           <div className={`font-sans flex-col-center ${inter.variable}`}>

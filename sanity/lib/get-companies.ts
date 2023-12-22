@@ -20,3 +20,21 @@ export const searchCompanies = async (title: string): Promise<Company[]> => {
         title
     })
 }
+
+export const searchByTags = async (tags: string): Promise<Company[]> => {
+    return client.fetch(`*[_type == "company" && tags match "${tags}" ]{
+        _id,
+        title,
+        "logo": logo.asset->url,
+        ownedBy,
+        ownerCompanyURL,
+    }`, {
+        tags
+    })
+}
+
+// export const getAllTags = async (): Promise<Company[]> => {
+//     return client.fetch(`*[_type == "company" ]{
+//         tags,
+//     }`)
+// }

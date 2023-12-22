@@ -116,12 +116,13 @@ export const TopSupporters = () => {
             <div className="relative aspect-square w-[110px]">
               <Image
                 fill
+                sizes={"(max-width: 210px) 200px, 210px"}
                 alt={o.name}
                 src={o.img}
                 className="h-full w-full rounded object-contain"
                 quality={60}
                 placeholder="blur"
-                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkMGKQBAAAuQBND/XDIQAAAABJRU5ErkJggg=="
+                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8fvdXPQAIcAMvy5dPawAAAABJRU5ErkJggg=="
               />
             </div>
             <div className="mx-auto text-center">

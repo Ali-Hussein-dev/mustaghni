@@ -5,20 +5,26 @@ import { useSearch } from "../app/hooks/use-search";
 import Image from "next/image";
 import { MantineSearchbar } from "./search/Searchbar";
 import { CountsLabel } from "@/components/counts-label";
+import { useSearchParams } from "next/navigation";
+import { useQueryClient } from "@tanstack/react-query";
+import { type Company } from "./company-card";
 
 const content = {
   description:
     "Easily search for corporations associated with genocide in Palestine.",
 };
 export const Hero = () => {
-  const { input, setInput, isLoading, companies, onSubmit, inputRef } =
-    useSearch();
-  const withResults = (companies ?? []).length > 0;
+  const searchParams = useSearchParams();
+  const query = searchParams.get("query");
+  const getSearchbarProps = useSearch();
+  const queryClient = useQueryClient();
+  const companies = queryClient.getQueryData<Company[]>(["brands", query]);
+  // const withResults = (companies ?? []).length > 0;
+
+  // console.log(["brands", query], companies);
   return (
     <div
-      className={`mx-auto flex w-full max-w-3xl flex-col justify-start gap-4 ${
-        withResults ? "pt-4" : "h-screen pt-20 sm:pt-32 md:pt-40"
-      }`}
+      className={`mx-auto flex w-full max-w-3xl flex-col justify-start gap-4 pt-20 sm:pt-32 md:pt-40`}
     >
       <div className="animate-in space-y-4">
         <div className="w-full flex-col-center">
@@ -38,19 +44,8 @@ export const Hero = () => {
             <CountsLabel />
           </div>
         </div>
-        <form
-          onSubmit={onSubmit}
-          // className={withResults ? "" : "pb-10 md:pb-44"}
-        >
-          <MantineSearchbar
-            isLoading={isLoading}
-            input={input}
-            setInput={setInput}
-            inputRef={inputRef}
-          />
-        </form>
+        <MantineSearchbar {...getSearchbarProps} />
       </div>
-
       <CompaniesList companies={companies} />
     </div>
   );
