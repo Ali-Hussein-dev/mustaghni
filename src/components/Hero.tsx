@@ -19,14 +19,12 @@ export const Hero = () => {
   const getSearchbarProps = useSearch();
   const queryClient = useQueryClient();
   const companies = queryClient.getQueryData<Company[]>(["brands", query]);
-  const withResults = (companies ?? []).length > 0;
+  // const withResults = (companies ?? []).length > 0;
 
   // console.log(["brands", query], companies);
   return (
     <div
-      className={`mx-auto flex w-full max-w-3xl flex-col justify-start gap-4 ${
-        withResults ? "pt-4" : "h-screen pt-20 sm:pt-32 md:pt-40"
-      }`}
+      className={`mx-auto flex w-full max-w-3xl flex-col justify-start gap-4 pt-20 sm:pt-32 md:pt-40`}
     >
       <div className="animate-in space-y-4">
         <div className="w-full flex-col-center">
