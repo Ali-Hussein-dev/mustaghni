@@ -13,4 +13,7 @@ export default {
   plugins: [
     require("tailwind-custom-utilities")
   ],
+  corePlugins: {
+    preflight: false,
+  }
 } satisfies Config;

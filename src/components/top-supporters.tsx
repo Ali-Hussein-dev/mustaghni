@@ -1,4 +1,4 @@
-import { BrandsCount } from "@/app/components/brands-count";
+import { Paper } from "@mantine/core";
 import Image from "next/image";
 
 const data = [
@@ -101,13 +101,17 @@ export const TopSupporters = () => {
         <h2 className="mb-1 text-center text-2xl font-bold">
           Black List Corporations
         </h2>
-        <BrandsCount />
       </div>
       <div className="grid max-w-3xl grid-cols-1 gap-3 sm:gap-6 md:grid-cols-2">
         {data.map((o, i) => (
-          <div
+          <Paper
             key={i}
-            className="rounded-xl border border-gray-200 p-2 text-stone-700 flex-col-center md:px-4"
+            withBorder
+            px="md"
+            pb="md"
+            pt="lg"
+            radius="lg"
+            className="text-stone-700 flex-col-center"
           >
             <div className="relative aspect-square w-[110px]">
               <Image
@@ -120,11 +124,13 @@ export const TopSupporters = () => {
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkMGKQBAAAuQBND/XDIQAAAABJRU5ErkJggg=="
               />
             </div>
-            <div className="">
-              <h3 className="text-sm font-semibold md:text-lg">{o.name}</h3>
-              <p className="font-light">{o.description}</p>
+            <div className="mx-auto text-center">
+              {/* <h3 className="text-sm font-semibold md:text-lg">{o.name}</h3> */}
+              <p className="font-light">
+                {o.name} {o.description}
+              </p>
             </div>
-          </div>
+          </Paper>
         ))}
       </div>
     </div>
