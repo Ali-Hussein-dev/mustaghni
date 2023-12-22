@@ -2,7 +2,7 @@ import * as React from "react";
 import { Hero } from "../components/Hero";
 import { TopSupporters } from "@/components/top-supporters";
 import { WhichBrands } from "@/components/which-brands";
-import { HowToBoycott } from "@/components/initial-view";
+import { HowToBoycott } from "@/components/how-to-boycott";
 
 export const revalidate = 3600; // 1 hour
 
