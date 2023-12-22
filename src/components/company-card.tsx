@@ -22,8 +22,12 @@ export const CompanyCard = ({
           <div className="relative h-11 w-11 overflow-hidden rounded-full">
             <Image
               fill
+              sizes={"(max-width: 210px) 200px, 210px"}
               src={logo}
               alt={`${title} logo`}
+              quality={60}
+              placeholder="blur"
+              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8fvdXPQAIcAMvy5dPawAAAABJRU5ErkJggg=="
               // className="object-contain"
             />
           </div>
