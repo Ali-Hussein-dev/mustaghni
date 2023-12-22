@@ -1,40 +1,41 @@
 "use client";
 import { PiSpinnerGapLight } from "react-icons/pi";
-import { MdOutlineClose, MdSearch } from "react-icons/md";
+import { MdFilterList, MdOutlineClose, MdSearch } from "react-icons/md";
 import { ActionIcon, Input } from "@mantine/core";
 import * as React from "react";
 import dynamic from "next/dynamic";
-interface SearchBarProps {
-  isLoading: boolean;
-  input: string;
-  setInput: (v: string) => void;
-  inputRef: React.RefObject<HTMLInputElement>;
-}
+import { Filter } from "./Filter";
+import { useFilterByTags } from "@/app/hooks/use-filter-by-tags";
+import { IoSend } from "react-icons/io5";
+import { type useSearch } from "@/app/hooks/use-search";
 
 //======================================From-Mantine
-export const Searchbar: React.FC<SearchBarProps> = ({
-  isLoading,
+export const Searchbar = ({
   input,
   setInput,
+  isLoading,
+  onSubmit,
   inputRef,
-}) => {
-  //   const [filter, setFilter] = React.useState(false);
+}: ReturnType<typeof useSearch>) => {
+  // const { input, setInput, isLoading, onSubmit, inputRef } = useSearch();
+  const [filter, setFilter] = React.useState(false);
+  const filterProps = useFilterByTags();
   return (
-    <div className="">
+    <form onSubmit={onSubmit}>
       <Input
         ref={inputRef}
         type="text"
         value={input}
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => setInput(e.target.value?.trim())}
         placeholder="Search here"
         classNames={{
           input:
-            "pl-[3rem] bg-gradient-to-t from-gray-50 to-transparent border border-gray-200 font-medium text-gray-600 duration-300 focus:shadow",
+            "pl-[3rem] bg-gradient-to-t from-gray-50 to-transparent border border-gray-200 text-gray-600 duration-300 focus:shadow",
         }}
         rightSectionWidth="auto"
         rightSectionPointerEvents="all"
         rightSection={
-          <div className="gap-2 pr-3 flex-row-end">
+          <div className="gap-3 pr-3 flex-row-end">
             {input && (
               <ActionIcon
                 type="button"
@@ -47,15 +48,24 @@ export const Searchbar: React.FC<SearchBarProps> = ({
                 <MdOutlineClose />
               </ActionIcon>
             )}
-            {/* <ActionIcon
+            <ActionIcon
               type="button"
               size="lg"
               radius="lg"
-              variant="outline"
+              variant="filled"
               onClick={() => setFilter(!filter)}
             >
               <MdFilterList size="25" />
-            </ActionIcon> */}
+            </ActionIcon>
+            <ActionIcon
+              type="submit"
+              size="lg"
+              radius="lg"
+              variant="filled"
+              disabled={!input}
+            >
+              <IoSend size="17" />
+            </ActionIcon>
           </div>
         }
         // leftSectionWidth="auto"
@@ -69,14 +79,8 @@ export const Searchbar: React.FC<SearchBarProps> = ({
         radius="xl"
         size="xl"
       />
-      {/* {filter && (
-        <div className="px-3">
-          <div className="mt-3 rounded border bg-gray-50 px-4 pb-3 pt-4">
-            filter section
-          </div>
-        </div>
-      )} */}
-    </div>
+      {filter && <Filter {...filterProps} setFilter={setFilter} />}
+    </form>
   );
 };
 
