@@ -1,6 +1,7 @@
 "use client";
 import * as React from "react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { MantineProvider, createTheme } from "@mantine/core";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import "@mantine/core/styles.css";
@@ -40,6 +41,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
         <MantineProvider theme={theme} defaultColorScheme="light">
           {children}
         </MantineProvider>
+        <ReactQueryDevtools initialIsOpen={true} />
       </QueryClientProvider>
       <GoogleAnalytics trackPageViews strategy="lazyOnload" />
     </>
