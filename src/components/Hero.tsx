@@ -1,9 +1,9 @@
 "use client";
 import { CompaniesList } from "@/components/companies-list";
 import * as React from "react";
-import { useSearch } from "../hooks/use-search";
+import { useSearch } from "../app/hooks/use-search";
 import Image from "next/image";
-import { MantineSearchbar } from "./search/Searchbar";
+import { MantineSearchbar } from "../app/components/search/Searchbar";
 import { CountsLabel } from "@/components/counts-label";
 
 const content = {
