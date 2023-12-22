@@ -1,4 +1,5 @@
 import { formatNumber } from "@/utils/format-number";
+import { Skeleton } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import { MdNumbers } from "react-icons/md";
 
@@ -10,7 +11,7 @@ export const CountsLabel = () => {
     queryFn: getCounts,
   });
   return data ? (
-    <div className="mb-2 gap-3 bg-black/90 px-2 py-1 text-gray-100 flex-row-start">
+    <div className="mb-2 gap-3 rounded-sm bg-black/90 px-2 py-1 text-gray-100 flex-row-start">
       <MdNumbers className="text-red-500" size="17" />
       <span hidden={!data.searches} className="text-center text-lg">
         {formatNumber(data?.searches, 5)} searches
@@ -20,5 +21,7 @@ export const CountsLabel = () => {
       </span>
       <MdNumbers className="text-red-500" size="17" />
     </div>
-  ) : null;
+  ) : (
+    <Skeleton w="340px" h="40px" />
+  );
 };

@@ -1,7 +1,7 @@
 "use client";
 import { PiSpinnerGapLight } from "react-icons/pi";
 import { MdFilterList, MdOutlineClose, MdSearch } from "react-icons/md";
-import { ActionIcon, Input } from "@mantine/core";
+import { ActionIcon, Input, Skeleton } from "@mantine/core";
 import * as React from "react";
 import dynamic from "next/dynamic";
 import { Filter } from "./Filter";
@@ -88,8 +88,6 @@ export const MantineSearchbar = dynamic(
   () => import("./Searchbar").then((c) => c.Searchbar),
   {
     ssr: false,
-    loading: () => (
-      <div className="h-14 w-full animate-pulse rounded-full bg-gray-200"></div>
-    ),
+    loading: () => <Skeleton w="100%" h="48px" radius="xl" />,
   },
 );
