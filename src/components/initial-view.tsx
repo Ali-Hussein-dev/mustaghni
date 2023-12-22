@@ -1,4 +1,4 @@
-import PCard from "@/app/components/p-card";
+import PCard from "@/components/p-card";
 
 const content = [
   {

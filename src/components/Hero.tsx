@@ -3,7 +3,7 @@ import { CompaniesList } from "@/components/companies-list";
 import * as React from "react";
 import { useSearch } from "../app/hooks/use-search";
 import Image from "next/image";
-import { MantineSearchbar } from "../app/components/search/Searchbar";
+import { MantineSearchbar } from "./search/Searchbar";
 import { CountsLabel } from "@/components/counts-label";
 
 const content = {
@@ -17,7 +17,7 @@ export const Hero = () => {
   return (
     <div
       className={`mx-auto flex w-full max-w-3xl flex-col justify-start gap-4 ${
-        withResults ? "pt-4" : "h-screen pt-20 md:pt-32"
+        withResults ? "pt-4" : "h-screen pt-20 sm:pt-32 md:pt-40"
       }`}
     >
       <div className="animate-in space-y-4">
