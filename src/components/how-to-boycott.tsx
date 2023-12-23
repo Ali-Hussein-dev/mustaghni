@@ -20,7 +20,7 @@ const content = [
 ];
 export const HowToBoycott = () => {
   return (
-    <div className="mx-auto w-full max-w-3xl py-6 text-gray-700">
+    <div className="mx-auto w-full max-w-3xl pb-6 pt-24 text-gray-700">
       <div className="mb-4 ">
         <h2 className="text-center text-2xl font-extrabold">How to Boycott?</h2>
         <p className="text-center">Make it effective and widly adapted</p>
