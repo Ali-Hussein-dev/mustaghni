@@ -11,6 +11,7 @@ const inter = Inter({
   variable: "--font-sans",
 });
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mustaghni.org"),
   title: "Mustaghni",
   description:
     "Easily search for brands & corporations associated with genocide in Palestine.",
