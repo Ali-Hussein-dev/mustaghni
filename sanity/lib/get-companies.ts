@@ -33,6 +33,16 @@ export const searchByTags = async (tags: string): Promise<Company[]> => {
     })
 }
 
+export const getByCorp = async (corp: string): Promise<Company[]> => {
+    return client.fetch(`*[_type == "company" && ownedBy match "${corp}" ] | order(title asc) {
+        title,
+        "logo": logo.asset->url,
+        ownedBy,
+    }`, {
+        tags: corp
+    })
+}
+
 // export const getAllTags = async (): Promise<Company[]> => {
 //     return client.fetch(`*[_type == "company" ]{
 //         tags,
