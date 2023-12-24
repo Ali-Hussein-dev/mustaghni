@@ -1,3 +1,4 @@
+import { Paper } from "@mantine/core";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
@@ -16,7 +17,7 @@ export const CompanyCard = ({
   ownerCompanyURL,
 }: Props) => {
   return (
-    <div className="rounded-sm border border-gray-200 bg-gray-100/60 px-3 py-4 ">
+    <Paper withBorder radius="sm" className="px-3 py-4">
       <div className="gap-2 flex-row-start">
         {logo ? (
           <div className="relative h-11 w-11 overflow-hidden rounded-full">
@@ -37,14 +38,14 @@ export const CompanyCard = ({
           </div>
         )}
         <div className=" flex-col-start">
-          <span className="font-semibold text-gray-700">{title}</span>
+          <span className="font-semibold">{title}</span>
 
           {ownerCompanyURL ? (
-            <span className="text-sm ">
+            <span className="text-sm">
               Owned by:{" "}
               <a
                 href={ownerCompanyURL}
-                className="text-sky-600 hover:underline"
+                className="text-sky-500 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -52,13 +53,13 @@ export const CompanyCard = ({
               </a>
             </span>
           ) : (
-            <span hidden={!ownedBy} className="text-sm text-gray-600">
+            <span hidden={!ownedBy} className="text-sm">
               Owned by {ownedBy}
             </span>
           )}
         </div>
       </div>
-    </div>
+    </Paper>
   );
 };
 
