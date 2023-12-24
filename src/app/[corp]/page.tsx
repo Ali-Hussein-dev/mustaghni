@@ -38,7 +38,6 @@ const CorpPage = async ({ params }: Props) => {
         {/* <div className="relative">
           <div className="absolute top-0 h-56 w-full border-0 border-t border-solid border-slate-300 bg-gradient-to-b from-slate-50 to-transparent"></div>
         </div> */}
-        {corp}
         <div>
           <div className="pt-4">Total brands: {brands.length}</div>
           <div className="grid gap-3 pb-6 pt-3 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
