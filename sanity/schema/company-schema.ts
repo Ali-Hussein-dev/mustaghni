@@ -11,8 +11,8 @@ const companySchema = {
             title: "Title",
             type: "string",
             validation: (Rule) => {
-          return Rule.required()
-              .warning("Title is required")
+                return Rule
+                    .required()
               .custom(async (title) => {
                   const query = `*[_type == "company" && title == $title]`;
                   const params = { title };
