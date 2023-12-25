@@ -41,7 +41,9 @@ export default function RootLayout({
       </head>
       <body className="scroll-smooth antialiased">
         <Providers>
-          <div className={`font-sans flex-col-center ${inter.variable}`}>
+          <div
+            className={`min-h-screen font-sans flex-col-center ${inter.variable}`}
+          >
             {children}
             <Footer />
           </div>
