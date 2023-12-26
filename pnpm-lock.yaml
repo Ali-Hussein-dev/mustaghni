@@ -32,6 +32,7 @@ specifiers:
   sanity: ^3.19.0
   styled-components: '6'
   tailwind-custom-utilities: ^1.0.3
+  tailwind-merge: ^2.2.0
   tailwindcss: ^3.3.3
   typescript: ^5.1.6
   zod: ^3.22.4
@@ -55,6 +56,7 @@ dependencies:
   sanity: 3.19.0_ii5mng7xl5wstv23a5p3ns7goi
   styled-components: 6.1.0_biqbaboplfbrettd7655fr4n2y
   tailwind-custom-utilities: 1.0.3
+  tailwind-merge: 2.2.0
   zod: 3.22.4
 
 devDependencies:
@@ -273,8 +275,8 @@ packages:
       '@babel/helper-plugin-utils': 7.22.5
     dev: false
 
-  /@babel/runtime/7.23.2:
-    resolution: {integrity: sha512-mM8eg4yl5D6i3lu2QKPuPH4FArvJ8KhTofbE7jwMUv9KX5mBvwPAqnV3MlyBNqdp9RyRKP6Yck8TrfYrPvX3bg==}
+  /@babel/runtime/7.23.6:
+    resolution: {integrity: sha512-zHd0eUrf5GZoOWVCXp6koAKQTfZV07eit6bGPmJgnZdnSAvvZee6zniW2XMF7Cmc4ISOOnPy3QaSiIJGJkVEDQ==}
     engines: {node: '>=6.9.0'}
     dependencies:
       regenerator-runtime: 0.14.0
@@ -1962,7 +1964,7 @@ packages:
       react: '>=16.8.0'
       react-dom: '>=16.8.0'
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@codemirror/commands': 6.3.0
       '@codemirror/state': 6.3.1
       '@codemirror/theme-one-dark': 6.1.2
@@ -2673,7 +2675,7 @@ packages:
     resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
     engines: {node: '>=0.11'}
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
     dev: false
 
   /date-now/1.0.1:
@@ -3194,7 +3196,7 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       aria-query: 5.3.0
       array-includes: 3.1.7
       array.prototype.flatmap: 1.3.2
@@ -3851,7 +3853,7 @@ packages:
   /history/5.3.0:
     resolution: {integrity: sha512-ZqaKwjjrAYUYfLG+htGaIIZ4nioX2L70ZUMIFysS3xvBsSG4x/n1V6TXV3N8ZYNuFGlDirFg32T7B6WOUPDYcQ==}
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
     dev: false
 
   /hosted-git-info/2.8.9:
@@ -4985,7 +4987,7 @@ packages:
     resolution: {integrity: sha512-Sz2Lkdxz6F2Pgnpi9U5Ng/WdWAUZxmHrNPoVlm3aAemxoy2Qy7LGjQg4uf8qKelDAUW94F4np3iH2YPf2qefcQ==}
     engines: {node: '>=10'}
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
     dev: false
 
   /postcss-import/15.1.0_postcss@8.4.31:
@@ -5214,7 +5216,7 @@ packages:
     peerDependencies:
       react: ^15.3.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       react: 18.2.0
     dev: false
 
@@ -5250,7 +5252,7 @@ packages:
       '@types/react':
         optional: true
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       '@types/react': 18.2.34
       focus-lock: 1.0.0
       prop-types: 15.8.1
@@ -5383,7 +5385,7 @@ packages:
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
-      '@babel/runtime': 7.23.2
+      '@babel/runtime': 7.23.6
       react: 18.2.0
       use-composed-ref: 1.3.0_react@18.2.0
       use-latest: 1.2.1_ugtszpytr2kaslv26e2bligzg4
@@ -6127,6 +6129,12 @@ packages:
 
   /tailwind-custom-utilities/1.0.3:
     resolution: {integrity: sha512-efEyvyT6azTwS4/D4cd2zAwDJ6JoyCtN7wqvXqayp4Fv9l9ofqpK4hm3E2hhadfm1C4Em602ZZ8fUWKrwNUq9w==}
+    dev: false
+
+  /tailwind-merge/2.2.0:
+    resolution: {integrity: sha512-SqqhhaL0T06SW59+JVNfAqKdqLs0497esifRrZ7jOaefP3o64fdFNDMrAQWZFMxTLJPiHVjRLUywT8uFz1xNWQ==}
+    dependencies:
+      '@babel/runtime': 7.23.6
     dev: false
 
   /tailwindcss/3.3.5:
