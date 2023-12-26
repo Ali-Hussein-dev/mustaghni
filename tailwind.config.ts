@@ -11,7 +11,8 @@ export default {
     },
   },
   plugins: [
-    require("tailwind-custom-utilities")
+    require("tailwind-custom-utilities"),
+    require("@tailwindcss/typography"),
   ],
   corePlugins: {
     preflight: false,
