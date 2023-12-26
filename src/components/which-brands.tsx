@@ -26,7 +26,7 @@ const content = {
 //======================================
 export const WhichBrands = () => {
   return (
-    <div className="w-full pt-10 text-gray-700">
+    <div className="w-full pt-10 text-gray-700 md:pt-28">
       <div className="mx-auto w-full max-w-3xl">
         <div className="mb-4 w-full flex-col-center">
           <h2 className="text-center text-2xl font-extrabold">
