@@ -45,10 +45,10 @@ export const WhichBrands = () => {
                     </h3>
                     <p className="font-light">{item.description}</p>
                   </div>
-                  <div className="rounded-full">
+                  <div className="-rotate-45 overflow-hidden rounded">
                     <span
                       className={twMerge(
-                        "center h-9 w-9 rounded-full text-lg font-medium text-white",
+                        "center h-9 w-9 rotate-45 text-lg font-medium text-white",
                         item.level === 1
                           ? "bg-red-600"
                           : item.level === 2
