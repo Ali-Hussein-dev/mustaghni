@@ -8,7 +8,7 @@ const allTags = [
   {
     group: "Country",
     items: ["israel"],
-    // items: ["Arab", "israel", "US", "German"],
+    // items: ["Arab", "israel", "US", "Germany"],
   },
   {
     group: "Category",
