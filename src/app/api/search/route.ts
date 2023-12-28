@@ -7,6 +7,7 @@ const nameSchema = z.string().min(1).refine(name => /^[^\*\_\{\}\}\[\]]+$/.test(
     message: "name should not contain special characters",
 });
 
+export const runtime = "edge"
 
 export const GET = async (req: NextRequest) => {
     // company name
