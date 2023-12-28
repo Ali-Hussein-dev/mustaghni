@@ -1,19 +1,29 @@
+import { redisClient } from "@/utils/redis";
 import { searchByTags } from "@sanity/lib/get-companies";
-import { type NextRequest } from "next/server";
+import { type NextRequest, NextResponse, } from "next/server";
 
 export const runtime = "edge"
 
 export const GET = async (req: NextRequest) => {
     const tags = req.nextUrl.searchParams.get("tags");
     if (tags) {
-        const companies = await searchByTags(tags)
-        return new Response(JSON.stringify(companies), { status: 200 })
+        try {
+            await redisClient.incr("searches")
+            const companies = await searchByTags(tags)
+            return new Response(JSON.stringify(companies), { status: 200 })
 
+        } catch (error) {
+            console.error(error);
+            const requestUrl = new URL(req.url)
+            return NextResponse.redirect(requestUrl.origin + "/?msg=something went wrong")
+            // rewrite
+        }
     }
     console.warn("tags params is not truthy", tags)
-    return new Response(JSON.stringify({ msg: "tags must be provided" }), { status: 400 })
+    const requestUrl = new URL(req.url)
+    return NextResponse.redirect(requestUrl.origin + "/?msg=tags params is not correct")
+    // return new Response(JSON.stringify({ msg: "tags must be provided" }), { status: 400 })
 }
-
 
 
 // use to generate updated tags.json
