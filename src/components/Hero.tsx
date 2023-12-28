@@ -18,7 +18,10 @@ export const Hero = () => {
   const query = searchParams.get("query");
   const getSearchbarProps = useSearch();
   const queryClient = useQueryClient();
-  const companies = queryClient.getQueryData<Company[]>(["brands", query]);
+  const companies = queryClient.getQueryData<Company[]>([
+    "brands",
+    query?.replace(/%7C/g, "|"),
+  ]);
   // const withResults = (companies ?? []).length > 0;
 
   // console.log(["brands", query], companies);

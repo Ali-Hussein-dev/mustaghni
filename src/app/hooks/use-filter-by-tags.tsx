@@ -7,7 +7,7 @@ export const useFilterByTags = () => {
   const [selected, setSelected] = React.useState<string[]>([]);
   const router = useRouter();
   const res = useQuery({
-    queryKey: ["brands", ...selected],
+    queryKey: ["brands", selected.join("|")],
     queryFn: () =>
       fetch(
         `api/filter/?tags=${selected.join("|")}`,
