@@ -1,7 +1,7 @@
 export const giantCorps = [
     {
-        name: "Nestle",
-        href: "Nestle",
+        name: "Nestlé",
+        href: "Nestlé",
         img: "/supporter-companies/Nestle.png",
         description:
             "is a Swiss multinational food and drink processing conglomerate corporation headquartered in Vevey, Vaud, Switzerland",

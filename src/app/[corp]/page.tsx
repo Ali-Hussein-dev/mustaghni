@@ -22,6 +22,7 @@ const CorpPage = async ({ params }: Props) => {
   // get brands by corp
   const corp = params.corp
     .replace(/%20/g, " ")
+    .replace(/%C3%A9/g, "é")
     .replace(/%26/g, "&") // for procter & gamble
     .toLowerCase();
   const brands = await getByCorp(corp);
