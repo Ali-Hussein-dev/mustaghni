@@ -11,7 +11,7 @@ type Props = {
 export const revalidate = 30;
 
 export function generateMetadata({ params }: Props) {
-  const name = params.corp.replace(/%20/g, " ");
+  const name = params.corp.replace(/%20/g, " ").replace(/%C3%A9/g, "é");
   return {
     title: `${name} | Mustaghni`,
     description: `Brands list owned by ${name}`,
