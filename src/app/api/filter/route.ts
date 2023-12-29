@@ -1,3 +1,4 @@
+import { checkRateLimit } from "@/utils/rate-limit";
 import { redisClient } from "@/utils/redis";
 import { searchByTags } from "@sanity/lib/get-companies";
 import { type NextRequest, NextResponse, } from "next/server";
@@ -5,6 +6,10 @@ import { type NextRequest, NextResponse, } from "next/server";
 export const runtime = "edge"
 
 export const GET = async (req: NextRequest) => {
+    const isRateExceeded = await checkRateLimit(req)
+    if (isRateExceeded) {
+        return isRateExceeded;
+    }
     const tags = req.nextUrl.searchParams.get("tags");
     if (tags) {
         try {

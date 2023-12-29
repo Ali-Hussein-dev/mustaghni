@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { type NextRequest } from 'next/server'
 import { searchCompanies } from '@sanity/lib/get-companies';
 import { redisClient } from '@/utils/redis';
+import { checkRateLimit, } from '@/utils/rate-limit';
 
 const nameSchema = z.string().min(1).refine(name => /^[^\*\_\{\}\}\[\]]+$/.test(name), {
     message: "name should not contain special characters",
@@ -10,6 +11,10 @@ const nameSchema = z.string().min(1).refine(name => /^[^\*\_\{\}\}\[\]]+$/.test(
 export const runtime = "edge"
 
 export const GET = async (req: NextRequest) => {
+    const isRateExceeded = await checkRateLimit(req)
+    if (isRateExceeded) {
+        return isRateExceeded;
+    }
     // company name
     const name = req.nextUrl.searchParams.get("name");
 
