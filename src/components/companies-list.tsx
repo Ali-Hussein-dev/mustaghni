@@ -1,10 +1,25 @@
 import { type Company, DyanmicCompanyCard } from "./company-card";
-export const CompaniesList = ({ companies }: { companies?: Company[] }) => {
-  return companies ? (
+
+export const CompaniesList = ({
+  companies,
+}: {
+  companies?: Company[] | { msg: string };
+}) => {
+  if (!companies) return null;
+  if ("msg" in companies) {
+    return (
+      <p className="mx-4 rounded-sm border border-solid px-4 py-3 text-center text-xl font-medium text-red-600">
+        {companies.msg}
+      </p>
+    );
+  }
+  return (
     <div>
       {companies.length === 0 && (
-        <div className="w-full bg-gray-100 py-4 font-semibold flex-row-center">
-          not found
+        <div className="w-full px-5 font-semibold">
+          <p className="rounded-sm bg-red-50 py-5 text-center text-xl text-red-800">
+            Not found in our database!
+          </p>
         </div>
       )}
       <div className="px-1 md:px-4">
@@ -26,5 +41,5 @@ export const CompaniesList = ({ companies }: { companies?: Company[] }) => {
         </div>
       </div>
     </div>
-  ) : null;
+  );
 };
