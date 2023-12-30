@@ -94,7 +94,7 @@ const BrandPage = async ({ params }: Props) => {
               supports the israeli occupation
             </Text>
           )}
-          {!brand.ownedBy && !brand.tags.includes("israel") && (
+          {!brand.ownedBy && !brand?.tags?.includes("israel") && (
             <Text className="font-medium">
               Please be patient we are adding evidence for every brand
             </Text>
