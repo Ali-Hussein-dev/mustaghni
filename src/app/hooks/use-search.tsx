@@ -28,7 +28,7 @@ export const useSearch = () => {
       // update url seach params
       const params = new URLSearchParams();
       params.append("query", input);
-      router.push(`?${params.toString()}`);
+      router.push(`?${params.toString()}`, { scroll: false });
       inputRef.current?.blur();
     },
     [refetch, input, router],

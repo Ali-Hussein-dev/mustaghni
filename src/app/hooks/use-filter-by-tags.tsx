@@ -23,7 +23,7 @@ export const useFilterByTags = () => {
     await refetch();
     const params = new URLSearchParams();
     params.append("query", selected.join("|"));
-    router.push(`?${params.toString()}`);
+    router.push(`?${params.toString()}`, { scroll: false });
   };
   return { onSubmit, selected, setSelected, isFetching };
 };
