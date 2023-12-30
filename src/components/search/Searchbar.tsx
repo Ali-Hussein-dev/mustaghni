@@ -1,6 +1,7 @@
 "use client";
 import { PiSpinnerGapLight } from "react-icons/pi";
-import { MdFilterList, MdOutlineClose, MdSearch } from "react-icons/md";
+import { MdFilterList, MdOutlineClose } from "react-icons/md";
+import { ImSearch } from "react-icons/im";
 import { ActionIcon, Input, Skeleton } from "@mantine/core";
 import * as React from "react";
 import dynamic from "next/dynamic";
@@ -17,7 +18,6 @@ export const Searchbar = ({
   onSubmit,
   inputRef,
 }: ReturnType<typeof useSearch>) => {
-  // const { input, setInput, isLoading, onSubmit, inputRef } = useSearch();
   const [filter, setFilter] = React.useState(false);
   const filterProps = useFilterByTags();
   return (
@@ -27,10 +27,10 @@ export const Searchbar = ({
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value?.trim())}
-        placeholder="Search here"
+        placeholder="Search for brands"
         classNames={{
           input:
-            "pl-[3rem] bg-gradient-to-t from-gray-50 to-transparent border border-gray-200 text-gray-600 duration-300 focus:shadow",
+            "pl-[3rem] bg-gradient-to-t from-gray-50 to-transparent border border-gray-300 text-gray-600 duration-300 focus:shadow",
         }}
         rightSectionWidth="auto"
         rightSectionPointerEvents="all"
@@ -73,7 +73,7 @@ export const Searchbar = ({
           isLoading ? (
             <PiSpinnerGapLight className="animate-spin" size="25" />
           ) : (
-            <MdSearch size="25" className="text-gray-400" />
+            <ImSearch size="20" className="text-gray-400" />
           )
         }
         radius="xl"

@@ -3,10 +3,11 @@ import * as React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { type Company } from "@/components/company-card";
 import { useRouter } from "next/navigation";
+import { useInputFocus } from "./use-input-focus";
 
 export const useSearch = () => {
   const [input, setInput] = React.useState("");
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const { inputRef } = useInputFocus<HTMLInputElement>();
   const router = useRouter();
   const {
     data: companies,
@@ -24,14 +25,16 @@ export const useSearch = () => {
     (e: React.FormEvent) => {
       e.preventDefault();
       void refetch();
-      // queryClient.setQueryData(["brands", input], companies);
+
       // update url seach params
       const params = new URLSearchParams();
       params.append("query", input);
       router.push(`?${params.toString()}`, { scroll: false });
+
+      // blur input, better UX for mobile users
       inputRef.current?.blur();
     },
-    [refetch, input, router],
+    [refetch, input, router, inputRef],
   );
   return {
     input,
