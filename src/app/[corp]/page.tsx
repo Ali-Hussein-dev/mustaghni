@@ -1,5 +1,5 @@
 import { BackButton } from "@/components/back-button";
-import { CompanyCard } from "@/components/company-card";
+import { DyanmicCompanyCard } from "@/components/company-card";
 import { Title } from "@mantine/core";
 import { getByCorp } from "@sanity/lib/get-companies";
 
@@ -43,7 +43,11 @@ const CorpPage = async ({ params }: Props) => {
           <div className="pt-4">Total brands: {brands.length}</div>
           <div className="grid gap-3 pb-6 pt-3 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
             {brands.map((brand) => (
-              <CompanyCard key={brand.title} {...brand} ownedBy={undefined} />
+              <DyanmicCompanyCard
+                key={brand.title}
+                {...brand}
+                ownedBy={undefined}
+              />
             ))}
           </div>
         </div>

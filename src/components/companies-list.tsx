@@ -29,15 +29,7 @@ export const CompaniesList = ({
           </p>
         )}
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
-          {companies?.map((o, i) => (
-            <DyanmicCompanyCard
-              key={i}
-              title={o.title}
-              logo={o?.logo}
-              ownedBy={o.ownedBy}
-              ownerCompanyURL={o.ownerCompanyURL}
-            />
-          ))}
+          {companies?.map((o, i) => <DyanmicCompanyCard key={i} {...o} />)}
         </div>
       </div>
     </div>

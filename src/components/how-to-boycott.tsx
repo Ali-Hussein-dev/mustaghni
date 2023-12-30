@@ -29,7 +29,7 @@ export const HowToBoycott = () => {
         <h2 className="text-center text-2xl font-extrabold">{content.title}</h2>
         <p className="text-center">{content.description}</p>
       </div>
-      <div className="space-y-4">
+      <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
         {content.list.map((o, i) => (
           <PCard key={i}>
             <h3 className="text-xl font-medium">{o.title}</h3>
