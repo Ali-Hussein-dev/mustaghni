@@ -49,7 +49,7 @@ const BrandPage = async ({ params }: Props) => {
             <div className="flex-wrap gap-2 flex-row-start">
               {Array.isArray(brand.tags) && (
                 <div className="flex-wrap gap-3 flex-row-start">
-                  {brand?.tags?.toSorted()?.map((str, i) => (
+                  {brand.tags.sort().map((str, i) => (
                     <Badge
                       key={i}
                       size="md"
