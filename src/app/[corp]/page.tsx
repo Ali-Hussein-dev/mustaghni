@@ -1,5 +1,5 @@
-import { BackButton } from "@/components/back-button";
 import { DyanmicCompanyCard } from "@/components/company-card";
+import CompanyLayout from "@/components/company-layout";
 import { Title } from "@mantine/core";
 import { getByCorp } from "@sanity/lib/get-companies";
 
@@ -28,31 +28,26 @@ const CorpPage = async ({ params }: Props) => {
   const brands = await getByCorp(corp);
 
   return (
-    <>
-      <div className="mx-auto w-full max-w-4xl grow px-2 pt-16 md:px-4">
-        <nav className="h-10 w-full border-0 border-b border-solid border-gray-300 flex-row-between">
-          <BackButton />
-          <Title c="gray" order={1} className="text-center text-2xl font-bold">
-            {brands[0]?.ownedBy}
-          </Title>
-        </nav>
-        {/* <div className="relative">
-          <div className="absolute top-0 h-56 w-full border-0 border-t border-solid border-slate-300 bg-gradient-to-b from-slate-50 to-transparent"></div>
-        </div> */}
-        <div>
-          <div className="pt-4">Total brands: {brands.length}</div>
-          <div className="grid gap-3 pb-6 pt-3 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
-            {brands.map((brand) => (
-              <DyanmicCompanyCard
-                key={brand.title}
-                {...brand}
-                ownedBy={undefined}
-              />
-            ))}
-          </div>
+    <CompanyLayout
+      title={
+        <Title c="gray" order={1} className="text-center text-2xl font-bold">
+          {brands[0]?.ownedBy}
+        </Title>
+      }
+    >
+      <div>
+        <p className="pt-2">Total brands: {brands.length}</p>
+        <div className="grid gap-3 pb-6 pt-4 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
+          {brands.map((brand) => (
+            <DyanmicCompanyCard
+              key={brand.title}
+              {...brand}
+              ownedBy={undefined}
+            />
+          ))}
         </div>
       </div>
-    </>
+    </CompanyLayout>
   );
 };
 
