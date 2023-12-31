@@ -36,7 +36,10 @@ const CorpPage = async ({ params }: Props) => {
   return corpData ? (
     <CompanyLayout>
       <div className=" space-y-4 py-4">
-        <Paper withBorder className="gap-3 rounded-lg p-4 pt-5 flex-row-start">
+        <Paper
+          withBorder
+          className="flex flex-col items-center justify-center gap-3 rounded-lg p-4 pt-5 md:flex-row md:items-start"
+        >
           <Image
             width="130"
             height="130"
@@ -45,8 +48,12 @@ const CorpPage = async ({ params }: Props) => {
             className="rounded-3xl border border-solid border-gray-200 object-fill"
           />
           <div>
-            <Title order={2}>{corpData.title}</Title>
-            <Text>{corpData.description}</Text>
+            <Title order={2} className="text-center md:text-left">
+              {corpData.title}
+            </Title>
+            <Text className="text-center md:text-left">
+              {corpData.description}
+            </Text>
           </div>
         </Paper>
         <Paper
