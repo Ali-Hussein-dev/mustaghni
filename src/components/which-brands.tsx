@@ -6,7 +6,7 @@ const content = {
   list: [
     {
       title:
-        "Israeli brands and the brands shamelessly supporting israeli occupation",
+        "Israeli brands and the brands explicitly supporting israeli occupation",
       description: "Such as Fiverr, Wix, Zara, ...etc",
       level: 1,
     },
@@ -27,22 +27,20 @@ const content = {
 export const WhichBrands = () => {
   return (
     <div className="w-full pt-10 text-gray-700 md:pt-28">
-      <div className="mx-auto w-full max-w-3xl">
+      <div className="mx-auto w-full">
         <div className="mb-4 w-full flex-col-center">
           <h2 className="text-center text-2xl font-extrabold">
             {content.title}
           </h2>
           <p className="text-center">{content.description}</p>
         </div>
-        <div className="space-y-4">
-          {content.list.map((item, index) => (
-            <div key={index}>
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+          {content.list.map((item, i) => (
+            <div key={i} className={i === 0 ? "md:col-span-2" : ""}>
               <PCard>
-                <div className="gap-2 flex-row-between">
-                  <div className="">
-                    <h3 className="w-[98%] text-xl font-medium">
-                      {item.title}
-                    </h3>
+                <div className="flex  justify-between gap-2">
+                  <div className="w-full">
+                    <h3 className="text-xl font-medium">{item.title}</h3>
                     <p className="font-light">{item.description}</p>
                   </div>
                   <div className="rounded-full">

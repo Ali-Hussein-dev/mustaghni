@@ -24,7 +24,7 @@ const content = {
 };
 export const HowToBoycott = () => {
   return (
-    <div className="mx-auto w-full max-w-3xl pb-6 pt-20 text-gray-700">
+    <div className="mx-auto w-full pb-6 pt-20 text-gray-700">
       <div className="mb-4 ">
         <h2 className="text-center text-2xl font-extrabold">{content.title}</h2>
         <p className="text-center">{content.description}</p>

@@ -8,7 +8,7 @@ export const revalidate = 3600; // 1 hour
 
 export default function HomePage() {
   return (
-    <main className="center container mx-auto h-full w-full grow px-2 py-10 ">
+    <main className="center mx-auto h-full w-full max-w-4xl grow px-2 py-10 ">
       <Hero />
       <WhichBrands />
       <HowToBoycott />

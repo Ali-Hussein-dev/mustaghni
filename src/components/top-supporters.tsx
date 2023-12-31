@@ -12,7 +12,7 @@ export const TopSupporters = () => {
           Black List Corporations
         </h2>
       </div>
-      <div className="grid max-w-3xl grid-cols-1 gap-3 sm:gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 sm:gap-6 md:grid-cols-2">
         {giantCorps.map((o, i) => (
           <Link
             key={i}
