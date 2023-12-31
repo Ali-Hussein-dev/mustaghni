@@ -1,7 +1,12 @@
 import { DyanmicCompanyCard } from "@/components/company-card";
 import CompanyLayout from "@/components/company-layout";
-import { Title } from "@mantine/core";
+import { Paper, Text, Title } from "@mantine/core";
+import { PortableText } from "@portabletext/react";
 import { getByCorp } from "@sanity/lib/get-companies";
+import { getCorp } from "@sanity/lib/get-corps";
+import Image from "next/image";
+import { twMerge } from "tailwind-merge";
+import { HiDocumentMagnifyingGlass } from "react-icons/hi2";
 
 type Props = {
   params: {
@@ -20,35 +25,67 @@ export function generateMetadata({ params }: Props) {
 //======================================
 const CorpPage = async ({ params }: Props) => {
   // get brands by corp
-  const corp = params.corp
+  const corpName = params.corp
     .replace(/%20/g, " ")
     .replace(/%C3%A9/g, "é")
     .replace(/%26/g, "&") // for procter & gamble
     .toLowerCase();
-  const brands = await getByCorp(corp);
+  const brands = await getByCorp(corpName);
+  const corpData = await getCorp(corpName);
 
-  return (
-    <CompanyLayout
-      title={
-        <Title c="gray" order={1} className="text-center text-2xl font-bold">
-          {brands[0]?.ownedBy}
-        </Title>
-      }
-    >
-      <div>
-        <p className="pt-2">Total brands: {brands.length}</p>
-        <div className="grid gap-3 pb-6 pt-4 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
-          {brands.map((brand) => (
-            <DyanmicCompanyCard
-              key={brand.title}
-              {...brand}
-              ownedBy={undefined}
+  return corpData ? (
+    <CompanyLayout>
+      <div className=" space-y-4 py-4">
+        <Paper withBorder className="gap-3 rounded-lg p-4 pt-5 flex-row-start">
+          <Image
+            width="130"
+            height="130"
+            src={corpData.logo}
+            alt={corpData.title}
+            className="rounded-3xl border border-solid border-gray-200 object-fill"
+          />
+          <div>
+            <Title order={2}>{corpData.title}</Title>
+            <Text>{corpData.description}</Text>
+          </div>
+        </Paper>
+        <Paper
+          withBorder
+          className={twMerge(
+            "prose prose-gray max-w-full rounded-xl p-4",
+            "prose-blockquote:m-0 prose-blockquote:border-0 prose-blockquote:border-l-4 prose-blockquote:border-solid ",
+          )}
+        >
+          <Title order={3} size="lg" fw="bold">
+            <HiDocumentMagnifyingGlass
+              size="24"
+              className="mr-1 text-red-800"
             />
-          ))}
-        </div>
+            Proof
+          </Title>
+          {corpData.content ? (
+            <PortableText value={corpData.content} />
+          ) : (
+            <Text>
+              Please be patient we are adding evidence for every corporation
+            </Text>
+          )}
+        </Paper>
+        <Paper withBorder className="rounded-xl bg-gray-100 p-4">
+          <Title order={3}>Total brands: {brands.length}</Title>
+          <div className="grid gap-3 py-4 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
+            {brands.map((brand) => (
+              <DyanmicCompanyCard
+                key={brand.title}
+                {...brand}
+                ownedBy={undefined}
+              />
+            ))}
+          </div>
+        </Paper>
       </div>
     </CompanyLayout>
-  );
+  ) : null;
 };
 
 export default CorpPage;
