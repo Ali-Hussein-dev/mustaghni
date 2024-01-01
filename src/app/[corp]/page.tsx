@@ -78,7 +78,7 @@ const CorpPage = async ({ params }: Props) => {
             </Text>
           )}
         </Paper>
-        <Paper withBorder className="rounded-xl bg-gray-100 p-4">
+        <Paper withBorder className="rounded-xl bg-gray-50 p-4">
           <Title order={3}>Total brands: {brands.length}</Title>
           <div className="grid gap-3 py-4 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
             {brands.map((brand) => (
