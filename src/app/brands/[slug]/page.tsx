@@ -1,5 +1,6 @@
 import CompanyLayout from "@/components/company-layout";
 import { Anchor, Badge, Paper, Text, Title } from "@mantine/core";
+import { PortableText } from "@portabletext/react";
 import { getBrand, getBrandName } from "@sanity/lib/get-companies";
 import { type Metadata } from "next";
 import Image from "next/image";
@@ -15,11 +16,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `Brands list owned by ${name}`,
   };
 }
-
+const Isr = () => (
+  <p className="!inline-block !line-through decoration-red-600">ISRAEL</p>
+);
 //======================================
 const BrandPage = async ({ params }: Props) => {
   const _id = params.slug.replace(/%20/g, " ");
   const brand = await getBrand(_id);
+  const isBasedOnIsrael = brand?.tags?.includes("israel");
+  const hasEvidence = !!brand?.evidence;
+  const isOwnedByCorp = !!brand?.ownedBy;
   return (
     <CompanyLayout title="📝 WIP Page is incomplete!">
       <div className="space-y-4 py-4">
@@ -66,12 +72,7 @@ const BrandPage = async ({ params }: Props) => {
             {brand.ownedBy && (
               <div className="">
                 Owned by:{" "}
-                <Anchor
-                  href={brand.ownerCompanyURL}
-                  variant="gradient"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Anchor href={`/${brand.ownedBy}`} variant="gradient">
                   {brand.ownedBy}
                 </Anchor>
               </div>
@@ -85,16 +86,31 @@ const BrandPage = async ({ params }: Props) => {
               Proof
             </Title>
           </div>
-          {brand?.tags && brand.tags.includes("israel") && (
-            <Text>The brand is based on israel!</Text>
-          )}
-          {brand.ownedBy && (
-            <Text className="font-medium">
-              The brand is ownd by <strong>{brand.ownedBy}</strong> which
-              supports the israeli occupation
+          {/* Boycott by israel ort */}
+          {isBasedOnIsrael && (
+            <Text>
+              The brand is based on <Isr />!
             </Text>
           )}
-          {!brand.ownedBy && !brand?.tags?.includes("israel") && (
+          {/* Boycott by owner */}
+          {isOwnedByCorp && (
+            <Text className="font-medium">
+              The brand is ownd by <strong>{brand.ownedBy}</strong> which
+              supports the israeli occupation see more details{" "}
+              <Anchor href={`/${brand.ownedBy}`} variant="gradient">
+                here
+              </Anchor>{" "}
+            </Text>
+          )}
+
+          {/* Boycott by evidence */}
+          {hasEvidence && (
+            <div className="prose prose-gray max-w-full">
+              <PortableText value={brand.evidence!} />
+            </div>
+          )}
+          {/* No evidence is provideed */}
+          {!isOwnedByCorp && !isBasedOnIsrael && !hasEvidence && (
             <Text className="font-medium">
               Please be patient we are adding evidence for every brand
             </Text>

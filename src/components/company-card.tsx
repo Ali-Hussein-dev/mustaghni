@@ -1,8 +1,9 @@
-import { ActionIcon, Button, Paper, Text } from "@mantine/core";
+import { ActionIcon, Paper, Text } from "@mantine/core";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa6";
+import { type TypedObject } from "sanity";
 
 export type Company = {
   title: string;
@@ -11,7 +12,9 @@ export type Company = {
   ownerCompanyURL?: string;
   tags: string[];
   _id: string;
+  evidence?: TypedObject[];
 };
+
 type Props = Pick<
   Company,
   "title" | "logo" | "ownedBy" | "ownerCompanyURL" | "_id"
