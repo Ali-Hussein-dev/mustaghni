@@ -8,6 +8,7 @@ import { CountsLabel } from "@/components/counts-label";
 import { useSearchParams } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 import { type Company } from "./company-card";
+import { useFilterByTags } from "@/app/hooks/use-filter-by-tags";
 
 const content = {
   description:
@@ -16,7 +17,10 @@ const content = {
 export const Hero = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get("query");
-  const getSearchbarProps = useSearch();
+  const getFilterProps = useFilterByTags();
+  const getSearchbarProps = useSearch({
+    setSelected: getFilterProps.setSelected,
+  });
   const queryClient = useQueryClient();
   const companies = queryClient.getQueryData<Company[]>([
     "brands",
@@ -27,8 +31,8 @@ export const Hero = () => {
   // console.log(["brands", query], companies);
   return (
     <div
-      className={`mx-auto flex w-full max-w-3xl flex-col justify-start gap-4 
-      pt-20 sm:pt-32 md:pt-40`}
+      className={`mx-auto flex w-full max-w-3xl flex-col justify-start 
+      gap-4 pt-20 sm:pt-32 md:pt-40`}
     >
       <div className="animate-in space-y-4">
         <div className="w-full flex-col-center">
@@ -48,9 +52,12 @@ export const Hero = () => {
             <CountsLabel />
           </div>
         </div>
-        <MantineSearchbar {...getSearchbarProps} />
+        <MantineSearchbar
+          {...getSearchbarProps}
+          getFilterProps={getFilterProps}
+        />
       </div>
-      <CompaniesList companies={companies} />
+      <CompaniesList companies={companies} tags={getFilterProps.selected} />
     </div>
   );
 };

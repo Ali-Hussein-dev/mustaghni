@@ -6,7 +6,7 @@ import { ActionIcon, Input, Skeleton } from "@mantine/core";
 import * as React from "react";
 import dynamic from "next/dynamic";
 import { Filter } from "./Filter";
-import { useFilterByTags } from "@/app/hooks/use-filter-by-tags";
+import { type useFilterByTags } from "@/app/hooks/use-filter-by-tags";
 import { IoSend } from "react-icons/io5";
 import { type useSearch } from "@/app/hooks/use-search";
 
@@ -17,9 +17,11 @@ export const Searchbar = ({
   isLoading,
   onSubmit,
   inputRef,
-}: ReturnType<typeof useSearch>) => {
+  getFilterProps,
+}: ReturnType<typeof useSearch> & {
+  getFilterProps: ReturnType<typeof useFilterByTags>;
+}) => {
   const [filter, setFilter] = React.useState(false);
-  const filterProps = useFilterByTags();
   return (
     <form onSubmit={onSubmit}>
       <Input
@@ -79,7 +81,7 @@ export const Searchbar = ({
         radius="xl"
         size="xl"
       />
-      {filter && <Filter {...filterProps} setFilter={setFilter} />}
+      {filter && <Filter {...getFilterProps} setFilter={setFilter} />}
     </form>
   );
 };
