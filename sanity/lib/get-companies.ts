@@ -52,6 +52,7 @@ export const getBrand = async (_id: string): Promise<Company> => {
         tags,
         ownedBy,
         ownerCompanyURL,
+        evidence
     }`, {
         _id
     })
