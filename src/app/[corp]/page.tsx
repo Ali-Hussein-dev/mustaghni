@@ -4,9 +4,9 @@ import { Paper, Text, Title } from "@mantine/core";
 import { PortableText } from "@portabletext/react";
 import { getByCorp } from "@sanity/lib/get-companies";
 import { getCorp } from "@sanity/lib/get-corps";
-import Image from "next/image";
 import { twMerge } from "tailwind-merge";
 import { HiDocumentMagnifyingGlass } from "react-icons/hi2";
+import { ImageContainer } from "@/components/img-container";
 
 type Props = {
   params: {
@@ -40,12 +40,11 @@ const CorpPage = async ({ params }: Props) => {
           withBorder
           className="flex flex-col items-center justify-center gap-3 rounded-lg p-4 pt-5 md:flex-row md:items-start"
         >
-          <Image
+          <ImageContainer
             width="130"
             height="130"
             src={corpData.logo}
             alt={corpData.title}
-            className="rounded-3xl border border-solid border-gray-200 object-contain"
           />
           <div>
             <Title order={2} className="text-center md:text-left">

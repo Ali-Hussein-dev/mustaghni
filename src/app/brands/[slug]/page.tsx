@@ -1,10 +1,11 @@
 import CompanyLayout from "@/components/company-layout";
+import { ImageContainer } from "@/components/img-container";
 import { Anchor, Badge, Paper, Text, Title } from "@mantine/core";
 import { PortableText } from "@portabletext/react";
 import { getBrand, getBrandName } from "@sanity/lib/get-companies";
 import { type Metadata } from "next";
-import Image from "next/image";
 import { HiDocumentMagnifyingGlass } from "react-icons/hi2";
+import { PiCaretDoubleUpFill } from "react-icons/pi";
 
 type Props = { params: { slug: string } };
 
@@ -28,22 +29,18 @@ const BrandPage = async ({ params }: Props) => {
   const isOwnedByCorp = !!brand?.ownedBy;
   return (
     <CompanyLayout title="📝 WIP Page is incomplete!">
-      <div className="space-y-4 py-4">
+      <div className="space-y-5 py-4">
         <Paper
-          className="gap-3 px-3 pb-3 pt-4 shadow flex-row-start"
+          className="gap-3 px-3 pb-3 pt-4 shadow-lg flex-row-start"
           radius="lg"
           withBorder
         >
           {brand.logo ? (
-            <Image
+            <ImageContainer
               src={brand.logo}
               alt="logo"
               width="100"
               height="100"
-              className="rounded-3xl border border-solid border-gray-200 object-contain"
-              quality={60}
-              placeholder="blur"
-              blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8fvdXPQAIcAMvy5dPawAAAABJRU5ErkJggg=="
             />
           ) : (
             <div></div>
@@ -79,10 +76,10 @@ const BrandPage = async ({ params }: Props) => {
             )}
           </div>
         </Paper>
-        <Paper className="gap-3 px-3 pb-3 pt-4 shadow" withBorder radius="lg">
+        <Paper className="px-3 py-4" withBorder radius="lg">
           <div className="mb-2 gap-3 flex-row-start">
             <HiDocumentMagnifyingGlass size="24" className="text-red-800" />
-            <Title order={2} c="gray" className="font-bold">
+            <Title order={3} c="gray" className="font-bold">
               Proof
             </Title>
           </div>
@@ -116,6 +113,19 @@ const BrandPage = async ({ params }: Props) => {
             </Text>
           )}
         </Paper>
+        {brand.alternatives && (
+          <Paper withBorder className="px-3 py-4" radius="lg">
+            <div className="mb-2 gap-3 flex-row-start">
+              <PiCaretDoubleUpFill size="24" className="text-green-400" />
+              <Title order={3} c="gray" className="font-bold">
+                Discover Alternatives
+              </Title>
+            </div>
+            <div className="prose prose-gray max-w-full ">
+              <PortableText value={brand.alternatives} />
+            </div>
+          </Paper>
+        )}
       </div>
     </CompanyLayout>
   );
