@@ -28,8 +28,8 @@ export const Filter = ({
 }) => {
   const selectedLimit = selected?.length === 2;
   return (
-    <div className="mt-3 px-3">
-      <Paper className="space-y-4 bg-gray-100 px-3 pb-3 pt-4">
+    <div className="mt-2 px-3">
+      <Paper className="space-y-4 rounded-xl bg-gray-50 px-3 pb-3 pt-4">
         <MultiSelect
           data={allTags}
           value={selected}

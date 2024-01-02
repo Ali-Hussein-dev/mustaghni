@@ -27,7 +27,7 @@ export const CompanyCard = ({
   _id,
 }: Props) => {
   return (
-    <Link href={`brands/${_id}`} className=" no-underline">
+    <Link href={`brands/${_id}`} className="group no-underline">
       <Paper
         radius="lg"
         className="h-full gap-1 px-3 py-4 shadow duration-500 flex-row-between hover:shadow-lg active:scale-90"
@@ -74,7 +74,7 @@ export const CompanyCard = ({
             )}
           </div>
           <ActionIcon variant="transparent" radius="md" size="lg">
-            <FaChevronRight />
+            <FaChevronRight className="text-gray-400 group-hover:text-sky-500" />
           </ActionIcon>
         </div>
       </Paper>

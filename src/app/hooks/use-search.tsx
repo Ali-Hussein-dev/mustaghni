@@ -5,7 +5,11 @@ import { type Company } from "@/components/company-card";
 import { useRouter } from "next/navigation";
 import { useInputFocus } from "./use-input-focus";
 
-export const useSearch = () => {
+export const useSearch = ({
+  setSelected,
+}: {
+  setSelected: React.Dispatch<React.SetStateAction<string[]>>;
+}) => {
   const [input, setInput] = React.useState("");
   const { inputRef } = useInputFocus<HTMLInputElement>();
   const router = useRouter();
@@ -33,8 +37,11 @@ export const useSearch = () => {
 
       // blur input, better UX for mobile users
       inputRef.current?.blur();
+
+      // update filter state
+      setSelected([]);
     },
-    [refetch, input, router, inputRef],
+    [refetch, input, router, inputRef, setSelected],
   );
   return {
     input,
