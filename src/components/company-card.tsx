@@ -31,7 +31,7 @@ export const CompanyCard = ({
     <Link href={`brands/${_id}`} className="group no-underline">
       <Paper
         radius="lg"
-        className="h-full gap-1 px-2 py-1 shadow duration-500 flex-row-between hover:shadow-lg active:scale-90"
+        className="h-full gap-1 px-2 py-1 shadow duration-500 flex-row-between hover:shadow-lg active:md:scale-95"
       >
         <div className="w-full grow gap-2 flex-row-start">
           {logo ? (

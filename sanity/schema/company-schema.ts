@@ -19,9 +19,16 @@ const companySchema = {
             //             return isTitle ? true : "Title must be unique";
             //         });
             // },
-        }), {
+        }),
+        {
             name: "evidence",
             title: "Evidence Explanation & Links",
+            type: "array",
+            of: [{ type: "block" }],
+        },
+        {
+            name: "alternatives",
+            title: "Provide a list of alternatives with links",
             type: "array",
             of: [{ type: "block" }],
         },
