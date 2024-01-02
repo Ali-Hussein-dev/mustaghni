@@ -40,7 +40,7 @@ const BrandPage = async ({ params }: Props) => {
               alt="logo"
               width="100"
               height="100"
-              className="rounded-3xl border border-solid border-gray-200 object-cover"
+              className="rounded-3xl border border-solid border-gray-200 object-contain"
               quality={60}
               placeholder="blur"
               blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8fvdXPQAIcAMvy5dPawAAAABJRU5ErkJggg=="

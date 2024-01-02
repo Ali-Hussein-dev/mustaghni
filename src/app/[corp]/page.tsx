@@ -45,7 +45,7 @@ const CorpPage = async ({ params }: Props) => {
             height="130"
             src={corpData.logo}
             alt={corpData.title}
-            className="rounded-3xl border border-solid border-gray-200 object-fill"
+            className="rounded-3xl border border-solid border-gray-200 object-contain"
           />
           <div>
             <Title order={2} className="text-center md:text-left">

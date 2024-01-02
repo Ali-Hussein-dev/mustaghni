@@ -43,7 +43,7 @@ export const CompanyCard = ({
                 quality={60}
                 placeholder="blur"
                 blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8fvdXPQAIcAMvy5dPawAAAABJRU5ErkJggg=="
-                className="h-full w-full grow object-cover"
+                className="h-full w-full grow object-contain"
               />
             </div>
           ) : (
