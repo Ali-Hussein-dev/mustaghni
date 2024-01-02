@@ -1,9 +1,9 @@
 import { ActionIcon, Paper, Text } from "@mantine/core";
 import dynamic from "next/dynamic";
-import Image from "next/image";
 import Link from "next/link";
 import { FaChevronRight } from "react-icons/fa6";
 import { type TypedObject } from "sanity";
+import { ImageContainer } from "./img-container";
 
 export type Company = {
   title: string;
@@ -13,6 +13,7 @@ export type Company = {
   tags: string[];
   _id: string;
   evidence?: TypedObject[];
+  alternatives?: TypedObject[];
 };
 
 type Props = Pick<
@@ -30,22 +31,18 @@ export const CompanyCard = ({
     <Link href={`brands/${_id}`} className="group no-underline">
       <Paper
         radius="lg"
-        className="h-full gap-1 px-3 py-4 shadow duration-500 flex-row-between hover:shadow-lg active:scale-90"
+        className="h-full gap-1 px-2 py-1 shadow duration-500 flex-row-between hover:shadow-lg active:md:scale-95"
       >
         <div className="w-full grow gap-2 flex-row-start">
           {logo ? (
-            <div className="relative h-14 w-14 overflow-hidden rounded-2xl border border-solid border-gray-300">
-              <Image
-                fill
-                sizes={"(min-width: 240px) 240px, 240px"}
-                src={logo}
-                alt={`${title} logo`}
-                quality={60}
-                placeholder="blur"
-                blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8fvdXPQAIcAMvy5dPawAAAABJRU5ErkJggg=="
-                className="h-full w-full grow object-contain"
-              />
-            </div>
+            <ImageContainer
+              width="70"
+              height="70"
+              sizes={"(min-width: 240px) 240px, 240px"}
+              src={logo}
+              alt={`${title} logo`}
+              cn="rounded-2xl"
+            />
           ) : (
             <div className="center h-14 w-14 overflow-hidden rounded-2xl bg-red-100 text-lg font-bold text-red-800">
               {title[0]}

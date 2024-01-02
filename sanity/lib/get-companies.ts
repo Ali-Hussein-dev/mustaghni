@@ -21,13 +21,6 @@ export const searchCompanies = async (title: string): Promise<Company[]> => {
     })
 }
 
-const updateDoc = async () => {
-    await client.patch({
-        id: "",
-        query: `*[_type == "company" && title match "" ]{
-    }`
-    }).set({}).commit()
-}
 export const searchByTags = async (tags: string): Promise<Company[]> => {
     return client.fetch(`*[_type == "company" && tags match "${tags}" ]{
         _id,
@@ -59,7 +52,8 @@ export const getBrand = async (_id: string): Promise<Company> => {
         tags,
         ownedBy,
         ownerCompanyURL,
-        evidence
+        evidence,
+        alternatives
     }`, {
         _id
     })
