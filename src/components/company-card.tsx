@@ -49,7 +49,7 @@ export const CompanyCard = ({
             </div>
           )}
           <div className="grow flex-col-start">
-            <Text c="dark" className="font-semibold">
+            <Text c="dark" className="font-semibold" lineClamp={1}>
               {title}
             </Text>
 
