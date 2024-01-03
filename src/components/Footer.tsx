@@ -5,15 +5,25 @@ export const Footer = () => (
   <div className="flex h-24 w-full flex-col justify-end md:h-36">
     <footer className="h-14 w-full text-gray-800 flex-row-center">
       <div className="w-full max-w-4xl gap-4 border-0 border-t border-solid border-neutral-400 px-1 py-2 flex-row-between">
-        <div className="gap-1 flex-row-start">
-          @{new Date().getFullYear()}{" "}
-          <span className="font-bold">Mustaghni</span>
-          <Link
-            href="/about"
-            className="ml-4 text-gray-800 no-underline hover:underline"
-          >
-            What is Mustaghni?
-          </Link>
+        <div className="grow gap-1 flex-row-start">
+          <div>
+            @{new Date().getFullYear()}{" "}
+            <span className="font-bold">Mustaghni</span>
+          </div>
+          <div className="mx-auto flex-wrap gap-2 flex-row-center">
+            <Link
+              href="/about"
+              className="text-gray-800 no-underline hover:underline"
+            >
+              What is Mustaghni?
+            </Link>
+            <Link
+              href="/privacy-policy"
+              className="text-gray-800 no-underline hover:underline"
+            >
+              Privacy Policy
+            </Link>
+          </div>
         </div>
         {[
           // { href: "https://x.com", icon: <FaXTwitter size="20" /> },
