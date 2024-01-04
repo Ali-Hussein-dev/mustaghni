@@ -12,7 +12,17 @@ const config = {
             hostname: "cdn.sanity.io",
             port: ""
         }]
-    }
+    },
+    // eslint-disable-next-line @typescript-eslint/require-await
+    async redirects() {
+        return [
+            {
+                source: '/d/:path*',
+                destination: 'https://discord.gg/Esqs7f3J',
+                permanent: true,
+            },
+        ]
+    },
 };
 
 export default config;
