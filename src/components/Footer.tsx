@@ -36,9 +36,6 @@ export const Footer = () => (
             Privacy Policy
           </Link>
         </div>
-        {/* Hi everyone, I created a Discord server for mustaghni.org, and would
-        like to invite to you join the server, where we can share our ideas and
-        experience in how to expand and make the boycott more effective. */}
         <div className="flex items-center justify-center gap-4 md:justify-end">
           {socialLinks.map((o, i) => (
             <a key={i} href={o.href} target="_black" rel="noreferrer">
