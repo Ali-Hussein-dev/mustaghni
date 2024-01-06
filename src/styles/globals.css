@@ -26,6 +26,9 @@ p {
     padding: 0;
 }
 
+.font-inter {
+    font-family: var(--font-inter);
+}
 h1,
 h2,
 h3 {
