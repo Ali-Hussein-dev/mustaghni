@@ -37,7 +37,7 @@ export const Hero = () => {
       <div className="animate-in space-y-4">
         <div className="w-full flex-col-center">
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             alt="logo"
             width="270"
             height="100"
