@@ -9,7 +9,7 @@ export const Discord = () => {
         <div className="w-full gap-4 rounded-3xl bg-white py-10 flex-col-center">
           <div className="flex-col-center">
             <FaDiscord size="70" className="text-violet-500" />
-            <Text size="lg" className="max-w-sm text-center">
+            <Text size="lg" className="max-w-sm px-3 text-center">
               Connect with others on the Discord Server and get involved!
             </Text>
           </div>
