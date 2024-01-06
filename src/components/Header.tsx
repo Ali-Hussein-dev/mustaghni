@@ -8,7 +8,7 @@ export const Header = () => {
       <div className="mx-auto h-full max-w-5xl px-2 flex-row-between md:px-0">
         <Link href="/">
           <Image
-            src="/logo.png"
+            src="/logo.svg"
             width={110}
             height={25}
             alt="logo"
