@@ -1,4 +1,4 @@
-import { Paper } from "@mantine/core";
+import { Paper, Text } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
 import { getCorpsList } from "@sanity/lib/get-corps";
@@ -13,7 +13,7 @@ export const TopSupporters = async () => {
           Corporations Backing israel
         </h2>
       </div>
-      <div className="grid grid-cols-1 gap-3 sm:gap-6 md:grid-cols-2">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-6 md:grid-cols-3">
         {corps
           .sort((a, b) => a.title.localeCompare(b.title))
           .map((o, i) => (
@@ -24,30 +24,28 @@ export const TopSupporters = async () => {
             >
               <Paper
                 withBorder
-                px="md"
+                px="sm"
                 pb="md"
                 pt="lg"
                 radius="lg"
                 h="100%"
                 className="text-stone-700 flex-col-center"
               >
-                <div className="relative aspect-square w-[110px]">
+                <div className="grow">
                   <Image
-                    fill
-                    sizes={"(max-width: 210px) 200px, 210px"}
+                    width="100"
+                    height="100"
                     alt={o.title}
                     src={o?.logo}
-                    className="h-full w-full rounded object-contain"
+                    className="object-contain"
                     quality={60}
                     placeholder="blur"
                     blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mO8fvdXPQAIcAMvy5dPawAAAABJRU5ErkJggg=="
                   />
                 </div>
-                <div className="mx-auto text-center">
-                  <p className="font-light">
-                    {o.title} {o?.description}
-                  </p>
-                </div>
+                <Text lineClamp={2} className="text-center font-light">
+                  {o.title} {o?.description}
+                </Text>
               </Paper>
             </Link>
           ))}
