@@ -4,6 +4,8 @@ import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { MantineProvider, createTheme } from "@mantine/core";
 import { GoogleAnalytics } from "nextjs-google-analytics";
+import { Analytics } from "@vercel/analytics/react";
+
 import "@mantine/core/styles.css";
 
 const theme = createTheme({
@@ -43,6 +45,7 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
         </MantineProvider>
         <ReactQueryDevtools initialIsOpen={true} />
       </QueryClientProvider>
+      <Analytics />
       <GoogleAnalytics trackPageViews strategy="lazyOnload" />
     </>
   );
