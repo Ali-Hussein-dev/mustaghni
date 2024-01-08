@@ -6,7 +6,8 @@ import { useRouter, useSearchParams } from "next/navigation";
 export const useFilterByTags = () => {
   const searchParams = useSearchParams();
   const fQuery =
-    searchParams.get("fQuery")?.replace(/%7C/g, "|").split("|") ?? [];
+    // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
+    searchParams.get("fQuery")?.replace(/%7C/g, "|").split("|") || [];
 
   const [selected, setSelected] = React.useState<string[]>(fQuery);
   const router = useRouter();
