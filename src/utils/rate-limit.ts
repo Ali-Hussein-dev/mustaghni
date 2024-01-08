@@ -5,7 +5,7 @@ import { type NextRequest } from "next/server";
 const rateLimit = new Ratelimit({
     redis: Redis.fromEnv(),
     analytics: true,
-    limiter: Ratelimit.slidingWindow(2, "5s"),
+    limiter: Ratelimit.slidingWindow(3, "5s"),
 });
 
 
