@@ -5,9 +5,10 @@ import { useRouter, useSearchParams } from "next/navigation";
 
 export const useFilterByTags = () => {
   const searchParams = useSearchParams();
-  const fQuery = searchParams.get("fQuery")?.replace(/%7C/g, "|") ?? "";
+  const fQuery =
+    searchParams.get("fQuery")?.replace(/%7C/g, "|").split("|") ?? [];
 
-  const [selected, setSelected] = React.useState<string[]>(fQuery.split("|"));
+  const [selected, setSelected] = React.useState<string[]>(fQuery);
   const router = useRouter();
   const res = useQuery({
     queryKey: ["brands", selected.join("|")],
