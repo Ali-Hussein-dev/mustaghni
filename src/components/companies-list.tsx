@@ -1,6 +1,38 @@
-import { Badge, Text } from "@mantine/core";
+import { ActionIcon, Badge } from "@mantine/core";
 import { type Company, DyanmicCompanyCard } from "./company-card";
+import { FaShareAlt } from "react-icons/fa";
 
+const ShareButton = () => {
+  // const [shareSuccess, setShareSuccess] = useState(false);
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "Share the result",
+          url: window.location.href,
+        });
+        // setShareSuccess(true);
+      } catch (error) {
+        console.error("Something went wrong sharing the page", error);
+      }
+    } else {
+      console.log("Web Share API is not supported in your browser");
+    }
+  };
+  return (
+    <ActionIcon
+      type="button"
+      onClick={handleShare}
+      color="green"
+      variant="light"
+      radius="lg"
+      size="lg"
+    >
+      <FaShareAlt />
+    </ActionIcon>
+  );
+};
 export const CompaniesList = ({
   companies,
   tags,
@@ -39,9 +71,10 @@ export const CompaniesList = ({
                 <Badge> NAME</Badge>
               )}
             </div>
-            <Text className="m-0 w-full p-0 text-right font-medium">
+            {/* <Text className="m-0 w-full p-0 text-right font-medium">
               Found: {companies.length}
-            </Text>
+            </Text> */}
+            <ShareButton />
           </div>
 
           <div className="grid grid-cols-1 gap-3 px-2 md:grid-cols-2 md:px-4">
