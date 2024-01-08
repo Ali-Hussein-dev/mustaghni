@@ -24,7 +24,8 @@ export const useSearch = ({
       fetch(`/api/search?name=${input}`, {
         method: "GET",
       }).then((res) => res.json()),
-    enabled: !!query,
+    enabled: false,
+    // enabled: !!query,
   });
   const onSubmit = React.useCallback(
     (e: React.FormEvent) => {

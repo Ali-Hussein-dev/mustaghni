@@ -20,7 +20,8 @@ export const useFilterByTags = () => {
         //   .map((tag) => `tags=${encodeURIComponent(tag)}`)
         //   .join("&")}`,
       ).then((res) => res.json()),
-    enabled: fQuery.length > 0,
+    enabled: false,
+    // enabled: fQuery.length > 0,
   });
   const { refetch, isFetching } = res;
   const onSubmit = async (e: React.FormEvent) => {
