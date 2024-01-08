@@ -2,7 +2,7 @@
 import * as React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { type Company } from "@/components/company-card";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useInputFocus } from "./use-input-focus";
 
 export const useSearch = ({
@@ -10,7 +10,8 @@ export const useSearch = ({
 }: {
   setSelected: React.Dispatch<React.SetStateAction<string[]>>;
 }) => {
-  const [input, setInput] = React.useState("");
+  const query = useSearchParams().get("query");
+  const [input, setInput] = React.useState(query ?? "");
   const { inputRef } = useInputFocus<HTMLInputElement>();
   const router = useRouter();
   const {
@@ -23,7 +24,7 @@ export const useSearch = ({
       fetch(`/api/search?name=${input}`, {
         method: "GET",
       }).then((res) => res.json()),
-    enabled: false,
+    enabled: !!query,
   });
   const onSubmit = React.useCallback(
     (e: React.FormEvent) => {

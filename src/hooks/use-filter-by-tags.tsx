@@ -1,10 +1,14 @@
 "use client";
 import * as React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export const useFilterByTags = () => {
-  const [selected, setSelected] = React.useState<string[]>([]);
+  const searchParams = useSearchParams();
+  const fQuery =
+    searchParams.get("fQuery")?.replace(/%7C/g, "|").split("|") ?? [];
+
+  const [selected, setSelected] = React.useState<string[]>(fQuery);
   const router = useRouter();
   const res = useQuery({
     queryKey: ["brands", selected.join("|")],
@@ -15,14 +19,15 @@ export const useFilterByTags = () => {
         //   .map((tag) => `tags=${encodeURIComponent(tag)}`)
         //   .join("&")}`,
       ).then((res) => res.json()),
-    enabled: false,
+    enabled: !!fQuery,
   });
   const { refetch, isFetching } = res;
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await refetch();
     const params = new URLSearchParams();
-    params.append("query", selected.join("|"));
+    params.delete("query");
+    await refetch();
+    params.append("fQuery", selected.join("|"));
     router.push(`?${params.toString()}`, { scroll: false });
   };
   return { onSubmit, selected, setSelected, isFetching };
