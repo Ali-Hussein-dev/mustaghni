@@ -3,7 +3,7 @@ import { IoSend } from "react-icons/io5";
 import { Button, MultiSelect, Paper } from "@mantine/core";
 import { tags } from "@/data/tags";
 import * as React from "react";
-import { type useFilterByTags } from "@/app/hooks/use-filter-by-tags";
+import { type useFilterByTags } from "@/hooks/use-filter-by-tags";
 const allTags = [
   {
     group: "Country",

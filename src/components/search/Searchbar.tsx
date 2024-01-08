@@ -6,9 +6,9 @@ import { ActionIcon, Input, Skeleton } from "@mantine/core";
 import * as React from "react";
 import dynamic from "next/dynamic";
 import { Filter } from "./Filter";
-import { type useFilterByTags } from "@/app/hooks/use-filter-by-tags";
+import { type useFilterByTags } from "@/hooks/use-filter-by-tags";
 import { IoSend } from "react-icons/io5";
-import { type useSearch } from "@/app/hooks/use-search";
+import { type useSearch } from "@/hooks/use-search";
 
 //======================================From-Mantine
 export const Searchbar = ({

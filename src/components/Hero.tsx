@@ -1,14 +1,14 @@
 "use client";
 import { CompaniesList } from "@/components/companies-list";
 import * as React from "react";
-import { useSearch } from "../app/hooks/use-search";
+import { useSearch } from "../hooks/use-search";
 import Image from "next/image";
 import { MantineSearchbar } from "./search/Searchbar";
 import { CountsLabel } from "@/components/counts-label";
 import { useSearchParams } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 import { type Company } from "./company-card";
-import { useFilterByTags } from "@/app/hooks/use-filter-by-tags";
+import { useFilterByTags } from "@/hooks/use-filter-by-tags";
 
 const content = {
   description:
