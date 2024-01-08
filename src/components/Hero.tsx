@@ -1,38 +1,21 @@
-"use client";
-import { CompaniesList } from "@/components/companies-list";
 import * as React from "react";
-import { useSearch } from "../hooks/use-search";
 import Image from "next/image";
-import { MantineSearchbar } from "./search/Searchbar";
 import { CountsLabel } from "@/components/counts-label";
-import { useSearchParams } from "next/navigation";
-import { useQueryClient } from "@tanstack/react-query";
-import { type Company } from "./company-card";
-import { useFilterByTags } from "@/hooks/use-filter-by-tags";
+import { SearchWrapper } from "./search-wrapper";
+import { Skeleton } from "@mantine/core";
 
 const content = {
   description:
     "Easily search for corporations associated with genocide in Palestine.",
 };
+
 export const Hero = () => {
-  const searchParams = useSearchParams();
-  const query = searchParams.get("query");
-  const fQuery = searchParams.get("fQuery")?.replace(/%7C/g, "|") ?? "";
-  const getFilterProps = useFilterByTags();
-  const getSearchbarProps = useSearch({
-    setSelected: getFilterProps.setSelected,
-  });
-  const queryClient = useQueryClient();
-  const companies = queryClient.getQueryData<Company[]>([
-    "brands",
-    query ?? fQuery ?? "",
-  ]);
   return (
     <div
-      className={`mx-auto flex w-full max-w-3xl flex-col justify-start 
-      gap-4 pt-20 sm:pt-32 md:pt-40`}
+      className="animate-in mx-auto flex w-full max-w-4xl flex-col 
+      justify-start gap-4 pt-20 sm:pt-32 md:pt-40"
     >
-      <div className="animate-in space-y-4">
+      <div className="space-y-4">
         <div className="w-full flex-col-center">
           <Image
             src="/logo.svg"
@@ -47,15 +30,17 @@ export const Hero = () => {
             {content.description}
           </p>
           <div className="gap-3 flex-row-center">
-            <CountsLabel />
+            <React.Suspense fallback={<Skeleton w="340px" h="40px" />}>
+              <CountsLabel />
+            </React.Suspense>
           </div>
         </div>
-        <MantineSearchbar
-          {...getSearchbarProps}
-          getFilterProps={getFilterProps}
-        />
       </div>
-      <CompaniesList companies={companies} tags={getFilterProps.selected} />
+      <React.Suspense
+        fallback={<div className="w-full flex-row-center">Loading...</div>}
+      >
+        <SearchWrapper />
+      </React.Suspense>
     </div>
   );
 };
