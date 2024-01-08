@@ -1,5 +1,5 @@
+"use client";
 import { formatNumber } from "@/utils/format-number";
-import { Skeleton } from "@mantine/core";
 import { useQuery } from "@tanstack/react-query";
 import { MdNumbers } from "react-icons/md";
 
@@ -21,7 +21,5 @@ export const CountsLabel = () => {
       </span>
       <MdNumbers className="text-red-500" size="17" />
     </div>
-  ) : (
-    <Skeleton w="340px" h="40px" />
-  );
+  ) : null;
 };
