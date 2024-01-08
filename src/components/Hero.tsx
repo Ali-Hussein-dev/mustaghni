@@ -17,6 +17,7 @@ const content = {
 export const Hero = () => {
   const searchParams = useSearchParams();
   const query = searchParams.get("query");
+  const fQuery = searchParams.get("fQuery")?.replace(/%7C/g, "|") ?? "";
   const getFilterProps = useFilterByTags();
   const getSearchbarProps = useSearch({
     setSelected: getFilterProps.setSelected,
@@ -24,11 +25,8 @@ export const Hero = () => {
   const queryClient = useQueryClient();
   const companies = queryClient.getQueryData<Company[]>([
     "brands",
-    query?.replace(/%7C/g, "|"),
+    query ?? fQuery ?? "",
   ]);
-  // const withResults = (companies ?? []).length > 0;
-
-  // console.log(["brands", query], companies);
   return (
     <div
       className={`mx-auto flex w-full max-w-3xl flex-col justify-start 
