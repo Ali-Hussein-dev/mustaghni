@@ -24,12 +24,15 @@ export const useSearch = ({
       fetch(`/api/search?name=${input}`, {
         method: "GET",
       }).then((res) => res.json()),
-    enabled: false,
-    // enabled: !!query,
+    // enabled: false,
+    enabled: !!query,
+    staleTime: 1000 * 60 * 60 * 24, // 1 day
   });
+  console.log({ query, input });
   const onSubmit = React.useCallback(
     (e: React.FormEvent) => {
       e.preventDefault();
+      if (!input) return;
       void refetch();
 
       // update url seach params

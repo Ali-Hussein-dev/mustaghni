@@ -22,7 +22,9 @@ export const useFilterByTags = () => {
       ).then((res) => res.json()),
     enabled: false,
     // enabled: fQuery.length > 0,
+    staleTime: 1000 * 60 * 60 * 24, // 1 day
   });
+  console.log({ fQuery, selected });
   const { refetch, isFetching } = res;
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -32,5 +34,5 @@ export const useFilterByTags = () => {
     params.append("fQuery", selected.join("|"));
     router.push(`?${params.toString()}`, { scroll: false });
   };
-  return { onSubmit, selected, setSelected, isFetching };
+  return { onSubmit, selected, setSelected, isFetching: isFetching };
 };
