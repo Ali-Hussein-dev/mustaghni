@@ -26,6 +26,11 @@ export const useFilterByTags = () => {
   });
   console.log({ fQuery, selected });
   const { refetch, isFetching } = res;
+    React.useEffect(() => {
+      if (!fQuery) return;
+      void refetch();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const params = new URLSearchParams();

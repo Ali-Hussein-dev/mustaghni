@@ -24,10 +24,16 @@ export const useSearch = ({
       fetch(`/api/search?name=${input}`, {
         method: "GET",
       }).then((res) => res.json()),
-    // enabled: false,
-    enabled: !!query,
+    enabled: false,
+    // enabled: !!query,
     staleTime: 1000 * 60 * 60 * 24, // 1 day
   });
+  React.useEffect(() => {
+    if (!query) return;
+    setInput(query);
+    void refetch();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   console.log({ query, input });
   const onSubmit = React.useCallback(
     (e: React.FormEvent) => {
