@@ -13,7 +13,7 @@ export const Hero = () => {
   return (
     <div
       className="animate-in mx-auto flex w-full max-w-4xl flex-col 
-      justify-start gap-4 pt-20 sm:pt-32 md:pt-40"
+      justify-start gap-4 pt-20"
     >
       <div className="space-y-4">
         <div className="w-full flex-col-center">

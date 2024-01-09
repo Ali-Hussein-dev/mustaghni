@@ -44,7 +44,7 @@ export const CompanyCard = ({
               cn="rounded-2xl"
             />
           ) : (
-            <div className="center h-14 w-14 overflow-hidden rounded-2xl bg-red-100 text-lg font-bold text-red-800">
+            <div className="center h-[67px] w-[67px] overflow-hidden rounded-2xl bg-red-100 text-lg font-bold text-red-800">
               {title[0]}
             </div>
           )}
