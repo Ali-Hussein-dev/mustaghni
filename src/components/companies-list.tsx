@@ -71,10 +71,20 @@ export const CompaniesList = ({
                 <Badge> NAME</Badge>
               )}
             </div>
-            {/* <Text className="m-0 w-full p-0 text-right font-medium">
-              Found: {companies.length}
-            </Text> */}
-            <ShareButton />
+            <div className="gap-2 flex-row-end">
+              <ActionIcon
+                radius="xl"
+                className="font-medium"
+                color="gray"
+                variant="light"
+                size="lg"
+                disabled
+              >
+                {companies.length}
+              </ActionIcon>
+
+              <ShareButton />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-3 px-2 md:grid-cols-2 md:px-4">
