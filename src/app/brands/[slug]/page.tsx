@@ -4,6 +4,7 @@ import { Anchor, Badge, Paper, Text, Title } from "@mantine/core";
 import { PortableText } from "@portabletext/react";
 import { getBrand, getBrandName } from "@sanity/lib/get-companies";
 import { type Metadata } from "next";
+import Image from "next/image";
 import { HiDocumentMagnifyingGlass } from "react-icons/hi2";
 import { PiCaretDoubleUpFill } from "react-icons/pi";
 
@@ -28,7 +29,7 @@ const BrandPage = async ({ params }: Props) => {
   const hasEvidence = !!brand?.evidence;
   const isOwnedByCorp = !!brand?.ownedBy;
   return (
-    <CompanyLayout title="📝 WIP Page is incomplete!">
+    <CompanyLayout>
       <div className="space-y-5 py-4">
         <Paper
           className="gap-3 px-3 pb-3 pt-4 shadow-lg flex-row-start"
@@ -77,8 +78,15 @@ const BrandPage = async ({ params }: Props) => {
           </div>
         </Paper>
         <Paper className="px-3 py-4" withBorder radius="lg">
-          <div className="mb-2 gap-3 flex-row-start">
-            <HiDocumentMagnifyingGlass size="24" className="text-red-800" />
+          <div className="mb-2 gap-2 flex-row-start">
+            {/* <HiDocumentMagnifyingGlass size="24" className="text-red-800" /> */}
+            <Image
+              width="24"
+              height="24"
+              src="/proof.png"
+              alt="proof"
+              quality={65}
+            />
             <Title order={3} c="gray" className="font-bold">
               Proof
             </Title>
@@ -91,7 +99,7 @@ const BrandPage = async ({ params }: Props) => {
           )}
           {/* Boycott by owner */}
           {isOwnedByCorp && (
-            <Text className="font-medium">
+            <Text className="mb-1">
               The brand is ownd by <strong>{brand.ownedBy}</strong> which
               supports the israeli occupation see more details{" "}
               <Anchor href={`/${brand.ownedBy}`} variant="gradient">
