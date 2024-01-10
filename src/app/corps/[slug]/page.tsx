@@ -10,13 +10,13 @@ import { ImageContainer } from "@/components/img-container";
 
 type Props = {
   params: {
-    corp: string;
+    slug: string;
   };
 };
 export const revalidate = 30;
 
 export function generateMetadata({ params }: Props) {
-  const name = params.corp.replace(/%20/g, " ").replace(/%C3%A9/g, "é");
+  const name = params.slug.replace(/%20/g, " ").replace(/%C3%A9/g, "é");
   return {
     title: `${name} | Mustaghni`,
     description: `Brands list owned by ${name}`,
@@ -25,7 +25,7 @@ export function generateMetadata({ params }: Props) {
 //======================================
 const CorpPage = async ({ params }: Props) => {
   // get brands by corp
-  const corpName = params.corp
+  const corpName = params.slug
     .replace(/%20/g, " ")
     .replace(/%C3%A9/g, "é")
     .replace(/%26/g, "&") // for procter & gamble
