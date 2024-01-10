@@ -69,7 +69,7 @@ const BrandPage = async ({ params }: Props) => {
             {brand.ownedBy && (
               <div className="">
                 Owned by:{" "}
-                <Anchor href={`/${brand.ownedBy}`} variant="gradient">
+                <Anchor href={`/corps/${brand.ownedBy}`} variant="gradient">
                   {brand.ownedBy}
                 </Anchor>
               </div>

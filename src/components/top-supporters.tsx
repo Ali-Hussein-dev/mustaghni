@@ -19,7 +19,7 @@ export const TopSupporters = async () => {
           .map((o, i) => (
             <Link
               key={i}
-              href={`/${o.title}`}
+              href={`/corps/${o.title}`}
               className="h-full rounded-2xl no-underline delay-100 duration-200 hover:shadow-lg"
             >
               <Paper
