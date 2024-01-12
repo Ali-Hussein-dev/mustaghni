@@ -31,7 +31,7 @@ export const CompanyCard = ({
   locale,
 }: Props) => {
   return (
-    <Link href={`${locale}/brands/${_id}`} className="group no-underline">
+    <Link href={`/${locale}/brands/${_id}`} className="group no-underline">
       <Paper
         radius="lg"
         className="h-full gap-1 px-2 py-1 shadow duration-500 flex-row-between hover:shadow-lg active:md:scale-95"

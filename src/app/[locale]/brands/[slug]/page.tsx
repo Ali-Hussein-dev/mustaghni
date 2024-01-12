@@ -4,6 +4,7 @@ import { Anchor, Badge, Paper, Text, Title } from "@mantine/core";
 import { PortableText } from "@portabletext/react";
 import { getBrand, getBrandName } from "@sanity/lib/get-companies";
 import { type Metadata } from "next";
+import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { PiCaretDoubleUpFill } from "react-icons/pi";
 
@@ -22,7 +23,9 @@ const Isr = () => (
 );
 //======================================
 const BrandPage = async ({ params }: Props) => {
-  const _id = params.slug.replace(/%20/g, " ");
+  const { locale, slug } = params;
+  unstable_setRequestLocale(locale);
+  const _id = slug.replace(/%20/g, " ");
   const brand = await getBrand(_id);
   const isBasedOnIsrael = brand?.tags?.includes("israel");
   const hasEvidence = !!brand?.evidence;

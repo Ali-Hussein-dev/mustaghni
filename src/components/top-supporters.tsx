@@ -2,10 +2,11 @@ import { Paper, Text } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
 import { getCorpsList } from "@sanity/lib/get-corps";
-
+import { useLocale } from "next-intl";
 //======================================
 export const TopSupporters = async () => {
   const corps = await getCorpsList();
+  const locale = useLocale();
   return (
     <div className="pt-10 md:pt-24">
       <div className="mb-4">
@@ -19,7 +20,7 @@ export const TopSupporters = async () => {
           .map((o, i) => (
             <Link
               key={i}
-              href={`/corps/${o.title}`}
+              href={`/${locale}/corps/${o.title}`}
               className="h-full rounded-2xl no-underline delay-100 duration-200 hover:shadow-lg"
             >
               <Paper
