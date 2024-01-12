@@ -1,14 +1,15 @@
 "use client";
-import { IoSend } from "react-icons/io5";
 import { Button, MultiSelect, Paper } from "@mantine/core";
 import { tags } from "@/data/tags";
 import * as React from "react";
 import { type useFilterByTags } from "@/hooks/use-filter-by-tags";
+import { useSearchCtx } from "@/hooks/use-search-ctx";
+import { useStore } from "zustand";
+import { FaFilter } from "react-icons/fa6";
 const allTags = [
   {
     group: "Country",
     items: ["israel"],
-    // items: ["Arab", "israel", "US", "Germany"],
   },
   {
     group: "Category",
@@ -27,6 +28,8 @@ export const Filter = ({
   setFilter: (a: boolean) => void;
 }) => {
   const selectedLimit = selected?.length === 2;
+  const store = useSearchCtx();
+  const labels = useStore(store, (s) => s.labels);
   return (
     <div className="mt-2 px-3">
       <Paper className="space-y-4 rounded-xl bg-gray-50 px-3 pb-3 pt-4">
@@ -35,9 +38,9 @@ export const Filter = ({
           value={selected}
           onChange={setSelected}
           limit={selectedLimit ? 0 : undefined}
-          placeholder={selectedLimit ? "" : "pick up to 2 tags"}
+          placeholder={selectedLimit ? "" : labels?.filterPlaceholder}
           size="lg"
-          label="Filter By"
+          label={labels?.filterBy}
           searchable
         />
         <div className="gap-3 flex-row-center">
@@ -50,7 +53,7 @@ export const Filter = ({
             onClick={() => setFilter(false)}
             // rightSection={<IoSend />}
           >
-            Cancel
+            {labels?.cancel}
           </Button>
           <Button
             radius="xl"
@@ -61,9 +64,9 @@ export const Filter = ({
             onClick={onSubmit}
             loading={isFetching}
             disabled={selected.length === 0}
-            rightSection={<IoSend />}
+            rightSection={<FaFilter />}
           >
-            Filter
+            {labels?.filter}
           </Button>
         </div>
       </Paper>

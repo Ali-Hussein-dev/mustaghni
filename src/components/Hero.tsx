@@ -3,11 +3,11 @@ import Image from "next/image";
 import { CountsLabel } from "@/components/counts-label";
 import { SearchWrapper } from "./search-wrapper";
 import { Skeleton } from "@mantine/core";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 export const Hero = () => {
   const t = useTranslations("home");
-
+  const locale = useLocale();
   return (
     <div
       className="animate-in mx-auto flex w-full max-w-4xl flex-col 
@@ -39,7 +39,17 @@ export const Hero = () => {
       <React.Suspense
         fallback={<div className="w-full flex-row-center">Loading...</div>}
       >
-        <SearchWrapper />
+        <SearchWrapper
+          labels={{
+            placeholder: t("searchbar.placeholder"),
+            cancel: t("searchbar.cancel"),
+            noResults: t("searchbar.noResults"),
+            filter: t("searchbar.filter"),
+            filterBy: t("searchbar.filterBy"),
+            filterPlaceholder: t("searchbar.filterPlaceholder"),
+          }}
+          locale={locale}
+        />
       </React.Suspense>
     </div>
   );
