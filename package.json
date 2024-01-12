@@ -32,7 +32,8 @@
     "styled-components": "^6.1.6",
     "tailwind-custom-utilities": "^1.0.3",
     "tailwind-merge": "^2.2.0",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "@tanstack/react-query-devtools": "^5.14.5",

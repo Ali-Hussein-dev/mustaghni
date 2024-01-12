@@ -2,11 +2,10 @@
 import * as React from "react";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-import { MantineProvider, createTheme } from "@mantine/core";
+import { DirectionProvider, MantineProvider, createTheme } from "@mantine/core";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-
 import "@mantine/core/styles.css";
 
 const theme = createTheme({
@@ -41,10 +40,12 @@ export const Providers = ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <MantineProvider theme={theme} defaultColorScheme="light">
-          {children}
-        </MantineProvider>
-        <ReactQueryDevtools initialIsOpen={true} />
+        <DirectionProvider>
+          <MantineProvider theme={theme} defaultColorScheme="light">
+            {children}
+          </MantineProvider>
+        </DirectionProvider>
+        <ReactQueryDevtools />
       </QueryClientProvider>
       <SpeedInsights />
       <Analytics />
