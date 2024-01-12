@@ -1,39 +1,25 @@
 import PCard from "@/components/p-card";
+import { Title } from "@mantine/core";
+import { useTranslations } from "next-intl";
 
-const content = {
-  title: "Maximizing the Impact of Boycott",
-  description: "Make it effective and widely adopted",
-  list: [
-    {
-      title: "Stop buying their products",
-      p: "Refrain from using their products",
-    },
-    {
-      title: "Promte others to take action",
-      p: "Motivate others to abbandon their products",
-    },
-    {
-      title: "Be active on social media",
-      p: "Unfollow their accounts, report their posts, and abstain from interacting with their content on social media",
-    },
-    {
-      title: "Lower their applications rating",
-      p: "Rate their apps with one star and leave a review showing their bias",
-    },
-  ],
-};
-export const HowToBoycott = () => {
+export const EffectiveBoycotting = () => {
+  const t = useTranslations("home");
+  const keys = ["a", "b", "c", "d"] as const;
   return (
     <div className="mx-auto w-full pb-6 pt-20 text-gray-700">
       <div className="mb-4 ">
-        <h2 className="text-center text-2xl font-extrabold">{content.title}</h2>
-        <p className="text-center">{content.description}</p>
+        <Title order={2} className="mb-4 text-center text-2xl font-extrabold">
+          {t("effectiveBoycotting.title")}
+        </Title>
+        <p className="text-center">{t("effectiveBoycotting.description")}</p>
       </div>
       <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-        {content.list.map((o, i) => (
+        {keys.map((k, i) => (
           <PCard key={i}>
-            <h3 className="text-xl font-medium">{o.title}</h3>
-            <p className="">{o.p}</p>
+            <h3 className="text-xl font-medium">
+              {t(`effectiveBoycotting.list.${k}.title`)}
+            </h3>
+            <p className="">{t(`effectiveBoycotting.list.${k}.p`)}</p>
           </PCard>
         ))}
       </div>

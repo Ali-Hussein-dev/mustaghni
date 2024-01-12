@@ -7,8 +7,9 @@ import { useSearchParams } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 import { type Company } from "./company-card";
 import { useFilterByTags } from "@/hooks/use-filter-by-tags";
+import { type SearchProps, SearchProvider } from "@/hooks/use-search-ctx";
 
-export const SearchWrapper = () => {
+export const SearchWrapper = (props: SearchProps) => {
   const searchParams = useSearchParams();
   const query = searchParams.get("query");
   const fQuery = searchParams.get("fQuery")?.replace(/%7C/g, "|") ?? "";
@@ -23,12 +24,12 @@ export const SearchWrapper = () => {
   ]);
 
   return (
-    <>
+    <SearchProvider initProps={props}>
       <MantineSearchbar
         {...getSearchbarProps}
         getFilterProps={getFilterProps}
       />
       <CompaniesList companies={companies} tags={getFilterProps.selected} />
-    </>
+    </SearchProvider>
   );
 };
