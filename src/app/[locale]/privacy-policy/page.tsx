@@ -12,7 +12,7 @@ const PrivacyPolicy = async ({ params: { locale } }: Props) => {
   unstable_setRequestLocale(locale);
   const page = await getStaticPage({ slug: "privacy-policy" });
   return (
-    <div>
+    <div dir="ltr">
       <Header />
       <article className="prose prose-gray max-w-4xl px-2 pb-10 pt-8 prose-h1:text-xl">
         <PortableText value={page.content} />

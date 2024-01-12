@@ -13,7 +13,7 @@ const AboutPage = async ({
 
   const page = await getStaticPage({ slug: "about" });
   return (
-    <div className="w-full grow">
+    <div className="w-full grow" dir="ltr">
       <Header />
       <div className="animate-in px-2 pb-6">
         <article className="prose prose-gray mx-auto mt-4 h-full w-full max-w-4xl rounded-sm bg-stone-100 px-2 py-8 shadow-lg prose-headings:text-gray-700 prose-h1:text-xl prose-p:text-lg prose-p:font-medium md:px-6">

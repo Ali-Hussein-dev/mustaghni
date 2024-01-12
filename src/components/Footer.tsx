@@ -1,6 +1,6 @@
 import { FaDiscord, FaTiktok } from "react-icons/fa6";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const socialLinks = [
   // { href: "https://x.com", icon: <FaXTwitter size="20" /> },
@@ -15,6 +15,7 @@ const socialLinks = [
 ];
 export const Footer = () => {
   const t = useTranslations("home");
+  const locale = useLocale();
   return (
     <div className="w-full">
       <footer className="mx-auto w-full text-gray-800 flex-row-center">
@@ -27,13 +28,13 @@ export const Footer = () => {
           </div>
           <div className="flex-wrap gap-2 flex-row-center">
             <Link
-              href="/about"
+              href={`/${locale}/about`}
               className="text-gray-800 no-underline hover:underline"
             >
               {t("footer.links.about")}
             </Link>
             <Link
-              href="/privacy-policy"
+              href={`/${locale}/privacy-policy`}
               className="text-gray-800 no-underline hover:underline"
             >
               {t("footer.links.privacyPolicy")}
