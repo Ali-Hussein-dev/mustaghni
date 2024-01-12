@@ -1,7 +1,6 @@
 "use client";
 import { PiSpinnerGapLight } from "react-icons/pi";
 import { MdOutlineClose } from "react-icons/md";
-import { FaFilter } from "react-icons/fa";
 import { ImSearch } from "react-icons/im";
 import { ActionIcon, Input, Skeleton } from "@mantine/core";
 import * as React from "react";
@@ -10,6 +9,9 @@ import { Filter } from "./Filter";
 import { type useFilterByTags } from "@/hooks/use-filter-by-tags";
 import { BiSolidSend } from "react-icons/bi";
 import { type useSearch } from "@/hooks/use-search";
+import { useSearchCtx } from "@/hooks/use-search-ctx";
+import { useStore } from "zustand";
+import { FaFilter } from "react-icons/fa6";
 
 //======================================From-Mantine
 export const Searchbar = ({
@@ -23,6 +25,9 @@ export const Searchbar = ({
   getFilterProps: ReturnType<typeof useFilterByTags>;
 }) => {
   const [filter, setFilter] = React.useState(false);
+  const store = useSearchCtx();
+  const labels = useStore(store, (s) => s.labels);
+  const locale = useStore(store, (s) => s.locale);
   return (
     <form onSubmit={onSubmit}>
       <Input
@@ -30,15 +35,15 @@ export const Searchbar = ({
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value?.trim())}
-        placeholder="Search for brands"
+        placeholder={labels?.placeholder}
         classNames={{
           input:
-            "pl-[3rem] bg-gradient-to-t from-gray-50 to-transparent border border-gray-300 text-gray-600 duration-300 focus:shadow",
+            "px-[3rem] bg-gradient-to-t from-gray-50 to-transparent border border-gray-300 text-gray-600 duration-300 focus:shadow",
         }}
         rightSectionWidth="auto"
         rightSectionPointerEvents="all"
         rightSection={
-          <div className="gap-3 pr-3 flex-row-end">
+          <div className={"gap-3 px-3 flex-row-end"}>
             {input && (
               <ActionIcon
                 type="button"
@@ -58,7 +63,7 @@ export const Searchbar = ({
               variant="filled"
               onClick={() => setFilter(!filter)}
             >
-              <FaFilter size="14" />
+              <FaFilter size="15" />
             </ActionIcon>
             <ActionIcon
               type="submit"
@@ -68,7 +73,10 @@ export const Searchbar = ({
               color="blue"
               disabled={!input}
             >
-              <BiSolidSend size="17" />
+              <BiSolidSend
+                size="17"
+                className={`${locale === "ar" ? "-rotate-180" : ""}`}
+              />
             </ActionIcon>
           </div>
         }

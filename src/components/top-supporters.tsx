@@ -2,15 +2,18 @@ import { Paper, Text } from "@mantine/core";
 import Image from "next/image";
 import Link from "next/link";
 import { getCorpsList } from "@sanity/lib/get-corps";
-
+import { useLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
 //======================================
 export const TopSupporters = async () => {
   const corps = await getCorpsList();
+  const locale = useLocale();
+  const t = await getTranslations("home");
   return (
     <div className="pt-10 md:pt-24">
       <div className="mb-4">
         <h2 className="mb-1 text-center text-2xl font-bold">
-          Corporations Backing israel
+          {t("corps.title")}
         </h2>
       </div>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-6 md:grid-cols-3">
@@ -19,7 +22,7 @@ export const TopSupporters = async () => {
           .map((o, i) => (
             <Link
               key={i}
-              href={`/corps/${o.title}`}
+              href={`/${locale}/corps/${o.title}`}
               className="h-full rounded-2xl no-underline delay-100 duration-200 hover:shadow-lg"
             >
               <Paper

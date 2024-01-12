@@ -3,6 +3,7 @@ import { type Company, DyanmicCompanyCard } from "./company-card";
 import { FaShareAlt } from "react-icons/fa";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { useRouter } from "next/navigation";
+import { useLocale } from "next-intl";
 
 const ShareButton = () => {
   // const [shareSuccess, setShareSuccess] = useState(false);
@@ -43,6 +44,7 @@ export const CompaniesList = ({
   tags: string[];
 }) => {
   const r = useRouter();
+  const locale = useLocale();
   if (!companies) return null;
   if ("msg" in companies) {
     return (
@@ -51,6 +53,7 @@ export const CompaniesList = ({
       </p>
     );
   }
+
   return (
     <div>
       {companies.length === 0 ? (
@@ -96,7 +99,9 @@ export const CompaniesList = ({
           </div>
 
           <div className="grid grid-cols-1 gap-3 px-2 md:grid-cols-2 md:px-4">
-            {companies?.map((o, i) => <DyanmicCompanyCard key={i} {...o} />)}
+            {companies?.map((o, i) => (
+              <DyanmicCompanyCard key={i} {...o} locale={locale} />
+            ))}
           </div>
         </div>
       )}

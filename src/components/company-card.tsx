@@ -19,19 +19,23 @@ export type Company = {
 type Props = Pick<
   Company,
   "title" | "logo" | "ownedBy" | "ownerCompanyURL" | "_id"
->;
+> & {
+  locale: string;
+};
 export const CompanyCard = ({
   title,
   logo,
   ownedBy = "",
   ownerCompanyURL,
   _id,
+  locale,
 }: Props) => {
   return (
-    <Link href={`brands/${_id}`} className="group no-underline">
+    <Link href={`/${locale}/brands/${_id}`} className="group no-underline">
       <Paper
         radius="lg"
         className="h-full gap-1 px-2 py-1 shadow duration-500 flex-row-between hover:shadow-lg active:md:scale-95"
+        dir="ltr"
       >
         <div className="w-full grow gap-2 flex-row-start">
           {logo ? (
@@ -66,7 +70,7 @@ export const CompanyCard = ({
               </span>
             ) : (
               <span hidden={!ownedBy} className="text-sm">
-                Owned by {ownedBy}
+                {ownedBy}
               </span>
             )}
           </div>

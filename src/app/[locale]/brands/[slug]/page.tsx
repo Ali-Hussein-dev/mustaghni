@@ -4,11 +4,11 @@ import { Anchor, Badge, Paper, Text, Title } from "@mantine/core";
 import { PortableText } from "@portabletext/react";
 import { getBrand, getBrandName } from "@sanity/lib/get-companies";
 import { type Metadata } from "next";
+import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
-import { HiDocumentMagnifyingGlass } from "react-icons/hi2";
 import { PiCaretDoubleUpFill } from "react-icons/pi";
 
-type Props = { params: { slug: string } };
+type Props = { params: { slug: string; locale: string } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const res = await getBrandName(params.slug);
@@ -23,7 +23,9 @@ const Isr = () => (
 );
 //======================================
 const BrandPage = async ({ params }: Props) => {
-  const _id = params.slug.replace(/%20/g, " ");
+  const { locale, slug } = params;
+  unstable_setRequestLocale(locale);
+  const _id = slug.replace(/%20/g, " ");
   const brand = await getBrand(_id);
   const isBasedOnIsrael = brand?.tags?.includes("israel");
   const hasEvidence = !!brand?.evidence;
@@ -35,6 +37,7 @@ const BrandPage = async ({ params }: Props) => {
           className="gap-3 px-3 pb-3 pt-4 shadow-lg flex-row-start"
           radius="lg"
           withBorder
+          dir="ltr"
         >
           {brand.logo ? (
             <ImageContainer
@@ -77,7 +80,7 @@ const BrandPage = async ({ params }: Props) => {
             )}
           </div>
         </Paper>
-        <Paper className="px-3 py-4" withBorder radius="lg">
+        <Paper className="px-3 py-4" withBorder radius="lg" dir="ltr">
           <div className="mb-2 gap-2 flex-row-start">
             {/* <HiDocumentMagnifyingGlass size="24" className="text-red-800" /> */}
             <Image
@@ -122,7 +125,7 @@ const BrandPage = async ({ params }: Props) => {
           )}
         </Paper>
         {brand.alternatives && (
-          <Paper withBorder className="px-3 py-4" radius="lg">
+          <Paper withBorder className="px-3 py-4" radius="lg" dir="ltr">
             <div className="mb-2 gap-3 flex-row-start">
               <PiCaretDoubleUpFill size="24" className="text-green-400" />
               <Title order={3} c="gray" className="font-bold">
