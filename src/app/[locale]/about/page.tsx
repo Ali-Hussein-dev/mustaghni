@@ -1,9 +1,16 @@
 import { getStaticPage } from "@sanity/lib/get-static-page";
 import { PortableText } from "@portabletext/react";
 import { Header } from "@/components/Header";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 //======================================
-const AboutPage = async () => {
+const AboutPage = async ({
+  params: { locale },
+}: {
+  params: { locale: string };
+}) => {
+  unstable_setRequestLocale(locale);
+
   const page = await getStaticPage({ slug: "about" });
   return (
     <div className="w-full grow">
