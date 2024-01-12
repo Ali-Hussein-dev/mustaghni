@@ -1,3 +1,7 @@
+import NextIntl from 'next-intl/plugin';
+// const withNextIntl = require('next-intl/plugin')();
+const withNextIntl = NextIntl("./src/i18n.ts");
+
 /**
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
  * for Docker builds.
@@ -5,7 +9,7 @@
 await import("./src/env.mjs");
 
 /** @type {import("next").NextConfig} */
-const config = {
+const NextConfig = {
     images: {
         remotePatterns: [{
             protocol: "https",
@@ -24,5 +28,8 @@ const config = {
         ]
     },
 };
+
+
+const config = withNextIntl(NextConfig);
 
 export default config;

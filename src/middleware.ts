@@ -1,13 +1,13 @@
 import type { NextRequest } from 'next/server'
-
 import { NextResponse } from 'next/server'
-
+import createMiddleware from 'next-intl/middleware';
+import { locales, localePrefix } from './navigation';
 // Block Austria, prefer Germany
 const BLOCKED_COUNTRY = 'isr'
 
 // Limit middleware pathname config
 export const config = {
-    matcher: '/',
+    matcher: ['/', '/(en|ar)/:path*'],
 }
 
 export function middleware(req: NextRequest) {
@@ -25,3 +25,9 @@ export function middleware(req: NextRequest) {
     // Rewrite to URL
     return NextResponse.rewrite(req.nextUrl)
 }
+
+export default createMiddleware({
+    locales,
+    localePrefix,
+    defaultLocale: 'en',
+});
