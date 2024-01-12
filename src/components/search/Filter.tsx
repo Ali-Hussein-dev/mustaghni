@@ -1,5 +1,5 @@
 "use client";
-import { IoSend } from "react-icons/io5";
+import { FaFilter } from "react-icons/fa6";
 import { Button, MultiSelect, Paper } from "@mantine/core";
 import { tags } from "@/data/tags";
 import * as React from "react";
@@ -61,7 +61,7 @@ export const Filter = ({
             onClick={onSubmit}
             loading={isFetching}
             disabled={selected.length === 0}
-            rightSection={<IoSend />}
+            rightSection={<FaFilter />}
           >
             Filter
           </Button>

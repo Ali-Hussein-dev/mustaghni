@@ -1,13 +1,14 @@
 "use client";
 import { PiSpinnerGapLight } from "react-icons/pi";
-import { MdFilterList, MdOutlineClose } from "react-icons/md";
+import { MdOutlineClose } from "react-icons/md";
+import { FaFilter } from "react-icons/fa";
 import { ImSearch } from "react-icons/im";
 import { ActionIcon, Input, Skeleton } from "@mantine/core";
 import * as React from "react";
 import dynamic from "next/dynamic";
 import { Filter } from "./Filter";
 import { type useFilterByTags } from "@/hooks/use-filter-by-tags";
-import { IoSend } from "react-icons/io5";
+import { BiSolidSend } from "react-icons/bi";
 import { type useSearch } from "@/hooks/use-search";
 
 //======================================From-Mantine
@@ -57,16 +58,17 @@ export const Searchbar = ({
               variant="filled"
               onClick={() => setFilter(!filter)}
             >
-              <MdFilterList size="25" />
+              <FaFilter size="14" />
             </ActionIcon>
             <ActionIcon
               type="submit"
               size="lg"
               radius="lg"
               variant="filled"
+              color="blue"
               disabled={!input}
             >
-              <IoSend size="17" />
+              <BiSolidSend size="17" />
             </ActionIcon>
           </div>
         }

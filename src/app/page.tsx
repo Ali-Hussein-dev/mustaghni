@@ -10,7 +10,7 @@ export const revalidate = 3600; // 1 hour
 
 export default function HomePage() {
   return (
-    <main className="center mx-auto h-full w-full max-w-4xl grow px-2 py-10 md:px-0 ">
+    <main className="center mx-auto h-full w-full max-w-4xl grow px-2 py-10 lg:px-0 ">
       <Hero />
       <WhichBrands />
       <Discord />

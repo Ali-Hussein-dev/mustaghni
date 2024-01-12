@@ -6,7 +6,7 @@ const list = [
     a: "Boycotts against Israel are having an impact, but they are just one part of the solution, not the whole solution.",
   },
   {
-    q: "What are the benefits of boycotting israeli companies for local businesses and the economy?",
+    q: "What are the benefits of the boycotting for local businesses and the economy?",
     a: "Boycotts can boost national economic growth, shift consumption patterns, and decrease unemployment by supporting local industries and small businesses. Additionally, boycotts can prompt businesses to negotiate, leading to policy changes and ethical behavior.",
   },
   {
@@ -23,7 +23,7 @@ export const FAQs = () => {
       </Title>
 
       <Accordion
-        variant="contained"
+        variant="filled"
         w="100%"
         radius="lg"
         transitionDuration={270}
@@ -32,6 +32,7 @@ export const FAQs = () => {
           control: "!font-bold text-lg",
           panel: "text-lg",
         }}
+        defaultValue={list[0]?.q}
       >
         {list.map((item) => (
           <Accordion.Item key={item.q} value={item.q}>
