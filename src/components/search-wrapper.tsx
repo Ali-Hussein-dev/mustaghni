@@ -18,11 +18,10 @@ export const SearchWrapper = (props: SearchProps) => {
     setSelected: getFilterProps.setSelected,
   });
   const queryClient = useQueryClient();
-  const companies = queryClient.getQueryData<Company[]>([
-    "brands",
-    query ?? fQuery ?? "",
-  ]);
-
+  const companies = queryClient.getQueryData<Company[]>(
+    !fQuery && !query ? [] : ["brands", fQuery || query],
+  );
+  console.log({ fQuery, query });
   return (
     <SearchProvider initProps={props}>
       <MantineSearchbar

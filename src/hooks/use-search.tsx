@@ -19,7 +19,7 @@ export const useSearch = ({
     isFetching,
     refetch,
   } = useQuery<Company[]>({
-    queryKey: ["brands", input],
+    queryKey: !!input ? ["brands", input] : [],
     queryFn: () =>
       fetch(`/api/search?name=${input}`, {
         method: "GET",
@@ -32,9 +32,8 @@ export const useSearch = ({
     if (!query) return;
     setInput(query);
     void refetch();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log({ query, input });
   const onSubmit = React.useCallback(
     (e: React.FormEvent) => {
       e.preventDefault();
