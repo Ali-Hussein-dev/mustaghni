@@ -91,7 +91,7 @@ export const CompaniesList = ({
                 color="red"
                 variant="outline"
                 size="lg"
-                onClick={() => r.push("/", { scroll: false })}
+                onClick={() => r.push(`/${locale}`, { scroll: false })}
               >
                 <RiDeleteBinFill />
               </ActionIcon>
