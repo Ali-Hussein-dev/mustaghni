@@ -26,7 +26,7 @@ export default function HomePage({ params: { locale } }: Props) {
       <Discord />
       <EffectiveBoycotting />
       <FAQs list={faqs} title={t("FAQs.title")} />
-      <TopSupporters />
+      {/* <TopSupporters /> */}
     </main>
   );
 }

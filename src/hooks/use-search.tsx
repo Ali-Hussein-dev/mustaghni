@@ -27,6 +27,8 @@ export const useSearch = ({
     enabled: false,
     // enabled: !!query,
     staleTime: 1000 * 60 * 60 * 24, // 1 day
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
   });
   React.useEffect(() => {
     if (!query) return;
