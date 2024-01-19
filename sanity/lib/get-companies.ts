@@ -67,8 +67,8 @@ export const getBrandName = async (_id: string): Promise<Pick<Company, "title">>
     })
 }
 
-// export const getAllTags = async (): Promise<Company[]> => {
-//     return client.fetch(`*[_type == "company" ]{
-//         tags,
-//     }`)
-// }
+export const getAllTags = async (): Promise<Company[]> => {
+    return client.fetch(`*[_type == "company"]{
+        tags,
+    }`)
+}
