@@ -7,6 +7,7 @@ export const tags = [
     "café",
     "cars",
     "cereals",
+    "charity",
     "chemicals",
     "chocolate",
     "cleaning",
