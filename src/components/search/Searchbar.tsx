@@ -12,6 +12,7 @@ import { type useSearch } from "@/hooks/use-search";
 import { useSearchCtx } from "@/hooks/use-search-ctx";
 import { useStore } from "zustand";
 import { FaFilter } from "react-icons/fa6";
+import { useSearchParams } from "next/navigation";
 
 //======================================From-Mantine
 export const Searchbar = ({
@@ -25,9 +26,14 @@ export const Searchbar = ({
   getFilterProps: ReturnType<typeof useFilterByTags>;
 }) => {
   const [filter, setFilter] = React.useState(false);
+
+  const params = useSearchParams();
+  const hasNoParams = params.size === 0;
+
   const store = useSearchCtx();
   const labels = useStore(store, (s) => s.labels);
   const locale = useStore(store, (s) => s.locale);
+
   return (
     <form onSubmit={onSubmit}>
       <Input
@@ -82,7 +88,7 @@ export const Searchbar = ({
         }
         // leftSectionWidth="auto"
         leftSection={
-          isLoading ? (
+          isLoading && !hasNoParams ? (
             <PiSpinnerGapLight className="animate-spin" size="25" />
           ) : (
             <ImSearch size="20" className="text-gray-400" />
