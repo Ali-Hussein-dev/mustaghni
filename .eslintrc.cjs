@@ -31,6 +31,11 @@ const config = {
       },
     ],
   },
+  overrides: [{
+    extends: ['plugin:@typescript-eslint/disable-type-checked'],
+    files: ['./**/*.js'],
+  },
+  ],
 };
 
 module.exports = config;

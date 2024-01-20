@@ -1,6 +1,5 @@
 import * as React from "react";
 import { Hero } from "@/components/Hero";
-import { TopSupporters } from "@/components/top-supporters";
 import { EvaluationCriteria } from "@/components/which-brands";
 import { EffectiveBoycotting } from "@/components/how-to-boycott";
 import { Discord } from "@/components/discord";
