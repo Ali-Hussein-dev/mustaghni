@@ -25,6 +25,16 @@ const theme = createTheme({
       "#030712",
     ],
   },
+  radius: {
+    xs: "2px",
+    sm: "3px",
+    md: "6px",
+    lg: "8px",
+    xl: "12px",
+    xxl: "16px",
+    xxxl: "24px",
+    full: "9999px",
+  },
 });
 export const Providers = ({ children }: { children: React.ReactNode }) => {
   const [queryClient] = React.useState(
