@@ -1,6 +1,8 @@
 import { FaDiscord, FaTiktok } from "react-icons/fa6";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
+import { SelectLanguage } from "./select-language";
+import { Text } from "@mantine/core";
 
 const socialLinks = [
   // { href: "https://x.com", icon: <FaXTwitter size="20" /> },
@@ -21,8 +23,10 @@ export const Footer = () => {
       <footer className="mx-auto w-full text-gray-800 flex-row-center">
         <div className="grid w-full max-w-4xl grid-cols-1 gap-2 border-0 border-t border-solid border-neutral-400 px-1 py-2 md:grid-cols-3">
           <div className="flex items-center justify-center gap-4 md:justify-start">
-            <div>
-              @{new Date().getFullYear()}{" "}
+            <div className="flex gap-1">
+              <Text display="inline-block" dir="ltr">
+                ©{new Date().getFullYear()}
+              </Text>
               <span className="font-bold">Mustaghni</span>
             </div>
           </div>
@@ -40,9 +44,16 @@ export const Footer = () => {
               {t("footer.links.privacyPolicy")}
             </Link>
           </div>
-          <div className="flex items-center justify-center gap-4 md:justify-end">
+          <div className="flex items-center justify-center gap-3 md:justify-end">
+            <SelectLanguage locale={locale} />
             {socialLinks.map((o, i) => (
-              <a key={i} href={o.href} target="_black" rel="noreferrer">
+              <a
+                key={i}
+                href={o.href}
+                target="_black"
+                rel="noreferrer"
+                className="center h-9 w-9 rounded-xl border border-solid border-gray-300 hover:border-gray-400"
+              >
                 {o.icon}
               </a>
             ))}
