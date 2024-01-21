@@ -5,7 +5,7 @@ import * as React from "react";
 import { type useFilterByTags } from "@/hooks/use-filter-by-tags";
 import { useSearchCtx } from "@/hooks/use-search-ctx";
 import { useStore } from "zustand";
-import { FaFilter } from "react-icons/fa6";
+
 const allTags = [
   {
     group: "Country",
@@ -32,7 +32,10 @@ export const Filter = ({
   const labels = useStore(store, (s) => s.labels);
   return (
     <div className="mt-2 px-3">
-      <Paper className="space-y-4 rounded-xl bg-gray-50 px-3 pb-3 pt-4">
+      <Paper
+        className="space-y-4 rounded-xl bg-gray-50 px-3 pb-3 pt-4"
+        withBorder
+      >
         <MultiSelect
           data={allTags}
           value={selected}
@@ -40,15 +43,16 @@ export const Filter = ({
           limit={selectedLimit ? 0 : undefined}
           placeholder={selectedLimit ? "" : labels?.filterPlaceholder}
           size="lg"
+          radius="full"
           label={labels?.filterBy}
           searchable
         />
-        <div className="gap-3 flex-row-center">
+        <div className="gap-3 flex-row-end">
           <Button
-            radius="xl"
-            w="100%"
+            radius="full"
+            w="fit-content"
             size="md"
-            variant="outline"
+            variant="subtle"
             type="button"
             onClick={() => setFilter(false)}
             // rightSection={<IoSend />}
@@ -56,15 +60,14 @@ export const Filter = ({
             {labels?.cancel}
           </Button>
           <Button
-            radius="xl"
-            w="100%"
+            radius="full"
+            w="fit-content"
             size="md"
             variant="filled"
             type="submit"
             onClick={onSubmit}
             loading={isFetching}
             disabled={selected.length === 0}
-            rightSection={<FaFilter />}
           >
             {labels?.filter}
           </Button>
