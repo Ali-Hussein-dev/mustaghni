@@ -1,0 +1,24 @@
+{
+    "name": "Mustaghni",
+    "description": "Easily search for brands associated with genocide in Palestine.",
+    "icons": [
+        {
+            "src": "/icons/icon512_rounded.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "/icons/icon512_maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "theme_color": "#1f2937",
+    "background_color": "#FFFFFF",
+    "start_url": "/",
+    "id": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "form_factor": "web_application"
+}
