@@ -45,7 +45,6 @@ export const Footer = () => {
             </Link>
           </div>
           <div className="flex items-center justify-center gap-3 md:justify-end">
-            <SelectLanguage locale={locale} />
             {socialLinks.map((o, i) => (
               <a
                 key={i}
@@ -57,6 +56,7 @@ export const Footer = () => {
                 {o.icon}
               </a>
             ))}
+            <SelectLanguage locale={locale} />
           </div>
         </div>
       </footer>

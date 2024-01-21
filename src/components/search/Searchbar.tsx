@@ -54,7 +54,7 @@ export const Searchbar = ({
               <ActionIcon
                 type="button"
                 size="lg"
-                radius="lg"
+                radius="full"
                 variant="outline"
                 onClick={() => setInput("")}
                 // className="center h-9 w-9 rounded-full bg-gray-100"
@@ -65,8 +65,9 @@ export const Searchbar = ({
             <ActionIcon
               type="button"
               size="lg"
-              radius="lg"
+              radius="full"
               variant="filled"
+              color="dark"
               onClick={() => setFilter(!filter)}
             >
               <FaFilter size="15" />
@@ -74,9 +75,9 @@ export const Searchbar = ({
             <ActionIcon
               type="submit"
               size="lg"
-              radius="lg"
+              radius="full"
               variant="filled"
-              color="blue"
+              color="dark"
               disabled={!input}
             >
               <BiSolidSend
@@ -94,7 +95,7 @@ export const Searchbar = ({
             <ImSearch size="20" className="text-gray-400" />
           )
         }
-        radius="xl"
+        radius="full"
         size="xl"
       />
       {filter && <Filter {...getFilterProps} setFilter={setFilter} />}

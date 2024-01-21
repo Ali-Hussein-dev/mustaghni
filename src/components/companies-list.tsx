@@ -29,7 +29,7 @@ const ShareButton = () => {
       onClick={handleShare}
       color="green"
       variant="light"
-      radius="lg"
+      radius="xxl"
       size="lg"
     >
       <FaShareAlt />
@@ -76,7 +76,7 @@ export const CompaniesList = ({
             </div>
             <div className="gap-2 flex-row-end">
               <ActionIcon
-                radius="xl"
+                radius="xxl"
                 className="font-medium"
                 color="gray"
                 variant="light"
@@ -87,7 +87,7 @@ export const CompaniesList = ({
               </ActionIcon>
               <ShareButton />
               <ActionIcon
-                radius="xl"
+                radius="xxl"
                 color="red"
                 variant="outline"
                 size="lg"
