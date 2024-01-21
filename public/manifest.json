@@ -63,4 +63,10 @@
         "education"
     ],
     "prefer_related_applications": false,
+    "shortcuts": [
+        {
+            "name": "About",
+            "url": "/en/about"
+        }
+    ]
 }
