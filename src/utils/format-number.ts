@@ -5,6 +5,6 @@
  * 10, 5 => +10
  * 11, 5 => +10
  */
-export function formatNumber(base: number, divisor: number) {
+export function formatNumber(base: number, divisor = 10) {
     return base % divisor === 0 ? base : "+" + (base - (base % divisor));
 }

@@ -18,10 +18,10 @@ export const CountsLabel = ({
     <div className="mb-2 gap-3 rounded-sm bg-black/90 px-2 py-1 text-gray-100 flex-row-start">
       <MdNumbers className="text-red-500" size="17" />
       <span hidden={!data.searches} className="text-center text-lg">
-        {formatNumber(data?.searches, 5)} {searches}
+        {formatNumber(data?.searches)} {searches}
       </span>
       <span hidden={!data.brands} className="text-center text-lg">
-        {formatNumber(data?.brands, 5)} {brands}
+        {formatNumber(data?.brands)} {brands}
       </span>
       <MdNumbers className="text-red-500" size="17" />
     </div>
