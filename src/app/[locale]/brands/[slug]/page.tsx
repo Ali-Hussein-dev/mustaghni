@@ -1,6 +1,6 @@
 import CompanyLayout from "@/components/company-layout";
 import { ImageContainer } from "@/components/img-container";
-import { Anchor, Badge, Paper, Text, Title } from "@mantine/core";
+import { Anchor, Badge, Divider, Paper, Text, Title } from "@mantine/core";
 import { PortableText } from "@portabletext/react";
 import { getBrand, getBrandName } from "@sanity/lib/get-companies";
 import { type Metadata } from "next";
@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const res = await getBrandName(params.slug);
   const name = res.title ?? "";
   return {
-    title: `${name} | Mustaghni`,
-    description: `Brands list owned by ${name}`,
+    title: `${name} - Mustaghni`,
+    description: name,
   };
 }
 const Isr = () => (
@@ -126,20 +126,22 @@ const BrandPage = async ({ params }: Props) => {
               Please be patient we are adding evidence for every brand
             </Text>
           )}
+          {/* ALTERNATIVES */}
+          {brand.alternatives && (
+            <>
+              <Divider my="md" color="#e5e7eb" />
+              <div className="mb-2 gap-3 flex-row-start">
+                <PiCaretDoubleUpFill size="24" className="text-green-400" />
+                <Title order={3} c="gray" className="font-bold">
+                  Alternatives
+                </Title>
+              </div>
+              <div className="prose prose-gray max-w-full ">
+                <PortableText value={brand.alternatives} />
+              </div>
+            </>
+          )}
         </Paper>
-        {brand.alternatives && (
-          <Paper withBorder className="px-3 py-4" radius="lg" dir="ltr">
-            <div className="mb-2 gap-3 flex-row-start">
-              <PiCaretDoubleUpFill size="24" className="text-green-400" />
-              <Title order={3} c="gray" className="font-bold">
-                Discover Alternatives
-              </Title>
-            </div>
-            <div className="prose prose-gray max-w-full ">
-              <PortableText value={brand.alternatives} />
-            </div>
-          </Paper>
-        )}
       </div>
     </CompanyLayout>
   );
