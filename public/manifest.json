@@ -1,5 +1,6 @@
 {
     "name": "Mustaghni",
+    "short_name": "Mustaghni",
     "description": "Easily search for brands associated with genocide in Palestine.",
     "icons": [
         {
@@ -55,5 +56,11 @@
     "id": "/",
     "display": "standalone",
     "orientation": "portrait",
-    "form_factor": "web_application"
+    "categories": [
+        "politics",
+        "news",
+        "lifestyle",
+        "education"
+    ],
+    "prefer_related_applications": false,
 }
