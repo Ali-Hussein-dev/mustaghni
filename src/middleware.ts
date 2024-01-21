@@ -3,7 +3,7 @@ import { NextResponse } from 'next/server'
 import createMiddleware from 'next-intl/middleware';
 import { locales, localePrefix } from './navigation';
 // Block Austria, prefer Germany
-const BLOCKED_COUNTRY = 'isr'
+const BLOCKED_COUNTRY = 'Il'
 
 // Limit middleware pathname config
 export const config = {
