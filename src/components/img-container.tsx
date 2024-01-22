@@ -12,7 +12,7 @@ export const ImageContainer = ({
       <div className="triangle animate-bounce"></div>
       <Image
         className={twMerge(
-          "rounded-3xl border border-solid border-gray-200 object-contain",
+          "rounded-3xl border border-solid border-gray-200 object-contain px-1",
           cn,
         )}
         quality={60}

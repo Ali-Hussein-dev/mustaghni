@@ -6,7 +6,7 @@ import { getBrand, getBrandName } from "@sanity/lib/get-companies";
 import { type Metadata } from "next";
 import { unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
-import { PiCaretDoubleUpFill } from "react-icons/pi";
+import { BsFillGridFill } from "react-icons/bs";
 
 type Props = { params: { slug: string; locale: string } };
 
@@ -18,9 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: name,
   };
 }
-const Isr = () => (
-  <p className="!inline-block !line-through decoration-red-600">ISRAEL</p>
-);
+
 //======================================
 const BrandPage = async ({ params }: Props) => {
   const { locale, slug } = params;
@@ -34,7 +32,7 @@ const BrandPage = async ({ params }: Props) => {
     <CompanyLayout>
       <div className="space-y-5 py-4">
         <Paper
-          className="gap-3 px-3 pb-3 pt-4 shadow-lg flex-row-start"
+          className="flex flex-col items-center justify-center gap-3 px-3 pb-3 pt-4 shadow-lg md:flex-row md:justify-start"
           radius="lg"
           withBorder
           dir="ltr"
@@ -43,33 +41,25 @@ const BrandPage = async ({ params }: Props) => {
             <ImageContainer
               src={brand.logo}
               alt="logo"
-              width="100"
-              height="100"
+              width="90"
+              height="90"
             />
           ) : (
             <div></div>
           )}
-          <div className="flex flex-col items-start gap-2">
+          <div className="flex flex-col items-center gap-2 md:items-start">
             <Title c="gray" order={2}>
               {brand.title}
             </Title>
-            <div className="flex-wrap gap-2 flex-row-start">
-              {Array.isArray(brand.tags) && (
-                <div className="flex-wrap gap-3 flex-row-start">
-                  {brand.tags.sort().map((str, i) => (
-                    <Badge
-                      key={i}
-                      size="md"
-                      color="dark"
-                      variant="dot"
-                      radius="sm"
-                    >
-                      {str}
-                    </Badge>
-                  ))}
-                </div>
-              )}
-            </div>
+            {Array.isArray(brand.tags) && (
+              <div className="flex flex-wrap items-center justify-center gap-2 md:justify-start">
+                {brand.tags.sort().map((str, i) => (
+                  <Badge key={i} size="md" color="gray" radius="sm">
+                    {str}
+                  </Badge>
+                ))}
+              </div>
+            )}
             {brand.ownedBy && (
               <div className="">
                 Owned by:{" "}
@@ -98,11 +88,7 @@ const BrandPage = async ({ params }: Props) => {
             </Title>
           </div>
           {/* Boycott by israel ort */}
-          {isBasedOnIsrael && (
-            <Text>
-              The brand is based on <Isr />!
-            </Text>
-          )}
+          {isBasedOnIsrael && <Text>The brand is based on israel!</Text>}
           {/* Boycott by owner */}
           {isOwnedByCorp && (
             <Text className="mb-1">
@@ -131,7 +117,7 @@ const BrandPage = async ({ params }: Props) => {
             <>
               <Divider my="md" color="#e5e7eb" />
               <div className="mb-2 gap-3 flex-row-start">
-                <PiCaretDoubleUpFill size="24" className="text-green-400" />
+                <BsFillGridFill size="20" className="text-green-400" />
                 <Title order={3} c="gray" className="font-bold">
                   Alternatives
                 </Title>
