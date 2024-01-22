@@ -1,0 +1,14 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "org.mustaghni.www.twa",
+      "sha256_cert_fingerprints": [
+        "66:1C:BF:76:4F:F2:22:AA:C7:F3:F9:D7:00:78:CF:FE:67:DE:B8:A7:28:D3:55:CE:08:F0:0E:51:EB:4F:8B:D4"
+      ]
+    }
+  }
+]
