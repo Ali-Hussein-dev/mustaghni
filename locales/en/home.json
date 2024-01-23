@@ -1,5 +1,5 @@
 {
-    "subtitle": "Easily search for brands associated with genocide in Palestine.",
+    "subtitle": "Ethical Wise Consumption",
     "searches": "Searches",
     "brands": "Brands",
     "searchbar": {
@@ -12,18 +12,18 @@
     },
     "evaluationCriteria": {
         "title": "Evaluation Criteria",
-        "description": "The level of support for israel differs among brands.",
+        "description": "We categorize brands into 3 levels based on their support to israeli.",
         "list": {
             "a": {
-                "description": "Israeli brands and all brands explicitly supporting israeli occupation, such as Fiverr, Wix, Zara",
+                "description": "Israeli brands and all brands explicitly supporting israeli, such as Fiverr, Wix, Zara",
                 "level": "1"
             },
             "b": {
-                "description": "Brands owned by giant corporations that support israeli occupation, such as brands owned by Pepsico, Nestle, Coca Cola",
+                "description": "Brands owned by giant corporations that support israeli, such as brands owned by Pepsico, Nestle, Coca Cola",
                 "level": "2"
             },
             "c": {
-                "description": "Brands have business agreements with israel, such as HP, Intel, Google",
+                "description": "Brands have business agreements with israel, such as HP, Intel, Microsoft",
                 "level": "3"
             }
         }
