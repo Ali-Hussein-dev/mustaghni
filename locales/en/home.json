@@ -75,6 +75,10 @@
     "header": {
         "about": "About"
     },
+    "easyAccess": {
+        "title": "Easy Access",
+        "description": "Install it on all platforms through the browser"
+    },
     "footer": {
         "links": {
             "about": "What is Mustaghni?",

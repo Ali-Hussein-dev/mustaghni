@@ -4,8 +4,10 @@ import { EvaluationCriteria } from "@/components/which-brands";
 import { EffectiveBoycotting } from "@/components/how-to-boycott";
 import { Discord } from "@/components/discord";
 import { FAQs } from "@/components/FAQs";
+// import { DynamicInstallButton } from "@/components/ios";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
+import { EasyAccess } from "@/components/easy-access";
 
 export const revalidate = 3600; // 1 hour
 type Props = {
@@ -21,10 +23,12 @@ export default function HomePage({ params: { locale } }: Props) {
   return (
     <main className="center mx-auto h-full w-full max-w-4xl grow px-2 py-10 lg:px-0">
       <Hero />
+      {/* <DynamicInstallButton /> */}
       <EvaluationCriteria />
-      <Discord />
+      <EasyAccess />
       <EffectiveBoycotting />
       <FAQs list={faqs} title={t("FAQs.title")} />
+      <Discord />
       {/* <TopSupporters /> */}
     </main>
   );
