@@ -7,7 +7,8 @@
       "namespace": "android_app",
       "package_name": "org.mustaghni.www.twa",
       "sha256_cert_fingerprints": [
-        "66:1C:BF:76:4F:F2:22:AA:C7:F3:F9:D7:00:78:CF:FE:67:DE:B8:A7:28:D3:55:CE:08:F0:0E:51:EB:4F:8B:D4"
+        "66:1C:BF:76:4F:F2:22:AA:C7:F3:F9:D7:00:78:CF:FE:67:DE:B8:A7:28:D3:55:CE:08:F0:0E:51:EB:4F:8B:D4",
+        "36:EB:29:CB:8D:26:94:2D:DD:5C:4A:38:03:95:B9:47:34:10:7C:E0:17:D9:7C:B9:33:2E:DD:F9:DA:1B:05:5C"
       ]
     }
   }
