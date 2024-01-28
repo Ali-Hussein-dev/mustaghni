@@ -22,9 +22,6 @@ export const PATCH = async (req: ExtendedRequest) => {
             .patch(body._id, { [body.property]: { boycotters: 1 } })
             .setIfMissing({ boycotters: 0 })
             .commit()
-            .then((updatedDocument) => {
-                console.log("updated document", updatedDocument);
-            })
             .catch((err: { message: string }) => {
                 console.error("Oh no, the update failed: ", err.message);
             });
