@@ -1,6 +1,14 @@
 import CompanyLayout from "@/components/company-layout";
 import { ImageContainer } from "@/components/img-container";
-import { Anchor, Badge, Divider, Paper, Text, Title } from "@mantine/core";
+import {
+  Anchor,
+  Avatar,
+  Badge,
+  Divider,
+  Paper,
+  Text,
+  Title,
+} from "@mantine/core";
 import { PortableText } from "@portabletext/react";
 import { getBrand, getBrandName } from "@sanity/lib/get-companies";
 import { type Metadata } from "next";
@@ -45,7 +53,9 @@ const BrandPage = async ({ params }: Props) => {
               height="90"
             />
           ) : (
-            <div></div>
+            <Avatar size="xl" radius="xxxl" color="red">
+              {brand.title[0]}
+            </Avatar>
           )}
           <div className="flex flex-col items-center gap-2 md:items-start">
             <Title c="gray" order={2}>
