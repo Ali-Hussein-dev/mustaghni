@@ -5,23 +5,46 @@ import { type CompanyProps } from "./company-card";
 import { CiBookmarkCheck, CiBookmarkPlus } from "react-icons/ci";
 import { useTranslations } from "next-intl";
 import dynamic from "next/dynamic";
+import { useMutation } from "@tanstack/react-query";
 
 export const BoycottButton = ({ brand }: { brand: CompanyProps }) => {
   const { addBrand, brands, removeBrand } = useBoycottedBrands();
   const isBoycotted = brands.some((b) => b._id === brand._id);
   const t = useTranslations("home");
 
+  const { mutate, isPending } = useMutation({
+    mutationKey: ["boycott"],
+    mutationFn: ({ property }: { property: "dec" | "inc" }) =>
+      fetch("/api/company", {
+        method: "PATCH",
+        body: JSON.stringify({
+          _id: brand._id,
+          property,
+        }),
+        headers: { "Content-Type": "application/json" },
+      }),
+  });
+  const handleClick = () => {
+    if (isBoycotted) {
+      removeBrand(brand);
+      mutate({ property: "dec" });
+    } else {
+      addBrand(brand);
+      mutate({ property: "inc" });
+    }
+  };
+
   return (
     <div className="isolate z-10 mx-auto -translate-y-5 flex-row-center">
       <Button
-        type="button"
         radius="xxl"
-        onClick={isBoycotted ? () => removeBrand(brand) : () => addBrand(brand)}
+        onClick={handleClick}
         className="duration-300"
         color="green"
         w="150px"
         bg={isBoycotted ? "green" : "white"}
         variant={isBoycotted ? "filled" : "outline"}
+        loading={isPending}
         leftSection={
           isBoycotted ? (
             <CiBookmarkCheck size="20" />

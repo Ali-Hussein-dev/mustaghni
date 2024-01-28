@@ -33,20 +33,20 @@ const companySchema = {
             of: [{ type: "block" }],
         },
         {
-          name: "tags",
-          title: "Tags",
-          type: "array",
-          of: [{ type: "string" }],
-      },
-      {
-          name: "ownedBy",
-          title: "owned by",
-          type: "string",
-      },
-      {
-          name: "ownerCompanyURL",
-          title: "Owner company URL",
-          type: "url",
+            name: "tags",
+            title: "Tags",
+            type: "array",
+            of: [{ type: "string" }],
+        },
+        {
+            name: "ownedBy",
+            title: "owned by",
+            type: "string",
+        },
+        {
+            name: "ownerCompanyURL",
+            title: "Owner company URL",
+            type: "url",
         },
         {
             name: "logo",
@@ -55,6 +55,12 @@ const companySchema = {
             options: {
                 accept: "image/png, image/jpeg, image/jpg",
             },
+        },
+        {
+            name: "boycotters",
+            title: "Boycotters count",
+            type: "number",
+            initialValue: 0,
         },
     ],
 };
