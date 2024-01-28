@@ -21,7 +21,9 @@ export const useBoycottedBrands = create<State>()(
           return { brands: [...state.brands, brand] };
         }),
       removeBrand: (brand) =>
-        set((state) => ({ brands: state.brands.filter((b) => b !== brand) })),
+        set((state) => ({
+          brands: state.brands.filter((b) => b._id !== brand._id),
+        })),
     }),
     {
       name: "mustaghni-boycotted-brands",
