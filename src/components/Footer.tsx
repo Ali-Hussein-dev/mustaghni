@@ -7,7 +7,7 @@ import { Text } from "@mantine/core";
 const socialLinks = [
   // { href: "https://x.com", icon: <FaXTwitter size="20" /> },
   {
-    href: "https://discord.gg/Esqs7f3J",
+    href: "https://discord.gg/3N64cTz8rK",
     icon: <FaDiscord size="22" className="text-gray-600" />,
   },
   {
