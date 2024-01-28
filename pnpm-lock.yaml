@@ -29,13 +29,14 @@ specifiers:
   eslint: ^8.47.0
   eslint-config-next: ^14.0.4
   next: ^14.0.4
-  next-intl: ^3.4.2
+  next-intl: ^3.5.2
   next-sanity: ^7.0.6
   nextjs-google-analytics: ^2.3.3
   postcss: ^8.4.27
   prettier: ^3.0.0
   prettier-plugin-tailwindcss: ^0.5.1
   react: 18.2.0
+  react-device-detect: ^2.2.3
   react-dom: 18.2.0
   react-icons: ^4.11.0
   sanity: ^3.23.4
@@ -46,7 +47,7 @@ specifiers:
   typescript: ^5.1.6
   webpack: ^5.89.0
   zod: ^3.22.4
-  zustand: ^4.4.7
+  zustand: ^4.5.0
 
 dependencies:
   '@mantine/core': 7.3.2_txddgqjkshrym7upa2xs4wkqim
@@ -65,10 +66,11 @@ dependencies:
   '@vercel/analytics': 1.1.1
   '@vercel/speed-insights': 1.0.2
   next: 14.0.4_biqbaboplfbrettd7655fr4n2y
-  next-intl: 3.4.2_next@14.0.4+react@18.2.0
+  next-intl: 3.5.2_next@14.0.4+react@18.2.0
   next-sanity: 7.0.6_dmsflccx573iihsjimp5jhxtmq
   nextjs-google-analytics: 2.3.3_next@14.0.4+react@18.2.0
   react: 18.2.0
+  react-device-detect: 2.2.3_biqbaboplfbrettd7655fr4n2y
   react-dom: 18.2.0_react@18.2.0
   react-icons: 4.11.0_react@18.2.0
   sanity: 3.23.4_nokvlb5ao3salvu6rrmkkisw4i
@@ -77,7 +79,7 @@ dependencies:
   tailwind-merge: 2.2.0
   webpack: 5.89.0
   zod: 3.22.4
-  zustand: 4.4.7_ugtszpytr2kaslv26e2bligzg4
+  zustand: 4.5.0_ugtszpytr2kaslv26e2bligzg4
 
 devDependencies:
   '@sanity/icons': 2.8.0_react@18.2.0
@@ -5419,8 +5421,8 @@ packages:
     resolution: {integrity: sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==}
     dev: false
 
-  /next-intl/3.4.2_next@14.0.4+react@18.2.0:
-    resolution: {integrity: sha512-DHAMtXfuItIGeNv5pUYqwHRWBmyL47dyuS1BDoG1dRUq+drcV5xk8eygD0n7xicD8yYUhgGcLMhNajEwRwpWNQ==}
+  /next-intl/3.5.2_next@14.0.4+react@18.2.0:
+    resolution: {integrity: sha512-HL0iAjUcsvn/5t3JbEKqkTFOHWGALznAx/RTn6Yx2WwB2l+fg5ZnKOzFjh+7JTeX7uWND5djF2oiL+sWV+sl2Q==}
     peerDependencies:
       next: ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -5429,7 +5431,7 @@ packages:
       negotiator: 0.6.3
       next: 14.0.4_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
-      use-intl: 3.4.2_react@18.2.0
+      use-intl: 3.5.2_react@18.2.0
     dev: false
 
   /next-sanity/7.0.6_dmsflccx573iihsjimp5jhxtmq:
@@ -6115,6 +6117,17 @@ packages:
       copy-to-clipboard: 3.3.3
       prop-types: 15.8.1
       react: 18.2.0
+    dev: false
+
+  /react-device-detect/2.2.3_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-buYY3qrCnQVlIFHrC5UcUoAj7iANs/+srdkwsnNjI7anr3Tt7UY6MqNxtMLlr0tMBied0O49UZVK8XKs3ZIiPw==}
+    peerDependencies:
+      react: '>= 0.14.0'
+      react-dom: '>= 0.14.0'
+    dependencies:
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      ua-parser-js: 1.0.37
     dev: false
 
   /react-dom/18.2.0_react@18.2.0:
@@ -7406,6 +7419,10 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  /ua-parser-js/1.0.37:
+    resolution: {integrity: sha512-bhTyI94tZofjo+Dn8SN6Zv8nBDvyXTymAdM3LDI/0IboIUwTu1rEhW7v2TfiVsoYWgkQ4kOVqnI8APUFbIQIFQ==}
+    dev: false
+
   /unbox-primitive/1.0.2:
     resolution: {integrity: sha512-61pPlCD9h51VoreyJ0BReideM3MDKMKnh6+V9L08331ipq6Q8OFXZYiqP6n/tbHx4s5I9uRhcye6BrbkizkBDw==}
     dependencies:
@@ -7530,8 +7547,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /use-intl/3.4.2_react@18.2.0:
-    resolution: {integrity: sha512-+9xUu01CqkxV0fqMXmxi08gUNCcWGSDFmSHiMSzodRXWGBPFeXcnhQXQ5UOGoCUQygW6vH+dntyXTKtb4hefYw==}
+  /use-intl/3.5.2_react@18.2.0:
+    resolution: {integrity: sha512-iKtfwkSwVgCLNA+Xx7W9ckseT8WgLeZH9Q/QUboH84oiDkm/7TgqubI7ROqA+zklpubsRHGQynZmXA7spmHZeA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
@@ -7924,12 +7941,12 @@ packages:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
     dev: false
 
-  /zustand/4.4.7_ugtszpytr2kaslv26e2bligzg4:
-    resolution: {integrity: sha512-QFJWJMdlETcI69paJwhSMJz7PPWjVP8Sjhclxmxmxv/RYI7ZOvR5BHX+ktH0we9gTWQMxcne8q1OY8xxz604gw==}
+  /zustand/4.5.0_ugtszpytr2kaslv26e2bligzg4:
+    resolution: {integrity: sha512-zlVFqS5TQ21nwijjhJlx4f9iGrXSL0o/+Dpy4txAP22miJ8Ti6c1Ol1RLNN98BMib83lmDH/2KmLwaNXpjrO1A==}
     engines: {node: '>=12.7.0'}
     peerDependencies:
       '@types/react': '>=16.8'
-      immer: '>=9.0'
+      immer: '>=9.0.6'
       react: '>=16.8'
     peerDependenciesMeta:
       '@types/react':

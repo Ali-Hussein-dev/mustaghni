@@ -98,7 +98,7 @@ export const CompaniesList = ({
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-3 px-2 md:grid-cols-2 md:px-4">
+          <div className="grid grid-cols-1 gap-5 px-2 pb-2 md:grid-cols-2 md:px-4">
             {companies?.map((o, i) => (
               <DyanmicCompanyCard key={i} {...o} locale={locale} />
             ))}

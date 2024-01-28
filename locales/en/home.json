@@ -1,88 +1,92 @@
 {
-    "subtitle": "Ethical Wise Consumption",
-    "searches": "Searches",
-    "brands": "Brands",
-    "searchbar": {
-        "placeholder": "Search for a brand",
-        "cancel": "Cancel",
-        "noResults": "Not found in database",
-        "filter": "Filter",
-        "filterBy": "Filter by",
-        "filterPlaceholder": "Pick up up to 2 tags"
-    },
-    "evaluationCriteria": {
-        "title": "Evaluation Criteria",
-        "description": "We categorize brands into 3 levels based on their support to israeli.",
-        "list": {
-            "a": {
-                "description": "Israeli brands and all brands explicitly supporting israeli, such as Fiverr, Wix, Zara",
-                "level": "1"
-            },
-            "b": {
-                "description": "Brands owned by giant corporations that support israeli, such as brands owned by Pepsico, Nestle, Coca Cola",
-                "level": "2"
-            },
-            "c": {
-                "description": "Brands have business agreements with israel, such as HP, Intel, Microsoft",
-                "level": "3"
-            }
-        }
-    },
-    "discord": {
-        "button": "Join Now",
-        "description": "Connect with others on the Discord server!"
-    },
-    "effectiveBoycotting": {
-        "title": "Effective Boycotting",
-        "description": "Make it effective and widely adopted",
-        "list": {
-            "a": {
-                "title": "Stop buying their products",
-                "p": "Buy from their competitors or local alternatives"
-            },
-            "b": {
-                "title": "Promote others to take action",
-                "p": "Motivate others to abbandon their products"
-            },
-            "c": {
-                "title": "Be active on social media",
-                "p": "Unfollow their accounts, report their posts, and abstain from interacting with their content on social media"
-            },
-            "d": {
-                "title": "Lower their applications rating",
-                "p": "Rate their apps with one star and leave a review showing their bias"
-            }
-        }
-    },
-    "FAQs": {
-        "title": "FAQs About Boycott",
-        "q1": {
-            "q": "Are the boycotts against israel making an impact?",
-            "a": "Boycotts against Israel are having an impact, but they are just one part of the solution, not the whole solution."
+"subtitle": "Ethical Wise Consumption",
+"searches": "Searches",
+"brands": "Brands",
+"searchbar": {
+    "placeholder": "Search for a brand",
+    "cancel": "Cancel",
+    "noResults": "Not found in database",
+    "filter": "Filter",
+    "filterBy": "Filter by",
+    "filterPlaceholder": "Pick up up to 2 tags"
+},
+"evaluationCriteria": {
+    "title": "Evaluation Criteria",
+    "description": "We categorize brands into 3 levels based on their support to israeli.",
+    "list": {
+        "a": {
+            "description": "Israeli brands and all brands explicitly supporting israeli, such as Fiverr, Wix, Zara",
+            "level": "1"
         },
-        "q2": {
-            "q": "What are the benefits of the boycotting for local businesses and the economy?",
-            "a": "Boycotts can boost national economic growth, shift consumption patterns, and decrease unemployment by supporting local industries and small businesses. Additionally, boycotts can prompt businesses to negotiate, leading to policy changes and ethical behavior."
+        "b": {
+            "description": "Brands owned by giant corporations that support israeli, such as brands owned by Pepsico, Nestle, Coca Cola",
+            "level": "2"
         },
-        "q3": {
-            "q": "There are so many brands to boycott, I can't boycott them all!",
-            "a": "boycott as many as you can, it doesn't have to be all or none. You can start with the brands that are easy to boycott, and then move to the harder ones. You can also boycott the brands that are more harmful than others."
-        }
-    },
-    "corps": {
-        "title": "Corporations Backing israel"
-    },
-    "header": {
-        "about": "About"
-    },
-    "easyAccess": {
-        "title": "Easy Access",
-        "description": "Install it on all platforms through the browser"
-    },
-    "footer": {
-        "links": {
-            "about": "What is Mustaghni?",
-            "privacyPolicy": "Privacy Policy"
+        "c": {
+            "description": "Brands have business agreements with israel, such as HP, Intel, Microsoft",
+            "level": "3"
         }
     }
+},
+"discord": {
+    "button": "Join Now",
+    "description": "Connect with others on the Discord server!"
+},
+"effectiveBoycotting": {
+    "title": "Effective Boycotting",
+    "description": "Make it effective and widely adopted",
+    "list": {
+        "a": {
+            "title": "Stop buying their products",
+            "p": "Buy from their competitors or local alternatives"
+        },
+        "b": {
+            "title": "Promote others to take action",
+            "p": "Motivate others to abbandon their products"
+        },
+        "c": {
+            "title": "Be active on social media",
+            "p": "Unfollow their accounts, report their posts, and abstain from interacting with their content on social media"
+        },
+        "d": {
+            "title": "Lower their applications rating",
+            "p": "Rate their apps with one star and leave a review showing their bias"
+        }
+    }
+},
+"FAQs": {
+    "title": "FAQs About Boycott",
+    "q1": {
+        "q": "Are the boycotts against israel making an impact?",
+        "a": "Boycotts against Israel are having an impact, but they are just one part of the solution, not the whole solution."
+    },
+    "q2": {
+        "q": "What are the benefits of the boycotting for local businesses and the economy?",
+        "a": "Boycotts can boost national economic growth, shift consumption patterns, and decrease unemployment by supporting local industries and small businesses. Additionally, boycotts can prompt businesses to negotiate, leading to policy changes and ethical behavior."
+    },
+    "q3": {
+        "q": "There are so many brands to boycott, I can't boycott them all!",
+        "a": "boycott as many as you can, it doesn't have to be all or none. You can start with the brands that are easy to boycott, and then move to the harder ones. You can also boycott the brands that are more harmful than others."
+    }
+},
+"corps": {
+    "title": "Corporations Backing israel"
+},
+"header": {
+    "about": "About"
+},
+"easyAccess": {
+    "title": "Easy Access",
+    "description": "Install it on all platforms through the browser"
+},
+"companyCard": {
+    "boycott": "Boycott",
+    "boycotted": "Boycotted"
+},
+"footer": {
+    "links": {
+        "about": "What is Mustaghni?",
+        "privacyPolicy": "Privacy Policy"
+    }
+}
 }
