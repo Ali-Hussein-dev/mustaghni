@@ -43,3 +43,6 @@ yarn-error.log*
 
 public/sw.js
 signing-key-info.txt
+Mustaghni.aab
+Mustaghni.apk
+signing.keystore
