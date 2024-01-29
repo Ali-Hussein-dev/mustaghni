@@ -13,6 +13,7 @@ import { useSearchCtx } from "@/hooks/use-search-ctx";
 import { useStore } from "zustand";
 import { FaFilter } from "react-icons/fa6";
 import { useSearchParams } from "next/navigation";
+import { BoycottedBrandsList } from "../boycotted-brands-list";
 
 //======================================From-Mantine
 export const Searchbar = ({
@@ -98,6 +99,7 @@ export const Searchbar = ({
         radius="full"
         size="xl"
       />
+      <BoycottedBrandsList />
       {filter && <Filter {...getFilterProps} setFilter={setFilter} />}
     </form>
   );
