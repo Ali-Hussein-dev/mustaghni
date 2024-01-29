@@ -1,18 +1,18 @@
 "use client";
 import { Accordion, Title } from "@mantine/core";
+import { useTranslations } from "next-intl";
 
 //======================================
-export const FAQs = ({
-  list,
-  title,
-}: {
-  title: string;
-  list: { q: string; a: string }[];
-}) => {
+export const FAQs = () => {
+  const t = useTranslations("home");
+  const faqs = ["q1", "q2", "q3"].map((q) => ({
+    q: t(`FAQs.${q}.q`),
+    a: t(`FAQs.${q}.a`),
+  }));
   return (
     <div className="w-full pt-24 text-gray-700">
       <Title order={2} className="mb-4 text-center text-2xl font-extrabold">
-        {title}
+        {t("FAQs.title")}
       </Title>
 
       <Accordion
@@ -25,9 +25,9 @@ export const FAQs = ({
           control: "!font-bold text-lg",
           panel: "text-lg",
         }}
-        defaultValue={list[0]?.q}
+        defaultValue={faqs[0]?.q}
       >
-        {list.map((item, i) => (
+        {faqs.map((item, i) => (
           <Accordion.Item key={i} value={item.q}>
             <Accordion.Control className="font-semibold" c="blue">
               {item.q}

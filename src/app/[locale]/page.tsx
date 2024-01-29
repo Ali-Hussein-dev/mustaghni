@@ -18,11 +18,6 @@ type Props = {
 };
 export default function HomePage({ params: { locale } }: Props) {
   unstable_setRequestLocale(locale);
-  const t = useTranslations("home");
-  const faqs = ["q1", "q2", "q3"].map((q) => ({
-    q: t(`FAQs.${q}.q`),
-    a: t(`FAQs.${q}.a`),
-  }));
   const messages = useMessages();
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
@@ -31,7 +26,7 @@ export default function HomePage({ params: { locale } }: Props) {
         <EvaluationCriteria />
         <EasyAccess />
         <EffectiveBoycotting />
-        <FAQs list={faqs} title={t("FAQs.title")} />
+        <FAQs />
         <Discord />
         {/* <TopSupporters /> */}
       </main>
