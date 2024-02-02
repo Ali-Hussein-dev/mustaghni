@@ -18,7 +18,7 @@ const list = [
 //======================================
 export const ImagesSlider = () => {
   return (
-    <div className="relative mx-auto w-full max-w-5xl pb-20 pt-12">
+    <div className="relative mx-auto w-full max-w-5xl overflow-hidden pb-20 pt-12">
       <div className={`${css.slider} relative w-full overflow-hidden`}>
         <div className={`${css["slide-track"]} w-full items-center`}>
           {list.map((src, i) => (

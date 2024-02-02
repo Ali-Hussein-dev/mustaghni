@@ -20,8 +20,8 @@ export const Footer = () => {
   const locale = useLocale();
   return (
     <div className="w-full">
-      <footer className="mx-auto w-full text-gray-800 flex-row-center">
-        <div className="grid w-full max-w-4xl grid-cols-1 gap-2 border-0 border-t border-solid border-neutral-400 px-1 py-2 md:grid-cols-3">
+      <footer className="wrapper text-gray-800 flex-row-center">
+        <div className="grid w-full grid-cols-1 gap-2 border-0 border-t border-solid border-neutral-400 px-1 py-2 md:grid-cols-3">
           <div className="flex items-center justify-center gap-4 md:justify-start">
             <div className="flex gap-1">
               <Text display="inline-block" dir="ltr">
