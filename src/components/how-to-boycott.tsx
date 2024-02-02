@@ -6,7 +6,7 @@ export const EffectiveBoycotting = () => {
   const t = useTranslations("home");
   const keys = ["a", "b", "c", "d"] as const;
   return (
-    <div className="mx-auto w-full pb-6 pt-20 text-gray-700">
+    <div className="wrapper pb-6 pt-20 text-gray-700">
       <div className="mb-4 ">
         <Title order={2} className="mb-4 text-center text-2xl font-extrabold">
           {t("effectiveBoycotting.title")}
