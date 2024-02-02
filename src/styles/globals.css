@@ -36,10 +36,14 @@ h3 {
     padding: 0;
 }
 .triangle {
-    @apply w-0 h-0;
     border-left: 9px solid transparent;
     border-right: 9px solid transparent;
     border-top: 10px solid #ff0000;
     box-shadow: #ff0000;
     margin: auto;
+}
+@layer components {
+    .wrapper {
+        @apply max-w-4xl mx-auto w-full
+    }
 }

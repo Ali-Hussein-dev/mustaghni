@@ -6,11 +6,8 @@ import { Discord } from "@/components/discord";
 import { FAQs } from "@/components/FAQs";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { EasyAccess } from "@/components/easy-access";
-import {
-  NextIntlClientProvider,
-  useMessages,
-  useTranslations,
-} from "next-intl";
+import { NextIntlClientProvider, useMessages } from "next-intl";
+import { ImagesSlider } from "@/components/images-slider/images-slider";
 
 export const revalidate = 3600; // 1 hour
 type Props = {
@@ -21,9 +18,10 @@ export default function HomePage({ params: { locale } }: Props) {
   const messages = useMessages();
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <main className="center mx-auto h-full w-full max-w-4xl grow px-2 py-10 lg:px-0">
+      <main className="center mx-auto h-full w-full grow px-2 py-10 lg:px-0">
         <Hero />
         <EvaluationCriteria />
+        <ImagesSlider />
         <EasyAccess />
         <EffectiveBoycotting />
         <FAQs />
