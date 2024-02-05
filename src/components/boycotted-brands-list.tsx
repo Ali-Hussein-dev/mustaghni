@@ -18,6 +18,7 @@ export function BoycottedBrandsList() {
         onClose={close}
         title={t("boycottedList.title")}
         position="right"
+        size="xs"
       >
         {/* Drawer content */}
         <div className="space-y-3">
