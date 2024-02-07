@@ -22,6 +22,9 @@ const NextConfig = {
             port: ""
         }]
     },
+    experimental: {
+        optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
+    },
     // eslint-disable-next-line @typescript-eslint/require-await
     async redirects() {
         return [
