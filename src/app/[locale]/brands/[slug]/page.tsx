@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: name,
   };
 }
-
+export const revalidate = 3600; // revalidate every hour
 //======================================
 const BrandPage = async ({ params }: Props) => {
   const { locale, slug } = params;
