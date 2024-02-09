@@ -16,7 +16,7 @@ export function BoycottedBrandsList() {
       <Drawer
         opened={opened}
         onClose={close}
-        title={t("boycottedList.title")}
+        title={`${t("boycottedList.title")} (${brands.length})`}
         position="right"
         size="xs"
       >
