@@ -3,9 +3,12 @@ import NextIntl from 'next-intl/plugin';
 const withNextIntl = NextIntl("./src/i18n.ts");
 import withSerwistInit from "@serwist/next";
 
+const dev = process.env.NODE_ENV == "development";
+
 const withSerwist = withSerwistInit({
     swSrc: "src/app/sw.ts",
     swDest: "public/sw.js",
+    disable: dev,
 });
 /**
  * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially useful
