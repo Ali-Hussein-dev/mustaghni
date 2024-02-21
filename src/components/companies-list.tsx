@@ -55,7 +55,7 @@ export const CompaniesList = ({
   }
 
   return (
-    <div>
+    <div className="bg-gray-50">
       {companies.length === 0 ? (
         <div className="w-full px-5 font-semibold">
           <p className="rounded-xl border border-solid border-red-700 py-5 text-center text-lg font-medium text-red-900">
@@ -64,7 +64,7 @@ export const CompaniesList = ({
         </div>
       ) : (
         <div className="overflow-hidden rounded-2xl border border-solid border-gray-200 pb-5 text-gray-700">
-          <div className="mb-4 gap-1 bg-gray-50 px-2 py-2 flex-row-between md:px-5">
+          <div className="mb-4 gap-1 bg-gray-100 px-2 py-2 flex-row-between md:px-5">
             <div className="w-full grow gap-3 font-medium flex-row-start">
               {tags.length > 0
                 ? tags.map((tag) => (
@@ -98,7 +98,7 @@ export const CompaniesList = ({
             </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 px-2 pb-2 md:grid-cols-2 md:px-4">
+          <div className="grid grid-cols-1 gap-5 px-2 pb-2 md:grid-cols-2 md:gap-y-7 md:px-4">
             {companies?.map((o, i) => (
               <DyanmicCompanyCard key={i} {...o} locale={locale} />
             ))}

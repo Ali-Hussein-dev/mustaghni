@@ -43,3 +43,7 @@ h3 {
     box-shadow: #ff0000;
     margin: auto;
 }
+.bg {
+    background: repeat;
+    background-image: url("/bg.svg")
+}

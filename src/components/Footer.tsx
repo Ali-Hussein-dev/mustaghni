@@ -19,7 +19,7 @@ export const Footer = () => {
   const t = useTranslations("home");
   const locale = useLocale();
   return (
-    <div className="w-full">
+    <div className="w-full bg-white">
       <footer className="mx-auto w-full text-gray-800 flex-row-center">
         <div className="grid w-full max-w-4xl grid-cols-1 gap-2 border-0 border-t border-solid border-neutral-400 px-1 py-2 md:grid-cols-3">
           <div className="flex items-center justify-center gap-4 md:justify-start">

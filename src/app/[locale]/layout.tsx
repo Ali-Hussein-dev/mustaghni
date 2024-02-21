@@ -41,15 +41,17 @@ export default function RootLayout({
       <head>
         <ColorSchemeScript />
       </head>
-      <body className="scroll-smooth antialiased">
-        <Providers>
-          <div
-            className={`min-h-screen font-sans flex-col-center ${inter.variable}`}
-          >
-            {children}
-            <Footer />
-          </div>
-        </Providers>
+      <body className="relative scroll-smooth antialiased">
+        <div className="bg">
+          <Providers>
+            <div
+              className={`min-h-screen bg-gradient-to-r from-gray-50 via-transparent to-gray-50 font-sans flex-col-center ${inter.variable}`}
+            >
+              {children}
+              <Footer />
+            </div>
+          </Providers>
+        </div>
       </body>
     </html>
   );
