@@ -22,14 +22,14 @@ export const FAQs = () => {
         transitionDuration={270}
         classNames={{
           root: "max-w-3xl mx-auto",
-          control: "!font-bold text-lg",
-          panel: "text-lg",
+          control: "!font-bold text-lg font-semibold shadow",
+          panel: "text-lg pt-3",
         }}
         defaultValue={faqs[0]?.q}
       >
         {faqs.map((item, i) => (
           <Accordion.Item key={i} value={item.q}>
-            <Accordion.Control className="font-semibold" c="blue">
+            <Accordion.Control c="blue" bg="white">
               {item.q}
             </Accordion.Control>
             <Accordion.Panel>{item.a}</Accordion.Panel>
