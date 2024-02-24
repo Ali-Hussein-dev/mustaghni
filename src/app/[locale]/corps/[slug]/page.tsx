@@ -92,6 +92,8 @@ const CorpPage = async ({ params }: Props) => {
                 {...brand}
                 ownedBy={undefined}
                 locale={locale}
+                // workaround for now
+                withBoycottBtn={false}
               />
             ))}
           </div>

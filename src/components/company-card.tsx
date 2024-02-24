@@ -15,16 +15,25 @@ export type Company = {
   _id: string;
   evidence?: TypedObject[];
   alternatives?: TypedObject[];
+  withBoycottBtn?: boolean;
 };
 
 export type CompanyProps = Pick<
   Company,
-  "title" | "logo" | "ownedBy" | "ownerCompanyURL" | "_id"
+  "title" | "logo" | "ownedBy" | "ownerCompanyURL" | "_id" | "withBoycottBtn"
 > & {
   locale: string;
 };
 export const CompanyCard = (props: CompanyProps) => {
-  const { title, logo, ownedBy = "", ownerCompanyURL, _id, locale } = props;
+  const {
+    title,
+    logo,
+    ownedBy = "",
+    ownerCompanyURL,
+    _id,
+    locale,
+    withBoycottBtn = true,
+  } = props;
 
   return (
     <div>
@@ -77,7 +86,7 @@ export const CompanyCard = (props: CompanyProps) => {
           </div>
         </Paper>
       </Link>
-      <BoycottBtn brand={props} />
+      {withBoycottBtn && <BoycottBtn brand={props} />}
     </div>
   );
 };
