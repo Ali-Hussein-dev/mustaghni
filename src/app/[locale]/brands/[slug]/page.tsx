@@ -103,7 +103,7 @@ const BrandPage = async ({ params }: Props) => {
           {isOwnedByCorp && (
             <Text className="mb-1">
               The brand is ownd by <strong>{brand.ownedBy}</strong> which
-              supports the israeli see{" "}
+              supports the israeli occupation. See{" "}
               <Anchor
                 href={`/${locale}/corps/${brand.ownedBy}`}
                 variant="gradient"
