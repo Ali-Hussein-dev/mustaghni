@@ -3,6 +3,7 @@ import { PortableText } from "@portabletext/react";
 import { Header } from "@/components/Header";
 import { unstable_setRequestLocale } from "next-intl/server";
 
+export const revalidate = 3600; // revalidate every hour
 //======================================
 const AboutPage = async ({
   params: { locale },
