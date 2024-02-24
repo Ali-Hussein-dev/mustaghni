@@ -45,7 +45,7 @@ export default function RootLayout({
         <div className="bg">
           <Providers>
             <div
-              className={`min-h-screen bg-gradient-to-r from-gray-50 via-transparent to-gray-50 font-sans flex-col-center ${inter.variable}`}
+              className={`min-h-screen bg-gradient-to-r from-gray-50 via-transparent to-gray-50 font-sans flex-col-center md:from-transparent md:via-gray-50 md:to-transparent ${inter.variable}`}
             >
               {children}
               <Footer />
