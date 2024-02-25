@@ -109,6 +109,6 @@ export const MantineSearchbar = dynamic(
   () => import("./Searchbar").then((c) => c.Searchbar),
   {
     ssr: false,
-    loading: () => <Skeleton w="100%" h="48px" radius="xl" />,
+    loading: () => <Skeleton w="100%" h="54px" radius="999999" />,
   },
 );

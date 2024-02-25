@@ -27,13 +27,13 @@ export const Hero = () => {
           <p className="mx-auto mb-2 mt-0 max-w-lg px-1 text-center text-xl font-semibold text-gray-600">
             {t("subtitle")}
           </p>
-          <div className="gap-3 flex-row-center">
+          {/* <div className="gap-3 flex-row-center">
             <React.Suspense fallback={<Skeleton w="340px" h="40px" />}>
               <CountsLabel
                 labels={{ brands: t("brands"), searches: t("searches") }}
               />
             </React.Suspense>
-          </div>
+          </div> */}
         </div>
       </div>
       <React.Suspense
