@@ -5,6 +5,7 @@ import { FaChevronRight } from "react-icons/fa6";
 import { type TypedObject } from "sanity";
 import { ImageContainer } from "./img-container";
 import { BoycottBtn } from "./boycott-button";
+import { useTranslations } from "next-intl";
 
 export type Company = {
   title: string;
@@ -34,7 +35,7 @@ export const CompanyCard = (props: CompanyProps) => {
     locale,
     withBoycottBtn = true,
   } = props;
-
+  const t = useTranslations("home");
   return (
     <div>
       <Link href={`/${locale}/brands/${_id}`} className="group no-underline">
@@ -86,7 +87,17 @@ export const CompanyCard = (props: CompanyProps) => {
           </div>
         </Paper>
       </Link>
-      {withBoycottBtn && <BoycottBtn brand={props} />}
+      {withBoycottBtn && (
+        <div className="isolate z-10 mx-auto -translate-y-5 flex-row-center">
+          <BoycottBtn
+            brand={props}
+            labels={{
+              idle: t("companyCard.boycott"),
+              clicked: t("companyCard.boycotted"),
+            }}
+          />
+        </div>
+      )}
     </div>
   );
 };
