@@ -1,3 +1,4 @@
+import { BoycottBtn } from "@/components/boycott-button";
 import CompanyLayout from "@/components/company-layout";
 import { ImageContainer } from "@/components/img-container";
 import {
@@ -12,7 +13,7 @@ import {
 import { PortableText } from "@portabletext/react";
 import { getBrand, getBrandName } from "@sanity/lib/get-companies";
 import { type Metadata } from "next";
-import { unstable_setRequestLocale } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import Image from "next/image";
 import { BsFillGridFill } from "react-icons/bs";
 
@@ -36,11 +37,12 @@ const BrandPage = async ({ params }: Props) => {
   const isBasedOnIsrael = brand?.tags?.includes("israel");
   const hasEvidence = !!brand?.evidence;
   const isOwnedByCorp = !!brand?.ownedBy;
+  const t = await getTranslations("home");
   return (
     <CompanyLayout>
       <div className="space-y-5 py-4">
         <Paper
-          className="flex flex-col items-center justify-center gap-3 px-3 pb-3 pt-4 shadow-lg md:flex-row md:justify-start"
+          className="flex w-full flex-col items-center justify-center gap-3 px-3 pb-3 pt-4 shadow-lg md:flex-row md:justify-start"
           radius="lg"
           withBorder
           dir="ltr"
@@ -81,6 +83,16 @@ const BrandPage = async ({ params }: Props) => {
                 </Anchor>
               </div>
             )}
+          </div>
+          <div className="grow flex-row-end">
+            <BoycottBtn
+              brand={{ ...brand, locale }}
+              labels={{
+                idle: t("companyCard.boycott"),
+                clicked: t("companyCard.boycotted"),
+              }}
+              className="md:h-[90px] md:w-[120px]"
+            />
           </div>
         </Paper>
         <Paper className="px-3 py-4" withBorder radius="lg" dir="ltr">

@@ -5,6 +5,7 @@ import { FaChevronRight } from "react-icons/fa6";
 import { type TypedObject } from "sanity";
 import { ImageContainer } from "./img-container";
 import { BoycottBtn } from "./boycott-button";
+import { useTranslations } from "next-intl";
 
 export type Company = {
   title: string;
@@ -15,26 +16,17 @@ export type Company = {
   _id: string;
   evidence?: TypedObject[];
   alternatives?: TypedObject[];
-  withBoycottBtn?: boolean;
 };
 
 export type CompanyProps = Pick<
   Company,
-  "title" | "logo" | "ownedBy" | "ownerCompanyURL" | "_id" | "withBoycottBtn"
+  "title" | "logo" | "ownedBy" | "ownerCompanyURL" | "_id"
 > & {
   locale: string;
 };
 export const CompanyCard = (props: CompanyProps) => {
-  const {
-    title,
-    logo,
-    ownedBy = "",
-    ownerCompanyURL,
-    _id,
-    locale,
-    withBoycottBtn = true,
-  } = props;
-
+  const { title, logo, ownedBy = "", ownerCompanyURL, _id, locale } = props;
+  const t = useTranslations("home");
   return (
     <div>
       <Link href={`/${locale}/brands/${_id}`} className="group no-underline">
@@ -51,7 +43,7 @@ export const CompanyCard = (props: CompanyProps) => {
                 sizes={"(min-width: 240px) 240px, 240px"}
                 src={logo}
                 alt={`${title} logo`}
-                cn="rounded-2xl"
+                cn="rounded-lg"
               />
             ) : (
               <Avatar size="lg" radius="xl">
@@ -59,7 +51,11 @@ export const CompanyCard = (props: CompanyProps) => {
               </Avatar>
             )}
             <div className="grow flex-col-start">
-              <Text c="dark" className="font-semibold" lineClamp={1}>
+              <Text
+                c="dark"
+                className="text-sm font-semibold md:text-base"
+                lineClamp={1}
+              >
                 {title}
               </Text>
 
@@ -86,7 +82,16 @@ export const CompanyCard = (props: CompanyProps) => {
           </div>
         </Paper>
       </Link>
-      {withBoycottBtn && <BoycottBtn brand={props} />}
+      <div className="isolate z-10 mx-auto -translate-y-5 flex-row-center">
+        <BoycottBtn
+          brand={props}
+          labels={{
+            idle: t("companyCard.boycott"),
+            clicked: t("companyCard.boycotted"),
+          }}
+          size="compact-md"
+        />
+      </div>
     </div>
   );
 };

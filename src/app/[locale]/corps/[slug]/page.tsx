@@ -83,17 +83,15 @@ const CorpPage = async ({ params }: Props) => {
             </Text>
           )}
         </Paper>
-        <Paper withBorder className="rounded-xl bg-gray-50 p-4" dir="ltr">
+        <Paper withBorder className="rounded-xl bg-gray-50 px-2 py-4" dir="ltr">
           <Title order={3}>Total brands: {brands.length}</Title>
-          <div className="grid gap-3 py-4 sm:grid-cols-2 md:grid-cols-3 md:gap-5">
+          <div className="grid gap-5 py-4 sm:grid-cols-2 md:grid-cols-3 md:gap-7">
             {brands.map((brand) => (
               <DyanmicCompanyCard
                 key={brand.title}
                 {...brand}
                 ownedBy={undefined}
                 locale={locale}
-                // workaround for now
-                withBoycottBtn={false}
               />
             ))}
           </div>
