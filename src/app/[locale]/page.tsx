@@ -1,16 +1,12 @@
 import * as React from "react";
 import { Hero } from "@/components/Hero";
-import { EvaluationCriteria } from "@/components/which-brands";
-import { EffectiveBoycotting } from "@/components/how-to-boycott";
+import { EvaluationCriteria } from "@/components/evaluation-criteria";
+import { EffectiveBoycott } from "@/components/effective-boycott";
 import { Discord } from "@/components/discord";
 import { FAQs } from "@/components/FAQs";
 import { unstable_setRequestLocale } from "next-intl/server";
 import { EasyAccess } from "@/components/easy-access";
-import {
-  NextIntlClientProvider,
-  useMessages,
-  useTranslations,
-} from "next-intl";
+import { NextIntlClientProvider, useMessages } from "next-intl";
 
 export const revalidate = 3600; // 1 hour
 type Props = {
@@ -25,7 +21,7 @@ export default function HomePage({ params: { locale } }: Props) {
         <Hero />
         <EvaluationCriteria />
         <EasyAccess />
-        <EffectiveBoycotting />
+        <EffectiveBoycott />
         <FAQs />
         <Discord />
         {/* <TopSupporters /> */}
