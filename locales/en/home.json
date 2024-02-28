@@ -12,7 +12,7 @@
   },
   "evaluationCriteria": {
     "title": "Evaluation Criteria",
-    "description": "We categorize brands into 3 levels based on their support to israeli.",
+    "description": "We categorize brands into three levels based on their support of israel.",
     "list": {
       "a": {
         "description": "Israeli brands and all brands explicitly supporting israeli, such as Fiverr, Wix, Zara",
@@ -33,8 +33,8 @@
     "description": "Connect with others on the Discord server!"
   },
   "effectiveBoycotting": {
-    "title": "Effective Boycotting",
-    "description": "Make it effective and widely adopted",
+"title": "Effective Boycott",
+    "description": "Without your participation, the boycott will have limited impact",
     "list": {
       "a": {
         "title": "Stop buying their products",
@@ -65,8 +65,8 @@
       "a": "Boycotts can boost national economic growth, shift consumption patterns, and decrease unemployment by supporting local industries and small businesses. Additionally, boycotts can prompt businesses to negotiate, leading to policy changes and ethical behavior."
     },
     "q3": {
-      "q": "There are so many brands to boycott, I can't boycott them all!",
-      "a": "boycott as many as you can, it doesn't have to be all or none. You can start with the brands that are easy to boycott, and then move to the harder ones. You can also boycott the brands that are more harmful than others."
+      "q": "Should we boycott all companies that support israel?",
+      "a": "Of course, the more companies we boycott, the more effective the boycott will be. However, it is not possible to boycott all companies, to make it easier for you, you can add them your boycott list."
     }
   },
   "corps": {
