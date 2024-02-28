@@ -9,7 +9,7 @@ export const Hero = () => {
   return (
     <div
       className="animate-in mx-auto flex min-h-[calc(75vh-5rem)] w-full max-w-4xl 
-      flex-col justify-start gap-4 pt-20"
+      flex-col justify-center gap-4"
     >
       <div className="space-y-4">
         <div className="w-full flex-col-center">

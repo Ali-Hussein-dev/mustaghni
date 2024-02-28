@@ -27,7 +27,7 @@ export function BoycottedBrandsList() {
           ))}
         </div>
       </Drawer>
-      <div className="mx-auto w-full max-w-xs rounded-b-3xl border-0 border-x border-b border-solid border-green-200 bg-white py-1 flex-row-center md:max-w-xl">
+      <div className="mx-auto w-full max-w-[230px] rounded-b-3xl border-0 border-x border-b border-solid border-green-200 bg-white py-1 flex-row-center md:max-w-md">
         <Button
           onClick={open}
           radius="xl"
