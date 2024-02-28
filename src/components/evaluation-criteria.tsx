@@ -8,13 +8,13 @@ export const EvaluationCriteria = () => {
   const t = useTranslations("home");
   const keys = ["a", "b", "c"] as const;
   return (
-    <div className="mb-10 w-full pt-24 text-gray-700 sm:mb-16 md:pt-48">
+    <div className="mb-10 w-full pt-24 text-gray-700 sm:mb-16">
       <div className="mx-auto w-full">
-        <div className="mb-4 w-full flex-col-center">
+        <div className="mb-6 w-full flex-col-center">
           <h2 className="text-center text-3xl font-extrabold">
             {t("evaluationCriteria.title")}
           </h2>
-          <Text className="text-center">
+          <Text className="text-center font-medium">
             {t("evaluationCriteria.description")}
           </Text>
         </div>
