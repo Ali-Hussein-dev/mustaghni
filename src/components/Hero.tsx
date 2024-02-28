@@ -1,8 +1,6 @@
 import * as React from "react";
 import Image from "next/image";
-import { CountsLabel } from "@/components/counts-label";
 import { SearchWrapper } from "./search-wrapper";
-import { Skeleton } from "@mantine/core";
 import { useLocale, useTranslations } from "next-intl";
 
 export const Hero = () => {
@@ -10,8 +8,8 @@ export const Hero = () => {
   const locale = useLocale();
   return (
     <div
-      className="animate-in mx-auto flex w-full max-w-4xl flex-col 
-      justify-start gap-4 pt-20"
+      className="animate-in mx-auto flex min-h-[calc(75vh-5rem)] w-full max-w-4xl 
+      flex-col justify-start gap-4 pt-20"
     >
       <div className="space-y-4">
         <div className="w-full flex-col-center">
@@ -36,9 +34,7 @@ export const Hero = () => {
           </div> */}
         </div>
       </div>
-      <React.Suspense
-        fallback={<div className="w-full flex-row-center">Loading...</div>}
-      >
+      <React.Suspense>
         <SearchWrapper
           labels={{
             placeholder: t("searchbar.placeholder"),
