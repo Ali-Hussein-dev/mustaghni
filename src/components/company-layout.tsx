@@ -10,7 +10,7 @@ interface CompanyLayoutProps {
 
 const CompanyLayout: React.FC<CompanyLayoutProps> = ({ title, children }) => {
   return (
-    <div className="w-full max-w-4xl grow">
+    <div className="animate-in w-full max-w-4xl grow">
       <Header />
       <div className="px-3 pb-4 pt-10 md:px-2 lg:px-0">
         <nav className="h-10 w-full border-0 border-b border-solid border-gray-300 flex-row-between">
