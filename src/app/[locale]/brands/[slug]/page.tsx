@@ -144,7 +144,7 @@ const BrandPage = async ({ params }: Props) => {
               <div className="mb-2 gap-3 flex-row-start">
                 <BsFillGridFill size="20" className="text-green-400" />
                 <Title order={3} c="gray" className="font-bold">
-                  Alternatives
+                  Some Alternatives to {brand.title}
                 </Title>
               </div>
               <div className="prose prose-gray max-w-full ">
