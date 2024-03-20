@@ -8,7 +8,20 @@ export const getCompanies = async (): Promise<Company[]> => {
         "logo": logo.asset->url,
     }`)
 }
-
+/**
+ * use for broswer extension
+ */
+export const findCompanies = async (title: string): Promise<Company[]> => {
+    return client.fetch(`*[_type == "company" && title match "${title}*" ]{
+        _id,
+        title,
+        "logo": logo.asset->url,
+        evidence,
+        alternatives
+    }`, {
+        title
+    })
+}
 export const searchCompanies = async (title: string): Promise<Company[]> => {
     return client.fetch(`*[_type == "company" && title match "${title}*" ]{
         _id,
