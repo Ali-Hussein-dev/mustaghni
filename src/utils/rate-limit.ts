@@ -2,14 +2,14 @@ import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
 import { type NextRequest } from "next/server";
 
-const rateLimit = new Ratelimit({
-    redis: Redis.fromEnv(),
-    analytics: true,
-    limiter: Ratelimit.slidingWindow(3, "5s"),
-});
 
 
-export async function checkRateLimit(req: NextRequest) {
+export async function checkRateLimit(req: NextRequest, count = 4) {
+    const rateLimit = new Ratelimit({
+        redis: Redis.fromEnv(),
+        analytics: true,
+        limiter: Ratelimit.slidingWindow(count, "5s"),
+    });
     const id = req.ip ?? "anonymous";
     const limit = await rateLimit.limit(id ?? "anonymous");
     const { success } = limit;
