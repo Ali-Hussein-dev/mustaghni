@@ -11,7 +11,7 @@ const nameSchema = z.string().min(1).refine(name => /^[^\*\_\{\}\}\[\]]+$/.test(
 export const runtime = "edge"
 
 export const GET = async (req: NextRequest) => {
-    const isRateExceeded = await checkRateLimit(req)
+    const isRateExceeded = await checkRateLimit(req, 6)
     if (isRateExceeded) {
         return isRateExceeded;
     }
