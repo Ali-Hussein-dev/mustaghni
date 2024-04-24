@@ -80,8 +80,8 @@
     "description": "Install on all platforms via the browser"
   },
   "companyCard": {
-    "boycott": "Boycott",
-    "boycotted": "Boycotted"
+    "boycott": "Add to Boycott list",
+    "boycotted": "Remove from Boycott list"
   },
   "boycottedList": {
     "title": "Boycotted brands List",

@@ -44,8 +44,11 @@ export const BoycottButton = ({
       radius="xxl"
       onClick={handleClick}
       className="duration-300"
+      classNames={{
+        root: "!border-green-500/30",
+      }}
       color="green"
-      w="150px"
+      w="230px"
       bg={isBoycotted ? "green" : "white"}
       variant={isBoycotted ? "filled" : "outline"}
       loading={isPending}

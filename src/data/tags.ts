@@ -25,7 +25,6 @@ export const tags = [
     "fast food",
     "feminine care",
     "finance",
-    "financial",
     "food",
     "food-delivery",
     "freelancing",

@@ -46,9 +46,12 @@ export const CompanyCard = (props: CompanyProps) => {
                 cn="rounded-lg"
               />
             ) : (
-              <Avatar size="lg" radius="xl">
-                {title[0]}
-              </Avatar>
+              <div>
+                <div className="triangle animate-bounce"></div>
+                <Avatar size="lg" radius="xl">
+                  {title[0]}
+                </Avatar>
+              </div>
             )}
             <div className="grow flex-col-start">
               <Text
@@ -114,7 +117,7 @@ export const ComapnyCardMini = (props: CompanyProps) => {
     >
       <Paper
         radius="lg"
-        className="h-full gap-1 px-2 py-1 shadow duration-500 flex-row-between hover:shadow-lg active:md:scale-95"
+        className="h-full gap-1 p-2 shadow duration-500 flex-row-between hover:shadow-lg active:md:scale-95"
         dir="ltr"
       >
         <div className="w-full grow gap-2 flex-row-start">
@@ -128,9 +131,12 @@ export const ComapnyCardMini = (props: CompanyProps) => {
               cn="rounded-2xl"
             />
           ) : (
-            <Avatar size="md" radius="md">
-              {title[0]}
-            </Avatar>
+            <div>
+              <div className="triangle animate-bounce"></div>
+              <Avatar size="md" radius="md">
+                {title[0]}
+              </Avatar>
+            </div>
           )}
           <div className="grow flex-col-start">
             <Text c="dark" className="font-semibold" lineClamp={1}>
